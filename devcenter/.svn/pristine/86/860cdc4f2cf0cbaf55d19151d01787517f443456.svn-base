@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>移动收单开放平台 | 开发者中心-安卓SDK</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="css/iconfont.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="js/respond.js"></script>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+			    <![endif]-->
+		<style>
+		body {
+			position: relative;
+		}
+		
+		.navbar-inverse .navbar-inner {
+			border-radius: 0;
+		}
+		
+		/*.nav-bg {
+			background-color: rgba(1, 112, 227, 1); /*导航背景默认颜色－透明
+			box-shadow: none;
+		}*/
+		</style>
+	</head>
+	<body>
+	<div class="navbar navbar-inverse navbar-static-top positiona nav-bg">
+		<div class="navbar-inner navbar-header">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse"
+					data-target="#navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="brand logo-padd" href="#"><img src="img/logo.png"
+					width="240"></a>
+				<div class="nav-collapse collapse" id="navbar-collapse">
+					<ul class="nav">
+						<li><a href="index.html">首页</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							产品介绍
+							<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu dropdown-style">
+								<li><a href="#">乐收银＋</a></li>
+								<li><a href="#">二维码收银台</a></li>
+								<li><a href="#">智能POS</a></li>
+							</ul>
+						</li>
+				        <li class="dropdown">
+				        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				        		解决方案
+				        		<b class="caret"></b>
+				        		</a>
+				        		<ul class="dropdown-menu dropdown-style">
+								<li><a href="#">服务商篇</a></li>
+								<li><a href="#">代理商篇</a></li>
+								<li><a href="#">大商户篇</a></li>
+								<li><a href="#">小商户篇</a></li>
+							</ul>
+				        </li>
+				        <li class="dropdown">
+					        	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        	常见问题
+					        	<b class="caret"></b>
+					        	</a>
+					        	<ul class="dropdown-menu dropdown-style">
+								<li><a href="commonProblem.html">综合篇</a></li>
+								<li><a href="f-Problem.html">服务商篇</a></li>
+								<li><a href="d-Problem.html">代理商篇</a></li>
+								<li><a href="P-Problem.html">平台商篇</a></li>
+							</ul>
+					        	<!--<ul class="dropdown-menu dropdown-style">
+								<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toTools.do">常用工具</a></li>
+								<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/">旧版开发者中心</a></li>
+							</ul>-->
+				        </li>
+				        <li class="dropdown">
+				        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				        		开发接入
+				        		<b class="caret"></b>
+				        		</a>
+				        		<div class="dropdown-menu dropdown-style width540 down-pos">
+				        			<ul class="menu-list api-height sdk-height">
+									<li class="nav-header menu-title">服务端API</li>
+									<li><a href="payApi.html">联机交易类</a></li>
+									<li><a href="manageApi.html">商户管理类</a></li>
+								</ul>
+								<ul class="menu-list h5-height">
+									<li class="nav-header menu-title">页面跳转</li>
+									<li><a href="docSkiph5.html">微信公众号跳转</a></li>
+								</ul>
+								<ul class="menu-list border0 api-height">
+									<li class="nav-header menu-title">移动端SDK</li>
+									<li><a href="androidSDK.html">安卓SDK(收单)</a></li>
+								    <li><a href="iosSDK.html">苹果SDK(收单)</a></li>
+									<li><a href="SDKServer.html">SDK服务端</a></li>
+								</ul>
+							</div>
+				        </li>
+				        <li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							资源中心
+							<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu dropdown-style">
+								<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toTools.do">常用工具</a></li>
+							</ul>
+						</li>
+				        <li><a href="#">关于我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container marginb100 paddingt70">
+		<div class="row">
+			<div id="pa-left-nav" class="span3">
+				<ul class="sidebar-menu">
+					<li>
+						<a href="#userMeun" class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> 
+							<span class="iconfont">&#xe60e;</span>
+							文档说明 
+							<span class="iconfont pull-right" style="position: relative;"></span>
+						</a>
+						<ul id="userMeun" class="nav nav-list collapse in menu-second">
+							<li id="pa-left1-1" class="active"><a href="#reader" data-toggle="tab">阅读对象</a></li>
+							<li id="pa-left1-2"><a href="#copyright" data-toggle="tab">版本说明</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#r-work" class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> 
+							<span class="iconfont">&#xe60e;</span>
+							机构接入准备工作 
+							<span class="iconfont pull-right" style="position: relative;"></span>
+						</a>
+						<ul id="r-work" class="nav nav-list collapse menu-second">
+							<li id="pa-left2-1"><a href="#p-work" data-toggle="tab">准备工作</a></li>
+							<li id="pa-left2-2"><a href="#p-noun" data-toggle="tab">专有名词解释</a></li>
+							<li id="pa-left2-3"><a href="#t-index" data-toggle="tab">民生收单网关地址</a></li>
+							<li id="pa-left2-4"><a href="#w-flow" data-toggle="tab">SDK业务流程</a></li>
+							<!--<li id="pa-left2-5"><a href="#e-parameter" data-toggle="tab">生产环境参数</a></li>-->
+						</ul>
+					</li>
+					<li>
+						<a href="#weixin" class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> 
+							<span class="iconfont">&#xe60e;</span>
+							安卓APP开发步骤
+							<span class="iconfont pull-right" style="position: relative;"></span>
+						</a>
+						<ul id="weixin" class="nav nav-list collapse menu-second">
+							<li id="pa-left3-1"><a href="#an-contents" data-toggle="tab">目录结构</a></li>
+							<li id="pa-left3-2"><a href="#an-file" data-toggle="tab">配置文件</a></li>
+							<li id="pa-left3-3"><a href="#an-steps" data-toggle="tab">添加sdk步骤说明</a></li>
+							<li id="pa-left3-4"><a href="#an-common" data-toggle="tab">通用接口调用说明</a></li>
+							<li id="pa-left3-5"><a href="#an-pos" data-toggle="tab">智能POS接口调用说明</a></li>
+						</ul>
+					</li>
+					<li><a href="#API" class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> 
+							<span class="iconfont">&#xe60e;</span>
+							API列表 
+							<span class="iconfont pull-right" style="position: relative;"></span>
+					</a>
+						<ul id="API" class="nav nav-list collapse menu-second">
+							<li id="pa-left6-1"><a href="#API-1" data-toggle="tab">APP配置文件字段</a></li>
+							<li id="pa-left6-2"><a href="#API-2" data-toggle="tab">APP接口参数字段</a></li>
+							<li id="pa-left6-3"><a href="#API-3" data-toggle="tab">APP结果回调字段</a></li>
+							<li id="pa-left6-4"><a href="#API-4" data-toggle="tab">APP打印功能接口参数字段</a></li>
+							<li id="pa-left6-5"><a href="#API-5" data-toggle="tab">MPOS固件版本</a></li>
+							<li id="pa-left6-6"><a href="#API-6" data-toggle="tab">查余成功结果回调字段</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="pa-right" class="span9" data-spy="scroll" data-target=".sidebar-menu">
+				<div class="tab-content border-ddd">
+					<div class="tab-pane active" id="reader">
+						<div class="content-sct">
+							<div class="func-discript">
+								<h2 class="sct-tit">阅读对象</h2>
+								<div>
+									<p class="lineh22">民生银行为合作的移动收单商户提供了SDK接入的方式，本文档主要介绍合作机构的开发者如何通过集成支付SDK来完成移动收单功能，该文档主要面向机构Android App和iOS App的开发人员。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="copyright">
+						<div class="content-sct">
+							<div class="func-discript">
+								<div>
+									<h2 class="sct-tit">版本说明</h2>
+								</div>
+								<div>
+									<table class="table table-bordered">
+										<tr>
+											<td>当前版本</td>
+											<td>V1.0</td>
+											<td>版本操作</td>
+											<td>赵琦 </td>
+										</tr>
+										<!--<tr>
+											<td>版本更新</td>
+											<td>V1.1.3</td>
+											<td>版本操作</td>
+											<td>夏浩波</td>
+										</tr>
+										<tr>
+											<td>修改日期</td>
+											<td>2016.10.20</td>
+											<td>技术支持</td>
+											<td>微信：18235417122</td>
+										</tr>
+										<tr>
+											<td colspan="4">版本更新记录<br>
+												1. 更正退款交易响应字段及查询响应字段<br>
+												2. 修改退款响应字段状态R的说明<br>
+												3. 修改交易明细单下载接入说明<br>
+												4. 修改文档对异步通知报文的说明<br>
+												5. 修改异步通知的接入说明<br>
+											</td>
+										</tr>-->
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="p-work">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">准备工作</h2>
+								<p class="lineh22">机构在与民生银行完成线下协议签订后，由总行乐收银商务平台管理员在乐收银商务平台开立机构平台号，平台号唯一，机构真实进行交易的商户须在民生乐收银商务平台开通商户，开通商户后，会生成民生银行商户号，民生会为每一个机构平台发放用于订单加密加签和解密验签的的通信证书。</p>
+								<p class="lineh22">通信协议采用SM2算法，商户订单信息采用机构私钥证书签名(cust0001.sm2)，民生公钥证书(cmbcTest.cer)加密。商户收到民生银行返回的信息，用商户私钥证书(cust0001.sm2)解密，民生公钥证书(cmbcTest.cer)验签，确保双方交互的信息加密传输，安全可靠防抵赖。</p>
+								<p class="lineh22">民生银行目前提供加密加签和解密验签demo，支持的语言有c#.net，php，和java，商户可以下载demo结合文档进行开发，测试证书在民生银行开发平台直接下载。</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="p-noun">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">专有名词解释</h2>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>名词</th>
+											<th>名词解释</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>通用接口</td>
+											<td>通用接口代表Android、iOS平台均可以通过调用该接口完成相应的收款功能。通过连接MPOS可以完成账单打印、获取设备信息、查询余额等功能</td>
+										</tr>
+										<tr>
+											<td>智能POS接口</td>
+											<td>Android系统通过调用智能POS接口完成对应的查询余额、付款、获取终端对应参数的功能。</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="w-flow">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">SDK业务流程</h2>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>接入流程图
+								</h3>
+								<img src="img/SDK1.png">
+								<p class="lineh22">商户系统集成SDK后下单主要交互说明：</p>
+								<p class="lineh22">步骤1：在商户APP中选择对应的服务或商品，发起下单申请给后台；</p>
+								<p class="lineh22">步骤2：商户后台将订单信息用本地通信密钥签名并加密，将密文传至SDK；</p>
+								<p class="lineh22">步骤3：收单SDK将加密订单信息发送至民生银行收单网关；</p>
+								<p class="lineh22">步骤4：收单SDK会发起和民生银行建立安全通道；</p>
+								<p class="lineh22">步骤5：银行端将解密后的订单信息在安全通道上返回；</p>
+								<p class="lineh22">步骤6：收单SDK发起下单请求；</p>
+								<p class="lineh22">步骤7：民生系统完成订单校验并完成下单支付操作；</p>
+								<p class="lineh22">步骤8：收单SDK发起支付查询结果。</p>
+								<p class="lineh22">步骤9：收单SDK收到支付结果后在商户App端显示支付结果。</p>
+								<p class="lineh22">步骤10：异步通知商户后台支付结果。</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="t-index">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">民生收单网关地址</h2>
+								  <h5>民生收单网关地址</h5>
+									<h5 class="word-break">
+										测试环境：<a href="http://111.205.207.103/mobilePlatform"
+											class="adress">http://111.205.207.103/mobilePlatform</a>
+									</h5>
+									<h5 class="word-break">
+										生产环境: <a href="http://epay.cmbc.com.cn/appweb"
+											class="adress">http://epay.cmbc.com.cn/appweb</a>
+									</h5>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="e-parameter">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">生产环境参数</h2>
+								<div>
+									<h5>民生支付网关地址</h5>
+									<h5 class="word-break">
+										测试环境：<a href="http://111.205.207.103/mobilePlatform"
+											class="adress">http://111.205.207.103/mobilePlatform</a>
+									</h5>
+									<h5 class="word-break">
+										生产环境: <a href="http://epay.cmbc.com.cn/appweb"
+											class="adress">http://epay.cmbc.com.cn/appweb</a>
+									</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="an-contents">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">目录结构</h2>
+									<p class="lineh22 ">安卓支付插件包括assets,libs,res文件夹，assets文件夹下为配置文件，libs文件夹下为需要调用的相关库文件。res文件夹下为相关的资源文件。</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="an-file">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">配置文件</h2>
+								<p class="lineh22 ">其中assets文件夹下的cmbc_constants.properties为配置文件，APP配置文件字段详细请见API列表—APP配置文件字段</p>
+								<h5>AndroidManifest需要添加如下内容:</h5>
+								<h5>（1）添加权限</h5>
+								<pre>
+	&lt;uses-permission android:name="android.permission.BLUETOOTH" /&gt;
+    &lt;uses-permission android:name="android.permission.BLUETOOTH_ADMIN" /&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /&gt;
+    &lt;uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" /&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_GPS" />
+    &lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /&gt;
+    &lt;uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /&gt;
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+    &lt;uses-permission android:name="android.permission.CAMERA" /&gt;
+    &lt;uses-permission android:name="android.permission.WAKE_LOCK" /&gt;
+    &lt;uses-permission android:name="android.permission.READ_PHONE_STATE" /&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" /&gt;
+    &lt;uses-permission android:name="android.premission.ACCESS_FRONT_CAMERA" /&gt;
+    &lt;uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /&gt;
+&lt;uses-permission android:name="android.permission.VIBRATE" /&gt;
+&lt;uses-permission android:name="android.permission.MANAGE_NEWLAND" /&gt;
+&lt;uses-permission android:name="android.permission.GET_TASKS"/&gt; 
+    &lt;uses-permission android:name="android.permission.READ_LOGS"/&gt;
+    &lt;uses-feature android:name="android.hardware.camera" /&gt;
+    &lt;uses-feature android:name="android.hardware.camera.autofocus" /&gt;
+    &lt;supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="false"
+        android:resizeable="true"
+        android:smallScreens="true" /&gt;
+								</pre>
+								<h5>（2）添加组件声明</h5>
+								<pre>
+&lt;activity
+        android:name="com.cmbc.pay.sdks.ui.SDKMainLayoutActivity"
+        android:configChanges="keyboardHidden|screenSize|orientation"
+        android:windowSoftInputMode="adjustPan|stateHidden" 
+        android:theme="@style/cmbc_sdk_NoAnimationTheme"
+    /&gt;
+    &lt;activity
+        android:name="com.cmbc.pay.sdks.wechat.CaptureActivity"
+        android:theme="@style/cmbc_sdk_NoAnimationTheme"
+    /&gt;
+
+    &lt;service android:name="com.cmbc.pos.device.DataExchangeService"   &gt;
+        &lt;intent-filter&gt;
+            &lt;action android:name="android.intent.action.DataExchangeService" /&gt;
+    &lt;category android:name="android.intent.category.DEFAULT" /&gt;
+        &lt;/intent-filter&gt;
+    &lt;/service&gt;
+    &lt;service android:name="com.amap.api.location.APSService" &gt;
+    &lt;/service&gt;
+    &lt;meta-data
+        android:name="com.amap.api.v2.apikey"
+        android:value="87a52306f53457a8203934dc6c2d52dc" &gt; &lt;!-- 高德地图的key，如果项目中已经使用高德地图定位，则用原有key替换该key；若之前未使用高德定位，则需要在高德开发者平台用该项目的包名申请一个key，把这个key替换掉 --&gt;
+&lt;meta-data 
+        android:name="CMBC_APPKEY"
+        android:value ="8356c55026ca11e6a454b82a72db4265"/&gt;&lt;!--用于民生银行数据统计上传错误信息 --&gt;
+    &lt;/meta-data&gt;</pre>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="an-steps">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">添加SDK步骤说明</h2>
+							  <p class="lineh22">将assets文件夹下，libs文件夹下和res文件夹下相关的资源文件拷贝到工程中对应的目录下面。在AndroidManifest目录下添加上述相应权限和相关页面声明。</p>
+								<p class="lineh22">libs文件夹下若有相同的jar或.so文件，需删除其中的一个，保留一个即可。</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="an-common">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">通用接口调用说明</h2>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>收款
+								</h3>
+								<h5>调用代码示例如下：</h5>
+								<pre>
+SDKTrade sdkTrade = SDKTrade.getInstance();
+//获取SDKTrade实例，调用sdkTrade.invokePaySDK
+sdkTrade.invokePaySDK(mContext, orderInfo, tradeType new TradeListener ());
+
+//交易结果回调
+public class MyTradeListener implements TradeListener{
+@Override
+    public void onResult(int errorCode, String errorMessage, String remark) {	
+	}	
+}</pre>
+								<h5>SDK接口参数说明</h5>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>字段名</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>mContext</td>
+											<td>安卓应用上下文</td>
+										</tr>
+									  <tr>
+									  	<td>orderinfo</td>
+									  	<td>商户订单信息</td>
+									  </tr>
+									  <tr>
+									  	<td>tradeType</td>
+									  	<td>调用SDK标识：</br> 0,收单</br>1,支付</td>
+									  </tr>
+									  <tr>
+									  	<td>TradeListener</td>
+									  	<td>交易状态回调</td>
+									  </tr>
+									</tbody>
+								</table>
+								<h5>回调参数见API列表—APP接口参数字段</h5>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>打印
+								</h3>
+								<p class="lineh22">通过调用SDKTrade实例中printList方法，传入对应的SDKMposPrintBean对象。</p>
+								<p class="lineh22">注：打印功能目前只针对Landi M36 POS 和智能pos有效</p>
+				                <h5>调用printList代码示例:</h5>
+				                <pre>
+ArrayList&lt;SDKMposPrintBean&gt; list = new ArrayList&lt;SDKMposPrintBean&gt;();
+	list.add(new SDKMposPrintBean(0, "要打印的文字1", 0, 0, 1, 9));
+	list.add(new SDKMposPrintBean(0, "要打印的文字2", 10, 0, 2, 2));
+	list.add(new SDKMposPrintBean(1, "要打印的二维码1", 100, 100, 0, 0));
+ 	list.add(new SDKMposPrintBean(0, "要打印的文字3" , 10, 0, 2, 2));
+	list.add(new SDKMposPrintBean(1, "要打印的二维码2", 100, 210, 0, 0));
+	SDKTrade.getInstance().printList(getActivity(), list,new TradeListener() {
+		@Override
+		public void onResult(int errorCode, String errorMessage, String remark) {
+		}
+	}); </pre>
+								<h5>表：SDKMposPrintBean对象构造函数说明</h5>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>参数	</th>
+											<th>参数类型</th>
+											<th>参数说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>printFlag</td>
+											<td>Int</td>
+											<td>0打印文字，1打印二维码打印格式</td>
+										</tr>
+									  <tr>
+									  	<td>content</td>
+									  	<td>String</td>
+									  	<td>打印内容</td>
+									  </tr>
+									  <tr>
+									  	<td>offset</td>
+									  	<td>Int</td>
+									  	<td>offset为向左偏移位置，POS打印每行384像素点</td>
+									  </tr>
+									  <tr>
+									  	<td>qrcodeSize</td>
+									  	<td>Int</td>
+									  	<td>二维码尺寸(打印文字时无效)</td>
+									  </tr>
+									  <tr>
+									  	<td>frontType</td>
+									  	<td>Int</td>
+									  	<td>打印字体说明</td>
+									  </tr>
+									  <tr>
+									  	<td>frontScale</td>
+									  	<td>Int</td>
+									  	<td>打印字体格式说明</td>
+									  </tr>
+									</tbody>
+								</table>
+								<h5>回调参数见API列表—APP接口参数字段</h5>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>获取版本
+								</h3>
+								<p class="lineh22">功能描述：用于获取SDK版本信息。</p>
+								<h5>调用代码示例如下：</h5>
+								<pre>
+SDKTrade sdkTrade = SDKTrade.getInstance();
+//获取SDKTrade实例，调用sdkTrade.getVersion();
+String version = SDKTrade.getInstance().getVersion();</pre>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>获取蓝牙名和设备ID
+								</h3>
+								<p class="lineh22">功能描述：用于获取蓝牙名和设备ID（序列号）</p>
+								<h5>调用代码示例如下：</h5>
+								<pre>
+SDKTrade.getInstance().startDeviceManager(getActivity(),new TradeListener() {
+	@Override
+	public void onResult(int errorCode, String errorMessage,
+		String remark) {
+	}
+});	</pre>
+								<h5>回调参数见API列表—APP接口参数字段</h5>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>获取当前已连接设备ID
+								</h3>
+								<p class="lineh22">功能描述：用于获取设备ID（序列号）</p>
+								<h5>调用代码示例如下：</h5>
+								<pre>
+SDKTrade.getInstance().queryDeviceId(getActivity(), new TradeListener() {
+	@Override
+	public void onResult(int errorCode, String errorMessage, String remark) {
+		
+	}
+});	</pre>
+								<h5>回调参数见API列表—APP接口参数字段</h5>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>动态设置SDK连接服务器地址
+								</h3>
+								<p class="lineh22 word-break"><strong>设置收单所连的URL地址,如不进行设置，则读取assets目录下cmbc_constants.properties文件中receiveOrderServerUrl对应的地址:</strong></p>
+								<p class="lineh22 word-break">SDKTrade.getInstance().setReceiveOrderServerUrl("https://111.205.207.103/mobilePlatform");</p>
+								<p class="lineh22 word-break"><strong>设置支付所连的URL地址,如不进行设置，则读取assets目录下cmbc_constants.properties文件中payOrderServerUrl对应的地址:</strong></p>
+								<p class="lineh22 word-break">SDKTrade.getInstance().setPayOrderServerUrl("http://111.205.207.103:18180/pay");</p>
+								<p class="lineh22 word-break"><strong>得到设置的收单地址:</strong></p>
+								<p class="lineh22 word-break">SDKTrade.getInstance().getReceiveOrderServerUrl();</p>
+	             				<p class="lineh22 word-break"><strong>得到设置的支付地址:</strong></p>
+							 	<p class="lineh22 word-break">SDKTrade.getInstance().getPayOrderServerUrl();</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>MPOS查询余额
+								</h3>
+								<p class="lineh22">功能描述：用于MPOS或智能POS刷卡（或插卡、挥卡）查询余额</p>
+								<h5>调用代码示例如下：</h5>
+								<pre>
+SDKTrade.getInstance().getBalance(getActivity(),null,new SDKTransListener() {
+	@Override
+	public void onTransSucceed(Map<String, String> params) {
+	ToastUtils.show(context, "查询成功，卡上余额："+params.get("amount"));
+	}
+	@Override
+	public void onTransFailed(int errorCode, String message) {
+	// TODO Auto-generated method stub
+	 ToastUtils.show(context, "查询失败");
+	}
+});</pre>
+								<h5>查询结果回调参数见API列表—查余成功结果回调字段</h5>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>设置SDK是否打印日志
+								</h3>
+								<p class="lineh22">日志级别为error，设置方法SDKTrade.getInstance().setShowLog(isShowLog);如果isShowLog为true打印日志，为false不打印，若不进行设置，默认不打印日志。通过SDKTrade.getInstance().isShowLog()可以获得是否显示日志。</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="an-pos">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>智能POS接口调用说明</h2>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>判断是否为智能POS
+								</h3>
+								<h5>调用代码示例如下：</h5>
+								<p class="lineh22 word-break">boolean isSPos = SDKTrade.getInstance().isSPOS(mContext);</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>查询余额
+								</h3>
+								<h5>调用代码示例如下：</h5>
+								<pre>
+HashMap&lt;String, String&gt; hashMap = new HashMap&lt;&gt;();
+hashMap.put("packageName", context.getPackageName());
+hashMap.put("000", "02");
+hashMap.put("001", "000000000000000");//IMEI
+hashMap.put("004", "E0,N0");//GPS
+hashMap.put("005", "18553717902");//登录手机号
+hashMap.put("006", "11");//第一位代表收款入账类型，第二位代表入账账号类型（入对公，人对私）
+hashMap.put("transName", "ChaYu");
+SDKTrade.getInstance().getBalance(getActivity(),hashMap,new SDKTransListener() {
+		
+	@Override
+	public void onTransSucceed(Map&lt;String, String&gt; params) {
+		
+	   ToastUtils.show(context, "查询成功，卡上余额："+params.get("amount"));
+	}
+	@Override
+	public void onTransFailed(int errorCode, String message) {
+	   // TODO Auto-generated method stub
+	   ToastUtils.show(context, "查询失败");
+	}
+});	</pre>
+								<h5>查询结果回调参数见API列表—查余成功结果回调字段</h5>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>请求字段
+								</h3>
+								<h5>注：打印功能目前只针对智能POS有效</h5>
+								<h5>调用代码示例如下：</h5>
+								<pre>
+HashMap&lt;String, String&gt; hashMap = new HashMap&lt;&gt;();
+hashMap.put("packageName", context.getPackageName());
+hashMap.put("transName", "FuKuan");
+hashMap.put("cardNum", "6226223300929943");//收款卡号
+hashMap.put("cardHolder", "张三");//收款人姓名
+hashMap.put("000", "02");
+hashMap.put("amount", "000000000011");
+hashMap.put("001", "000000000000000");//imei
+hashMap.put("004", "E0,N0");//gps
+hashMap.put("005", "18553717902");//登录手机号
+hashMap.put("006", "11");//第一位代表收款入账类型，第二位代表入账账号类型（入对公，人对私）
+hashMap.put("007", "1"); 
+hashMap.put("isShowSuccess", "1");//是否显示成功界面，为1的时候显示，0不显示
+SDKTrade.getInstance().fuKuan(getActivity(),hashMap,new SDKTransListener() {
+		
+	@Override
+	public void onTransSucceed(Map&lt;String, String&gt; params) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void onTransFailed(int errorCode, String message) {
+		// TODO Auto-generated method stub
+	}
+});	</pre>
+								<h5>付款成功结果回调key说明: </h5>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>key</th>
+											<th>类型</th>
+											<th>说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>amount</td>
+											<td>交易金额</td>
+											<td>单位分</td>
+										</tr>
+										<tr>
+											<td>transDate</td>
+											<td>交易日期</td>
+											<td>格式示例：20160302</td>
+										</tr>
+										<tr>
+											<td>transTime</td>
+											<td>交易时间</td>
+											<td>格式示例：154515</td>
+										</tr>
+										<tr>
+											<td>cardNo</td>
+											<td>卡号</td>
+											<td>622622******1234(这里是统一6个*)</td>
+										</tr>
+										<tr>
+											<td>batchNo</td>
+											<td>批次号</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>refNo</td>
+											<td>交易参考号</td>
+											<td>50</td>
+										</tr>
+										<tr>
+											<td>voucherNo</td>
+											<td>凭证号</td>
+											<td>8</td>
+										</tr>
+										<tr>
+											<td>issBankNo</td>
+											<td>发卡行代码</td>
+											<td>03050000(民生银行)</td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>获取终端参数
+								</h3>
+								<h5>调用代码示例如下：</h5>
+								<pre>
+Map&lt;String, String&gt; hashMap = new HashMap&lt;String,String&gt;();
+hashMap.put("transName", "GetTermPara");
+hashMap.put("packageName", getActivity().getPackageName());
+SDKTrade.getInstance().getTermPara(context, hashMap ,new SDKTransListener() {
+	@Override
+	public void onTransSucceed(Map&lt;String, String&gt; params) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void onTransFailed(int errorCode, String message) {
+		// TODO Auto-generated method stub
+		
+	}
+});	</pre>
+								<h5>获取终端参数成功结果回调key说明: </h5>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>key</th>
+											<th>类型</th>
+											<th>说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>pinpadSerial</td>
+											<td>获取终端序列号</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>version</td>
+											<td>厂商应用的版本号</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>model</td>
+											<td>机器型号</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>设置终端参数
+								</h3>
+								<h5>调用代码示例如下：</h5>
+								<pre>
+HashMap&lt;String, String&gt; hashMap = new HashMap&lt;String,String&gt;();
+hashMap.put("merchantName", "测试商户");
+hashMap.put("transName", "SetTermPara");
+hashMap.put("packageName", getActivity().getPackageName());
+SDKTrade.getInstance().setTermPara(context, hashMap, new SDKTransListener() {
+		
+	public void onTransSucceed(Map&lt;String, String&gt; params) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void onTransFailed(int errorCode, String message) {
+		// TODO Auto-generated method stub
+		
+	}
+});	</pre>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="API-1">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>
+									APP配置文件字段
+								</h2>
+								<table class="table table-bordered word-break">
+									<thead>
+										<tr>
+											<th>字段名</th>
+											<th>字段说明</th>
+											<th>内容示例</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>https</td>
+											<td>是否采用https</td>
+											<td>请求方式 YES 是  NO 否（Android无需此字段）</td>
+										</tr>
+										<tr>
+											<td>receiveOrderServerUrl </td>
+											<td>收单服务器地址</td>
+											<td>receiveOrderServerUrl = http://111.205.207.103 /mobilePlatform</td>
+										</tr>
+										<tr>
+											<td>payOrderServerUrl</td>
+											<td>支付服务器地址</td>
+											<td>payOrderServerUrl = http://111.205.207.103 /pay</td>
+										</tr>
+										<tr>
+											<td>publicKeyStr</td>
+											<td>民生公钥</td>
+											<td>publicKeyStr = </br>MIGfMA0GCSqGSIb3DQEB</br>AQUAA4GN</br>FkBXr2pxW75JhVQpejlnxd</td>
+										</tr>
+										<tr>
+											<td>isSCAP</td>
+											<td>验证服务器签名检测，为true是进行验签，false不验</td>
+											<td>isSCAP =  true</td>
+										</tr>
+										<tr>
+											<td>isGPS</td>
+											<td>POS防移机，当为true的时候检测地理位置</td>
+											<td>isGPS =  true</td>
+										</tr>
+										<tr>
+											<td>isUpdateMpos</td>
+											<td>是否检查Mpos固件更新，为true时检查，false时不检查固件更新</td>
+											<td>isUpdateMpos = true</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="API-2">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>
+									APP接口参数字段
+								</h2>
+								<h5>Andriod参数：</h5>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>字段名</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>mContext</td>
+											<td>安卓应用上下文</td>
+										</tr>
+										<tr>
+											<td>orderinfo</td>
+											<td>商户订单信息</td>
+										</tr>
+										<tr>
+											<td>tradeType</td>
+											<td>调用SDK标识：</br> 0,收单</br> 1,支付</td>
+										</tr>
+										<tr>
+											<td>TradeListener</td>
+											<td>交易状态回调</td>
+										</tr>
+									</tbody>
+								</table>
+								<h5>iOS参数：</h5>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>字段名</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>orderinfo</td>
+											<td>商户订单信息</td>
+										</tr>
+										<tr>
+											<td>tradeType</td>
+											<td>调用SDK标识：</br>0,收单</br>1,支付</td>
+										</tr>
+										<tr>
+											<td>delegate</td>
+											<td>交易状态回调</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="API-3">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>
+									APP结果回调字段
+								</h2>
+								<h5>1、回调字段</h5>
+								<table class="table table-bordered word-break">
+									<thead>
+										<tr>
+											<th>字段名	</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>errorCode</td>
+											<td>交易状态：</br>0失败</br>1成功</td>
+										</tr>
+										<tr>
+											<td>errorMessage</td>
+											<td>错误提示信息</td>
+										</tr>
+										<tr>
+											<td>remark</td>
+											<td>字段说明如下</td>
+										</tr>
+									</tbody>
+								</table>
+								<h5>2、remark字段：</h5>
+								<p class="lineh22">格式：key=value&amp;key=value&amp;key=value</p>
+								<table class="table table-bordered word-break">
+									<thead>
+										<tr>
+											<th>接口类型</th>
+											<th>成功回调结果示例</th>
+											<th>说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>收款接口回调(仅刷卡有remark)</td>
+											<td>amount=1&amp;transTime=20160314100705&amp;batchNo=000001&amp;voucherNo=000040&amp;refNo=607410113764</td>
+											<td>金额：amoun</br> 
+												   时间：transTime</br>
+												   批次号：batchNo</br>
+												   凭证号：voucherNo</br>
+												   参考号：refNo
+											</td>
+										</tr>
+										<tr>
+											<td>获取当前已连接设备ID回到</td>
+											<td>deviceId=123456789.</td>
+											<td>返回设备ID（序列号），格式为： deviceId=设备ID</td>
+										</tr>
+										<tr>
+											<td>搜索并连接POS回调</td>
+											<td>bluetoothName=CMBC-A123456&amp;deviceId=123456789</td>
+											<td>返回结果包含蓝牙名和设备ID（序列号），格式为：blueToothName=蓝牙名&amp;deviceId=设备ID</td>
+										</tr>
+									</tbody>
+								</table>
+								
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="API-4">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>
+									APP打印功能接口参数字段
+								</h2>
+								<p class="lineh22">注：POS打印每行384像素点，offset 加上文字大小或二维码大小（qrcodeSize）之和应该不小于0，不大于384.</p>
+								<h5>表1：frontType打印字体</h5>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>取值	</th>
+											<th>打印字体说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>16X8西文点阵占用8X16像素点</br>16X16汉字点阵占用16X16像素点</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>12X24西文点阵占用12X24像素点</br>24X24汉字点阵占用24X24像素点</td>
+										</tr>
+									</tbody>
+								</table>
+								<h5>表2：frontScale打印格式</h5>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>取值</th>
+											<th>打印格式说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>1倍宽 1倍高</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>1倍宽 2倍高</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>1倍宽 3倍高</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>2倍宽 1倍高</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>2倍宽 2倍高</td>
+										</tr>
+										<tr>
+											<td>6</td>
+											<td>2倍宽 3倍高</td>
+										</tr>
+										<tr>
+											<td>7</td>
+											<td>3倍宽 1倍高</td>
+										</tr>
+										<tr>
+											<td>8</td>
+											<td>3倍宽 2倍高</td>
+										</tr>
+										<tr>
+											<td>9</td>
+											<td>3倍宽 3倍高</td>
+										</tr>
+									</tbody>
+								</table>
+								
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="API-5">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>
+                  MPOS固件版本
+								</h2>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>MPOS型号</th>
+											<th>版本</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>联迪M35</td>
+											<td>CMBC-A-V20160619</td>
+										</tr>
+										<tr>
+											<td>联迪M35F</td>
+											<td>CMBC-F-V20160619</td>
+										</tr>
+										<tr>
+											<td>联迪M36</td>
+											<td>CMBC-B-V20160619</td>
+										</tr>
+										<tr>
+											<td>MPOS型号</td>
+											<td>版本</td>
+										</tr>
+										<tr>
+											<td>新大陆</td>
+											<td>CMBC-C-V20160616</td>
+										</tr>
+										<tr>
+											<td>百福D180</td>
+											<td>CMBC-E-V20160616</td>
+										</tr>
+									</tbody>
+								</table>
+								
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="API-6">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>
+									查余成功结果回调字段
+								</h2>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>key</th>
+											<th>类型</th>
+											<th>说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>amount</td>
+											<td>String</td>
+											<td>金额，单位为分</td>
+										</tr>
+										<tr>
+											<td>issBankNo</td>
+											<td>String</td>
+											<td>发卡行号</td>
+										</tr>
+										<tr>
+											<td>cardNo</td>
+											<td>String</td>
+											<td>银行卡号</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container footer-product">
+			<div class="row">
+				<p class="footer-t">我们每日帮助万余家公司处理支付问题。</p>
+			</div>
+			<div class="row row1">
+				<div class="span4">
+					<img src="img/y-l_03.png">
+					<span class="footer-m">乐收银＋</span>
+				</div>
+				<div class="span4">
+					<img src="img/y-e_05.png">						
+					<span class="footer-m">二维码收银台</span>
+				</div>
+				<div class="span4">
+					<img src="img/y-p_07.png">						
+					<span class="footer-m">智能POS</span>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+		    <div class="testl fontc6 ">
+			    	<a href="#">中国民生银行</a>
+			    	<a href="#">解决方案</a>     
+			    	<a href="#">关于我们</a>     
+			    	<a href="#">联系我们</a>
+		    </div>
+	    		<div class="testl fontcc paddingb20">@版权所有&nbsp;中国民生银行&nbsp;|&nbsp;京ICP备05020372号</div>
+    		</div>
+	</div>
+	<a class="iconfont to-top">&#xe625;</a>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		document.body.addEventListener('touchstart', function() {
+		}); //保证手机端按钮或链接active效果
+
+		$(".to-top").click(function() { //置顶按钮
+			$('html,body').animate({
+				scrollTop : '0'
+			}, 80)
+		})
+
+		$(document).ready(function() { //控制文档左侧菜单不同二级菜单不同时active
+			$('ul.menu-second > li').click(function(e) {
+				e.preventDefault();
+				$('ul.menu-second > li').removeClass('active');
+				$(this).addClass('active');
+			});
+		});
+
+		$('#pa-left1-1 a').click(function(e) { //点击左侧菜单显示相应内容
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left1-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-3 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-4 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-5 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-3 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-4 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-5 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-3 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-4 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-5 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left5-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left5-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-3 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-4 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-5 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-6 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+	</script>
+</body>
+</html>

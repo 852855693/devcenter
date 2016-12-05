@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>移动收单开放平台 | 开发者中心-首页</title>
+    		<link rel="stylesheet" href="css/bootstrap.css" >
+    		<link rel="stylesheet" href="css/bootstrap-responsive.css" >
+   	 	<link rel="stylesheet" href="css/iconfont.css" >
+   	 	<link rel="stylesheet" href="css/styles.css">
+   	 	<script src="http://api.html5media.info/1.1.8/html5media.min.js"></script>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-static-top positiona nav-bg">
+			<div class="navbar-inner navbar-header">
+				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#navbar-collapse">
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+				    </button>
+					<a class="brand logo-padd" href="#"><img src="img/logo.png" width="240"></a>
+					<div class="nav-collapse collapse" id="navbar-collapse">
+						<ul class="nav">
+							<li><a href="index.html">首页</a></li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								产品介绍
+								<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu dropdown-style">
+									<li><a href="#">乐收银＋</a></li>
+									<li><a href="#">二维码收银台</a></li>
+									<li><a href="#">智能POS</a></li>
+								</ul>
+							</li>
+					        <li class="dropdown">
+					        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        		解决方案
+					        		<b class="caret"></b>
+					        		</a>
+					        		<ul class="dropdown-menu dropdown-style">
+									<li><a href="#">服务商篇</a></li>
+									<li><a href="#">代理商篇</a></li>
+									<li><a href="#">大商户篇</a></li>
+									<li><a href="#">小商户篇</a></li>
+								</ul>
+					        </li>
+					        <li class="dropdown">
+						        	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						        	常见问题
+						        	<b class="caret"></b>
+						        	</a>
+						        	<ul class="dropdown-menu dropdown-style">
+									<li><a href="commonProblem.html">综合篇</a></li>
+									<li><a href="f-Problem.html">服务商篇</a></li>
+									<li><a href="d-Problem.html">代理商篇</a></li>
+									<li><a href="P-Problem.html">平台商篇</a></li>
+								</ul>
+						        	<!--<ul class="dropdown-menu dropdown-style">
+									<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toTools.do">常用工具</a></li>
+									<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/">旧版开发者中心</a></li>
+								</ul>-->
+					        </li>
+					        <li class="dropdown">
+					        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        		开发接入
+					        		<b class="caret"></b>
+					        		</a>
+					        		<div class="dropdown-menu dropdown-style width540 down-pos">
+					        			<ul class="menu-list api-height sdk-height">
+										<li class="nav-header menu-title">服务端API</li>
+										<li><a href="payApi.html">联机交易类</a></li>
+										<li><a href="manageApi.html">商户管理类</a></li>
+									</ul>
+									<ul class="menu-list h5-height">
+										<li class="nav-header menu-title">页面跳转</li>
+										<li><a href="docSkiph5.html">微信公众号跳转</a></li>
+									</ul>
+									<ul class="menu-list border0 api-height">
+										<li class="nav-header menu-title">移动端SDK</li>
+										<li><a href="androidSDK.html">安卓SDK(收单)</a></li>
+									    <li><a href="iosSDK.html">苹果SDK(收单)</a></li>
+										<li><a href="SDKServer.html">SDK服务端</a></li>
+									</ul>
+								</div>
+					        </li>
+					        <li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								资源中心
+								<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu dropdown-style">
+									<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toTools.do">常用工具</a></li>
+								</ul>
+							</li>
+					        <li><a href="#">关于我们</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	    <div id="myCarousel-banner" class="carousel slide banner" data-ride="carousel">
+		    <ol class="carousel-indicators">
+			    <li data-target="#myCarousel-banner" data-slide-to="0" class="active"></li>
+			    <li data-target="#myCarousel-banner" data-slide-to="1"></li>
+		    </ol>
+	      <!-- Carousel items -->
+		    <div class="carousel-inner">
+			    <div class="active item" id="video-box" style="position: relative;">
+				    <div class="ie-video">
+						<div class="container video-text">
+							<h1>尽享互联生活 感受无现自在</h1>
+							<p>开发者中心为合作商提供解决方案选择、接入流程引导、常见问题查询等，让各方能够快速便捷的接入移动收单开放平台，享受中国民生银行提供的安全快捷的支付服务。</p>
+							<!--<button class="btn video-link" onclick="window.location.href='aboutUs.html'">关于我们</button>-->
+						</div>
+					</div>
+			    </div>
+			    <div class="item"><div class="banner01"></div></div>
+		    </div>
+	      <!-- Carousel nav -->
+		    <a class="carousel-control left banner-lctrl" href="#myCarousel-banner" data-slide="prev">&lsaquo;</a>
+		    <a class="carousel-control right banner-rctrl" href="#myCarousel-banner" data-slide="next">&rsaquo;</a>
+	    </div>
+		<div class="container margint30">
+			<!--<div class="text-center font20">便捷交易</div>
+			<div class="text-center paddingt10">尽享互联生活&nbsp;&nbsp;&nbsp;感受无现自在</div>-->
+			<ul class="row func-margin conv-deal">
+				<li class="span2 paddinglr1">
+					<div class="img-circle function-border">
+						<span class="iconfont font-style">&#xe605;</span>
+					</div>
+					<span class="text-center displayb paddingt18">收款</span>
+					<p class="text-center font12 paddingb20 color-999">刷卡、插卡、闪付、微信、支付宝等多种收款方式</p>
+				</li>
+				<li class="span2 paddinglr1">
+					<div class="img-circle function-border">
+						<span class="iconfont font-style">&#xe62a;</span>
+					</div>
+					<span class="text-center displayb paddingt18">付款</span>
+					<p class="text-center font12 paddingb20 color-999">向公司及个人转账、打款，实时到账</p>
+				</li>
+				<li class="span2 paddinglr1">
+					<div class="img-circle function-border">
+						<span class="iconfont font-style">&#xe628;</span>
+					</div>
+					<span class="text-center displayb paddingt18">账户</span>
+					<p class="text-center font12 paddingb20 color-999">民生银行实体卡、电子账户，全程资金托管，安全无忧</p>
+				</li>
+				<li class="span2 paddinglr1">
+					<div class="img-circle function-border">
+						<span class="iconfont font-style">&#xe629;</span>
+					</div>
+					<span class="text-center displayb paddingt18">接入</span>
+					<p class="text-center font12 paddingb20 color-999">为行业平台、服务商、大商户提供支付服务输出，SDK或API方式接入民生银行</p>
+				</li>
+				<li class="span2 paddinglr1">
+					<div class="img-circle function-border">
+						<span class="iconfont font-style">&#xe62f;</span>
+					</div>
+					<span class="text-center displayb paddingt18">大数据</span>
+					<p class="text-center font12 paddingb20 color-999">通过商户的交易和民生银行积累的海量数据，为商户提供风险控制和大数据服务</p>
+				</li>
+			</ul>
+		</div>
+		<div class="platform-tab">
+			<div class="container">
+				    <div class="tabbable tabs-left margint40">
+				      <ul class="nav nav-tabs plat-lheight">
+				        <!--<li class="positionr active"><a href="#ta" data-toggle="tab">所有平台</a></li>-->
+				        <li class="positionr"><a href="#tb" data-toggle="tab">PC网页</a></li>
+				        <li class="positionr"><a href="#tc" data-toggle="tab">手机网页</a></li>
+				        <li class="positionr active"><a href="#td" data-toggle="tab">智能POS</a></li>
+				        <li class="positionr"><a href="#te" data-toggle="tab">PC客户端</a></li>
+				        <li class="positionr"><a href="#tf" data-toggle="tab">移动SDK</a></li>
+				      </ul>
+				      <div class="tab-content">
+				        <div class="tab-pane" id="ta" style="display: none;">
+				        		<ul class="ta-content">
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon">&#xe61b;</span>
+				        				<div class="plat-nam">
+				        					<h4>支付宝</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon">&#xe61b;</span>
+				        				<div class="plat-nam">
+				        					<h4>支付宝</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon">&#xe61b;</span>
+				        				<div class="plat-nam">
+				        					<h4>支付宝</h4>
+				        					<p>服务窗支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font37">&#xe61f;</span>
+				        				<div class="plat-nam">
+				        					<h4>微信</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font37">&#xe61f;</span>
+				        				<div class="plat-nam">
+				        					<h4>微信</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font37">&#xe61f;</span>
+				        				<div class="plat-nam">
+				        					<h4>微信</h4>
+				        					<p>公众号支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe620;</span>
+				        				<div class="plat-nam">
+				        					<h4>QQ钱包</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe620;</span>
+				        				<div class="plat-nam">
+				        					<h4>QQ钱包</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe620;</span>
+				        				<div class="plat-nam">
+				        					<h4>QQ钱包</h4>
+				        					<p>H5页面支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe621;</span>
+				        				<div class="plat-nam">
+				        					<h4>银联</h4>
+				        					<p>云闪付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe61d;</span>
+				        				<div class="plat-nam">
+				        					<h4>Apple</h4>
+				        					<p>Apple Pay</p>
+				        				</div>
+				        			</li>
+				        		</ul>
+				        </div>
+				        <div class="tab-pane" id="tb">
+				        		<ul class="ta-content">
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon">&#xe61b;</span>
+				        				<div class="plat-nam">
+				        					<h4>支付宝</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe620;</span>
+				        				<div class="plat-nam">
+				        					<h4>QQ钱包</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font37">&#xe61f;</span>
+				        				<div class="plat-nam">
+				        					<h4>微信</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        		</ul>
+				        </div>
+				        <div class="tab-pane" id="tc">
+				        		<ul class="ta-content">
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon">&#xe61b;</span>
+				        				<div class="plat-nam">
+				        					<h4>支付宝</h4>
+				        					<p>服务窗支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font37">&#xe61f;</span>
+				        				<div class="plat-nam">
+				        					<h4>微信</h4>
+				        					<p>公众号支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe620;</span>
+				        				<div class="plat-nam">
+				        					<h4>QQ钱包</h4>
+				        					<p>H5页面支付</p>
+				        				</div>
+				        			</li>
+				        		</ul>
+				        </div>
+				        <div class="tab-pane active" id="td">
+				        		<ul class="ta-content">
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe621;</span>
+				        				<div class="plat-nam">
+				        					<h4>银联</h4>
+				        					<p>云闪付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe61d;</span>
+				        				<div class="plat-nam">
+				        					<h4>Apple</h4>
+				        					<p>Apple Pay</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon">&#xe61b;</span>
+				        				<div class="plat-nam">
+				        					<h4>支付宝</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon">&#xe61b;</span>
+				        				<div class="plat-nam">
+				        					<h4>支付宝</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font37">&#xe61f;</span>
+				        				<div class="plat-nam">
+				        					<h4>微信</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font37">&#xe61f;</span>
+				        				<div class="plat-nam">
+				        					<h4>微信</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe620;</span>
+				        				<div class="plat-nam">
+				        					<h4>QQ钱包</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe620;</span>
+				        				<div class="plat-nam">
+				        					<h4>QQ钱包</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        		</ul>
+				        </div>
+				        <div class="tab-pane" id="te">
+				        		<ul class="ta-content">
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon">&#xe61b;</span>
+				        				<div class="plat-nam">
+				        					<h4>支付宝</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon">&#xe61b;</span>
+				        				<div class="plat-nam">
+				        					<h4>支付宝</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font37">&#xe61f;</span>
+				        				<div class="plat-nam">
+				        					<h4>微信</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font37">&#xe61f;</span>
+				        				<div class="plat-nam">
+				        					<h4>微信</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe620;</span>
+				        				<div class="plat-nam">
+				        					<h4>QQ钱包</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe620;</span>
+				        				<div class="plat-nam">
+				        					<h4>QQ钱包</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        		</ul>
+				        </div>
+				        <div class="tab-pane" id="tf">
+				        		<ul class="ta-content">
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe621;</span>
+				        				<div class="plat-nam">
+				        					<h4>银联</h4>
+				        					<p>云闪付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe61d;</span>
+				        				<div class="plat-nam">
+				        					<h4>Apple</h4>
+				        					<p>Apple Pay</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon">&#xe61b;</span>
+				        				<div class="plat-nam">
+				        					<h4>支付宝</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon">&#xe61b;</span>
+				        				<div class="plat-nam">
+				        					<h4>支付宝</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font37">&#xe61f;</span>
+				        				<div class="plat-nam">
+				        					<h4>微信</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font37">&#xe61f;</span>
+				        				<div class="plat-nam">
+				        					<h4>微信</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe620;</span>
+				        				<div class="plat-nam">
+				        					<h4>QQ钱包</h4>
+				        					<p>正扫支付</p>
+				        				</div>
+				        			</li>
+				        			<li class="width30">
+				        				<span class="iconfont plat-icon font38">&#xe620;</span>
+				        				<div class="plat-nam">
+				        					<h4>QQ钱包</h4>
+				        					<p>反扫支付</p>
+				        				</div>
+				        			</li>
+				        		</ul>
+				        </div>
+				      </div>
+				    </div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="news-title">
+				<h2 class=" news-tit text-center font30">最新资讯</h2>
+			</div>
+			<div id="myCarousel-news" class="carousel slide">
+				<ol class="carousel-indicators" style="display: none;">
+					<li data-target="#myCarousel-news" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel-news" data-slide-to="1"></li>
+					<li data-target="#myCarousel-news" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+				    <div class="active item"><p class="news-item">合作模式全新推出，服务商、代理商欢迎合作，共赢市场</p></div>
+				    <div class="item"><p class="news-item">如果你是服务商，我们为有需求的商户提供各类支付，提现，对账等基础资金服务</p></div>
+				    <div class="item"><p class="news-item">如果你是代理商，我们已具备递推团队可以帮助您拓展商户，提供网站和app支持</p></div>
+			    </div>
+			    <!-- Carousel nav -->
+				<a class="carousel-control left left-ctrl" href="#myCarousel-news" data-slide="prev">&lsaquo;</a>
+				<a class="carousel-control right right-ctrl" href="#myCarousel-news" data-slide="next">&rsaquo;</a>
+				<!--<p>SDK文档已经成为当今的一种潮流趋势越来越多的工程师开始应用这种模式进行开发。</p>-->
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container footer-product">
+				<div class="row">
+					<p class="footer-t">我们每日帮助万余家公司处理支付问题。</p>
+				</div>
+				<div class="row row1">
+					<div class="span4">
+						<img src="img/y-l_03.png">
+						<span class="footer-m">乐收银＋</span>
+					</div>
+					<div class="span4">
+						<img src="img/y-e_05.png">						
+						<span class="footer-m">二维码收银台</span>
+					</div>
+					<div class="span4">
+						<img src="img/y-p_07.png">						
+						<span class="footer-m">智能POS</span>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+			    <div class="testl fontc6 ">
+				    	<a href="#">中国民生银行</a>
+				    	<a href="#">解决方案</a>     
+				    	<a href="#">关于我们</a>     
+				    	<a href="#">联系我们</a>
+			    </div>
+		    		<div class="testl fontcc paddingb20">@版权所有&nbsp;中国民生银行&nbsp;|&nbsp;京ICP备05020372号</div>
+	    		</div>
+		</div>
+    		<script src="js/jquery-1.9.1.min.js"></script>
+    		<script src="js/bootstrap.js"></script>
+    		<script type="text/javascript">
+    			document.body.addEventListener('touchstart', function () { });  //保证手机端按钮或链接active效果
+    			
+    		</script>
+	</body>
+</html>

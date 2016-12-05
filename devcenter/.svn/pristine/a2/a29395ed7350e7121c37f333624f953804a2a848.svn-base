@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>移动收单开放平台 | 开发者中心-联机交易类API</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/bootstrap-responsive.css">
+		<link rel="stylesheet" href="css/iconfont.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<script src="js/respond.js"></script>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+			    <![endif]-->
+		<style>
+		body {
+			position: relative;
+		}
+		
+		.navbar-inverse .navbar-inner {
+			border-radius: 0;
+		}
+		
+		/*.nav-bg {
+			background-color: rgba(1, 112, 227, 1); /*导航背景默认颜色－透明
+			box-shadow: none;
+		}*/
+		</style>
+	</head>
+	<body>
+	<div class="navbar navbar-inverse navbar-static-top positiona nav-bg">
+		<div class="navbar-inner navbar-header">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse"
+					data-target="#navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="brand logo-padd" href="#"><img src="img/logo.png"
+					width="240"></a>
+				<div class="nav-collapse collapse" id="navbar-collapse">
+					<ul class="nav">
+						<li><a href="index.html">首页</a></li>
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							产品介绍
+							<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu dropdown-style">
+								<li><a href="#">乐收银＋</a></li>
+								<li><a href="#">二维码收银台</a></li>
+								<li><a href="#">智能POS</a></li>
+							</ul>
+						</li>
+				        <li class="dropdown">
+				        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				        		解决方案
+				        		<b class="caret"></b>
+				        		</a>
+				        		<ul class="dropdown-menu dropdown-style">
+								<li><a href="#">服务商篇</a></li>
+								<li><a href="#">代理商篇</a></li>
+								<li><a href="#">大商户篇</a></li>
+								<li><a href="#">小商户篇</a></li>
+							</ul>
+				        </li>
+				        <li class="dropdown">
+					        	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        	常见问题
+					        	<b class="caret"></b>
+					        	</a>
+					        	<ul class="dropdown-menu dropdown-style">
+								<li><a href="commonProblem.html">综合篇</a></li>
+								<li><a href="f-Problem.html">服务商篇</a></li>
+								<li><a href="d-Problem.html">代理商篇</a></li>
+								<li><a href="P-Problem.html">平台商篇</a></li>
+							</ul>
+					        	<!--<ul class="dropdown-menu dropdown-style">
+								<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toTools.do">常用工具</a></li>
+								<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/">旧版开发者中心</a></li>
+							</ul>-->
+				        </li>
+				        <li class="dropdown">
+				        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				        		开发接入
+				        		<b class="caret"></b>
+				        		</a>
+				        		<div class="dropdown-menu dropdown-style width540 down-pos">
+				        			<ul class="menu-list api-height sdk-height">
+									<li class="nav-header menu-title">服务端API</li>
+									<li><a href="payApi.html">联机交易类</a></li>
+									<li><a href="manageApi.html">商户管理类</a></li>
+								</ul>
+								<ul class="menu-list h5-height">
+									<li class="nav-header menu-title">页面跳转</li>
+									<li><a href="docSkiph5.html">微信公众号跳转</a></li>
+								</ul>
+								<ul class="menu-list border0 api-height">
+									<li class="nav-header menu-title">移动端SDK</li>
+									<li><a href="androidSDK.html">安卓SDK(收单)</a></li>
+								    <li><a href="iosSDK.html">苹果SDK(收单)</a></li>
+									<li><a href="SDKServer.html">SDK服务端</a></li>
+								</ul>
+							</div>
+				        </li>
+				        <li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+							资源中心
+							<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu dropdown-style">
+								<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toTools.do">常用工具</a></li>
+							</ul>
+						</li>
+				        <li><a href="#">关于我们</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container marginb100 paddingt70">
+		<div class="row">
+			<div id="pa-left-nav" class="span3">
+				<ul class="sidebar-menu">
+					<li><a href="#userMeun"
+						class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> 
+							<span class="iconfont">&#xe60e;</span>
+							文档说明 
+							<span class="iconfont pull-right" style="position: relative;"></span></a>
+						<ul id="userMeun" class="nav nav-list collapse in menu-second">
+							<li id="pa-left1-1" class="active"><a href="#reader" data-toggle="tab">阅读对象</a></li>
+							<li id="pa-left1-2"><a href="#copyright" data-toggle="tab">版本说明</a></li>
+						</ul>
+					</li>
+					<li><a href="#r-work"
+						class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> 
+							<span class="iconfont">&#xe60e;</span>
+							机构接入准备工作 
+							<span class="iconfont pull-right" style="position: relative;"></span>
+					</a>
+						<ul id="r-work" class="nav nav-list collapse menu-second">
+							<li id="pa-left2-1"><a href="#p-work" data-toggle="tab">准备工作</a></li>
+							<li id="pa-left2-2"><a href="#p-noun" data-toggle="tab">专有名词解释</a></li>
+							<li id="pa-left2-3"><a href="#t-index" data-toggle="tab">民生UAT测试环境测试参数</a></li>
+							<li id="pa-left2-4"><a href="#e-parameter" data-toggle="tab">生产环境参数</a></li>
+						</ul>
+					</li>
+					<li><a href="#weixin"
+						class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> 
+							<span class="iconfont">&#xe60e;</span>
+							场景介绍 
+							<span class="iconfont pull-right" style="position: relative;"></span>
+					</a>
+						<ul id="weixin" class="nav nav-list collapse menu-second">
+							<li id="pa-left3-1"><a href="#z-weixin" data-toggle="tab">正扫</a></li>
+							<li id="pa-left3-2"><a href="#f-weixin" data-toggle="tab">反扫</a></li>
+							<li id="pa-left3-3"><a href="#z-serve" data-toggle="tab">支付宝服务窗</a></li>
+						</ul></li>
+					<li><a href="#articleMenu"
+						class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> 
+							<span class="iconfont">&#xe60e;</span>
+							API列表 
+							<span class="iconfont pull-right" style="position: relative;"></span>
+					</a>
+						<ul id="articleMenu" class="nav nav-list collapse  menu-second ">
+							<li id="pa-left4-1"><a href="#order-api" data-toggle="tab">统一下单API</a></li>
+							<li id="pa-left4-2"><a href="#query" data-toggle="tab">支付结果查询API</a></li>
+							<li id="pa-left4-3"><a href="#refund" data-toggle="tab">退款API</a></li>
+							<li id="pa-left4-4"><a href="#tell" data-toggle="tab">异步通知</a></li>
+							<li id="pa-left4-5"><a href="#t-detail" data-toggle="tab">交易明细单下单API</a></li>
+						</ul>
+					</li>
+					<li><a href="#rule"
+						class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> 
+							<span class="iconfont">&#xe60e;</span>
+							接口规则 
+							<span class="iconfont pull-right" style="position: relative;"></span>
+					</a>
+						<ul id="rule" class="nav nav-list collapse menu-second">
+							<li id="pa-left5-1"><a href="#x-rule" data-toggle="tab">协议规则</a></li>
+							<li id="pa-left5-2"><a href="#s-rule" data-toggle="tab">安全规范</a></li>
+						</ul>
+					</li>
+					<li><a href="#error"
+						class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> 
+							<span class="iconfont">&#xe60e;</span>
+							错误码说明 
+							<span class="iconfont pull-right" style="position: relative;"></span>
+						</a>
+						<ul id="error"
+							class="nav nav-list collapse menu-second borderb-ddd">
+							<li id="pa-left6-1"><a href="#error-code" data-toggle="tab">错误码说明</a></li>
+							<li id="pa-left6-2"><a href="#problem" data-toggle="tab">常见问题/错误信息与解决方案</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="pa-right" class="span9" data-spy="scroll"
+				data-target=".sidebar-menu">
+				<div class="tab-content border-ddd">
+					<div class="tab-pane active" id="reader">
+						<div class="content-sct">
+							<div class="func-discript">
+								<h2 class="sct-tit">阅读对象</h2>
+								<div>
+									<p class="lineh22">民生银行为合作的移动收单商户提供了API接入的方式，本文档面向机构服务端开发人员，主要介绍了机构后台如何通过API方式接入民生移动收单系统。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="copyright">
+						<div class="content-sct">
+							<div class="func-discript">
+								<div>
+									<h2 class="sct-tit">版本说明</h2>
+								</div>
+								<div>
+									<table class="table table-bordered">
+										<tr>
+											<td>上一版本</td>
+											<td>V1.1</td>
+											<td>版本操作</td>
+											<td>赵琦 | 夏浩波</td>
+										</tr>
+										<tr>
+											<td>版本更新</td>
+											<td>V1.1.3</td>
+											<td>版本操作</td>
+											<td>夏浩波</td>
+										</tr>
+										<tr>
+											<td>修改日期</td>
+											<td>2016.10.20</td>
+											<td>技术支持</td>
+											<td>微信：18235417122</td>
+										</tr>
+										<tr>
+											<td colspan="4">版本更新记录<br>
+												1. 更正退款交易响应字段及查询响应字段<br>
+												2. 修改退款响应字段状态R的说明<br>
+												3. 修改交易明细单下载接入说明<br>
+												4. 修改文档对异步通知报文的说明<br>
+												5. 修改异步通知的接入说明<br>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="p-work">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">准备工作</h2>
+								<p class="lineh22">机构在与民生银行完成线下协议签订后，由总行乐收银商务平台管理员在乐收银商务平台开立机构平台号，平台号唯一，机构真实进行交易的商户须在民生乐收银商务平台开通商户，开通商户后，会生成民生银行商户号，民生会为每一个机构平台发放用于订单加密加签和解密验签的的通信证书。</p>
+								<p class="lineh22">通信协议采用SM2算法，商户订单信息采用机构私钥证书签名，民生公钥证书加密。商户收到民生银行返回的信息，用商户私钥证书解密，民生公钥证书验签，确保双方交互的信息加密传输，安全可靠防抵赖。</p>
+								<p class="lineh22">民生银行目前提供加密加签和解密验签demo，支持的语言有c#.net，php，和java，商户可以下载demo结合文档进行开发，测试证书在民生银行开发平台直接下载。</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="p-noun">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">专有名词解释</h2>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>字段名</th>
+											<th>字段说明</th>
+											<th>获取方式</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>platformId</td>
+											<td>平台编号</td>
+											<td>平台接入时，在乐收银商务平台添加平台后生成平台编号，民生向该平台发放证书</br>UAT测试环境填：cust0001</br>生产环境填民生为接入机构开通的平台编号。
+											</td>
+										</tr>
+										<tr>
+											<td>merchantNo</td>
+											<td>民生统一商户号</td>
+											<td>在乐收银商务平台开通商户后生成统一商户号，有民生银行分行商户录入时提供或者批量导给商户</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="t-index">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">民生UAT测试环境测试参数</h2>
+								<table class="table table-bordered">
+									<tr>
+										<td>平台号</td>
+										<td>cust0001</td>
+									</tr>
+									<tr>
+										<td>商户号</td>
+										<td>M01002016090000001428</td>
+									</tr>
+									<tr>
+										<td>商户私钥</td>
+										<td>cust0001.sm2</td>
+									</tr>
+									<tr>
+										<td>私钥密码</td>
+										<td>123123</td>
+									</tr>
+									<tr>
+										<td>民生公钥</td>
+										<td>cmbcTest.cer</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="e-parameter">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">生产环境参数</h2>
+								<div>
+									<p class="lineh22">生产环境平台需向民生银行申请平台号以及平台证书，平台保留自己的私钥和密码，将生产环境平台公钥文件提供给民生银行，生产环境民生银行公钥为证书文件cmbc.cer，由商户保留用作加密和验签。</p>
+									<h5>民生支付网关地址</h5>
+									<h5 class="word-break">
+										UAT测试环境服务器地址：<a href="http://wxpay.cmbc.com.cn/mobilePlatfrom/"
+											class="adress">http://wxpay.cmbc.com.cn/mobilePlatfrom/</a>
+									</h5>
+									<h5 class="word-break">
+										生产环境地址: <a href="https://epay.cmbc.com.cn/appweb/"
+											class="adress">https://epay.cmbc.com.cn/appweb/</a>
+									</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="z-weixin">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">正扫</h2>
+								<div>
+									<h3>
+										<span class="iconfont">&#xe60f;</span>案例
+									</h3>
+									<p class="lineh22 ">线上：微信，支付宝，qq钱包。</p>
+									<p class="lineh22 ">线下：待补充。</p>
+									<h3>
+										<span class="iconfont">&#xe60f;</span>场景介绍
+									</h3>
+									<!--<p class="lineh22 marginl18">商户后台系统先调用微信支付的统一下单接口，微信后台系统返回链接参数code_url，商户后台系统将code_url值生成二维码图片，用户使用微信客户端扫码后发起支付。注意：code_url有效期为xxx小时，过期后扫码不能再发起支付。</p>
+									    <p class="lineh22 marginl18">以下的截图以微信作为第三方为例:</p>-->
+									<h5>微信</h5>
+									<p class="lineh22">步骤1：商户根据第三方支付的规则，为不同的商品生成不同的二维码（如图1.1），展示在各种场景，用于用户扫描购买。</p>
+
+									<p class="lineh22">步骤2：用户使用第三方支付“扫一扫”（如图1.2），扫描二维码后，获取商品支付信息，引导用户完成支付（如图1.3）。</p>
+
+									<div class="img-step ">
+										<div class="img-1 paddingr10">
+											<img src="img/zs-1.png" class="img-1" width="150">
+											<p class="legend" width="150">1.1 支付二维码</p>
+										</div>
+										<div class="img-1 paddingr10">
+											<img src="img/zs-2.png" class="img-1 marginb30" width="150">
+											<p class="legend lineh22">
+												1.2 打开微信扫一扫二维码
+											</p>
+										</div>
+										<div class="img-1">
+											<img src="img/zs-3.png" class="img-1" width="150">
+											<p class="legend">1.3 确认支付页面</p>
+										</div>
+									</div>
+									<p class="lineh22 ">步骤3：用户确认支付，输入支付密码（如图1.4）</p>
+									<p class="lineh22 ">步骤4：支付完成后会提示用户支付成功（如图1.5），商户后台得到支付成功的通知，进行后续处理，如发货。</p>
+									<div class="img-step ">
+										<div class="img-1 paddingr10">
+											<img src="img/zs-4.png" class="img-1" width="150">
+											<p class="legend">
+												1.4 用户确认支付,输入密码
+											</p>
+										</div>
+										<div class="img-1 paddingr10">
+											<img src="img/zs-5.png" class="img-1" width="150">
+											<p class="legend" width="150">1.5 支付成功提示</p>
+										</div>
+									</div>
+									<h5>支付宝</h5>
+									<p class="lineh22 ">步骤1：商户根据支付宝的支付规则，为不同的商品生成不同的二维码（如图1.1），展示在各种场景，用于用户扫描购买。</p>
+									<p class="lineh22 ">步骤2：用户使用支付宝“扫一扫”（如图1.2），扫描二维码后，获取商品支付信息，引导用户完成支付（如图1.3）。</p>
+									<div class="img-step ">
+										<div class="img-1 paddingr10">
+											<img src="img/zhifubao-zs1.png" class="img-1 paddingt124"
+												width="150"></img>
+											<p class="legend">1.1 支付二维码</p>
+										</div>
+										<div class="img-1 paddingr10">
+											<img src="img/zhifubao-zs2.png" class="img-1" width="150">
+											<p class="legend lineh22">
+												1.2 打开支付宝<br>扫一扫二维码
+											</p>
+										</div>
+										<div class="img-1">
+											<img src="img/zhifubao-zs3.png" class="img-1" width="150">
+											<p class="legend">1.3 确认支付页面</p>
+										</div>
+									</div>
+									<p class="lineh22">步骤3：用户确认支付，输入支付密码，支付完成后会提示用户支付成功（如图1.5），商户后台得到支付成功的通知，进行后续处理，如发货。</p>
+									<div class="img-step ">
+										<div class="img-1">
+											<img src="img/zhifubao-zs4.png" class="img-1" width="150">
+											<p class="legend lineh22">1.5
+												用户确认支付，输入密码后支付成功提示</p>
+										</div>
+									</div>
+									<h3>
+										<span class="iconfont">&#xe60f;</span>时序图
+									</h3>
+									<img src="img/zs-6.png" class="marginl18"></img>
+									<p class="lineh22 ">业务流程说明：</p>
+									<p class="lineh22 ">（1）商户后台系统根据用户选购的商品生成订单。</p>
+									<p class="lineh22 ">
+										（2）用户确认支付后调用乐收银 <a class="" target="_blank" href="#order-api"
+											data-toggle="tab">【统一下单API】</a>生成预支付交易；
+									</p>
+									<p class="lineh22 ">（3）微信支付系统收到请求后生成预支付交易单，并返回交易会话的二维码链接code_url。</p>
+									<p class="lineh22 ">（4）商户后台系统根据返回的code_url生成二维码。</p>
+									<p class="lineh22 ">（5）用户打开微信“扫一扫”扫描二维码，微信客户端将扫码内容发送到微信支付系统。</p>
+									<p class="lineh22 ">（6）微信支付系统收到客户端请求，验证链接有效性后发起用户支付，要求用户授权。</p>
+									<p class="lineh22 ">（7）用户在微信客户端输入密码，确认支付后，微信客户端提交授权。</p>
+									<p class="lineh22 ">（8）微信支付系统根据用户授权完成支付交易。</p>
+									<p class="lineh22 ">（9）微信支付系统完成支付交易后给乐收银返回交易结果，并将交易结果通过短信、微信消息提示用户。微信客户端展示支付交易结果页面。</p>
+									<p class="lineh22 ">（10）微信支付系统通过发送异步消息通知商户后台系统支付结果。商户后台系统需回复接收情况，通知微信后台系统不再发送该单的支付通知。</p>
+									<p class="lineh22 ">
+										（11）商户后台系统调用乐收银系统<a href="#query" data-toggle="tab">【查询订单API】</a>
+									</p>
+									<p class="lineh22 ">（12）商户确认订单后可进行后续操作。</p>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="f-weixin">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">反扫</h2>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>案例
+								</h3>
+								<p class="lineh22 ">线上：微信，支付宝，qq钱包。</p>
+								<p class="lineh22 ">线下：待补充。</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>场景介绍
+								</h3>
+								<h5>微信</h5>
+								<p class="lineh22">以下的截图以微信作为第三方为例。</p>
+								<p class="lineh22">步骤1：商户根据第三方支付的规则，生成订单及支付信息（如图3.1）；</p>
+								<p class="lineh22">步骤2：用户点开微信“钱包”点击“付款”（如图3.2）；</p>
+								<p class="lineh22">步骤3：用户将“付款码”界面对准商户扫描设备，完成支付（若未开启免密情况，需要用户输入密码完成支付）；</p>
+								<p class="lineh22">步骤4：支付完成后会提示用户支付成功，商户后台得到支付成功的通知；</p>
+								<div class="img-step">
+									<div class="img-1 paddingr10">
+										<img class="img-1" src="img/weixin-f1.png" width="150">
+										<p class="legend" width="150">图3.1</p>
+									</div>
+									<div class="img-1 paddingr10">
+										<img class="img-1" src="img/weixin-f2.png" width="150">
+										<p class="legend" width="150">图3.2</p>
+									</div>
+								</div>
+								<h5>支付宝</h5>
+								<p class="lineh22 ">步骤1：商户根据支付宝的支付规则，生成订单及支付信息；</p>
+								<p class="lineh22 ">步骤2：用户点开支付宝点击“付款”（如图3.1）；</p>
+								<p class="lineh22 ">步骤3：用户将“付款码”界面对准商户扫描设备，完成支付；</p>
+								<p class="lineh22">步骤4：支付完成后会提示用户支付成功，商户后台得到支付成功的通知,用户也会得到支付成功的消息（如图3.2）；</p>
+								<div class="img-step">
+									<div class="img-1 paddingr10">
+										<img class="img-1" src="img/zhifubao-f1.png" width="150">
+										<p class="legend" width="150">图3.1</p>
+									</div>
+									<div class="img-1 paddingr10">
+										<img class="img-1" src="img/zhifubao-f2.png" width="150">
+										<p class="legend" width="150">图3.2</p>
+									</div>
+								</div>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>时序图
+								</h3>
+								<img src="img/fansap-5.png" class="marginl18">
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="z-serve">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">支付宝服务窗</h2>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>案例
+								</h3>
+								<p class="lineh22">线上：支付宝服务窗。</p>
+								<p class="lineh22">线下：民生银行网络金融。</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>场景介绍
+								</h3>
+								<p class="lineh22">以下截图以民生银行网络金融支付宝服务窗为例。</p>
+								<p class="lineh22">步骤1：（图1）进入商户网页，用户选择物品，完成选购流程。</p>
+								<p class="lineh22">步骤2：（图2）调起微信支付控件，用户开始输入支付密码。</p>
+
+								<div class="img-step">
+									<div class="img-1 paddingr10">
+										<img class="img-1" src="img/fuwuchuang1.png" width="150">
+										<p class="legend" width="150">图1</p>
+									</div>
+									<div class="img-1 paddingr10">
+										<img class="img-1" src="img/fuwuchuang2.png" width="150">
+										<p class="legend" width="150">图2</p>
+									</div>
+								</div>
+								<p class="lineh22">步骤3：（图3）密码验证通过，支付成功。用户得到支付宝支付成功的通知。</p>
+								<p class="lineh22">步骤4：（图4）返回商户页面，显示购买成功。该页面由商户自定义可以是静态页面。</p>
+								<div class="img-step">
+									<div class="img-1 paddingr10">
+										<img class="img-1" src="img/fuwuchuang3.png" width="150">
+										<p class="legend" width="150">图3</p>
+									</div>
+									<div class="img-1 paddingr10">
+										<img class="img-1" src="img/fuwuchuang4.png" width="150">
+										<p class="legend" width="150">图4</p>
+									</div>
+								</div>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>时序图
+								</h3>
+								<img src="img/fuwuchuang5.png" class="marginl18"></img>
+								<p class="lineh22">商户系统和支付宝支付系统主要交互：</p>
+								<p class="lineh22">
+									1、商户server调用乐收银统一下单接口请求订单，api参见公共api<a class="" target="_blank"
+										href="#order-api" data-toggle="tab">【统一下单API】</a>
+								</p>
+								<p class="lineh22">2、商户server接收支付通知，api参见公共api【支付结果通知API】</p>
+								<p class="lineh22">
+									3、商户server调用乐收查询支付结果，api参见公共api<a href="#query"
+										data-toggle="tab">【查询订单API】</a>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="order-api">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>统一下单API</h2>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>应用场景
+								</h3>
+								<p class="lineh22 ">统一下单 API 支持微信正反扫和公众号、支付宝正反扫和公众号 API 下单。</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>请求地址
+								</h3>
+								<table class="table table-bordered ">
+									<tr>
+										<td>测试环境</td>
+										<td style="word-break: break-all;"><a
+											href="http://wxpay.cmbc.com.cn/mobilePlatform/appserver/lcbpPay.do"
+											class="adress">http://wxpay.cmbc.com.cn/mobilePlatform/appserver/lcbpPay.do</a></td>
+									</tr>
+									<tr>
+										<td>生产环境</td>
+										<td style="word-break: break-all;"><a
+											href="http://epay.cmbc.com.cn/appweb/appserver/lcbpPay.do"
+											class="adress">http://epay.cmbc.com.cn/appweb/appserver/lcbpPay.do</a></td>
+									</tr>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>请求字段
+								</h3>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>中文名</th>
+											<th>字段名</th>
+											<th>长度限制</th>
+											<th>是否必输</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>接入平台号</td>
+											<td>platformId</td>
+											<td>23</td>
+											<td>Y</td>
+											<td>民生银行为接入平台分配的平台编号,与平台证书一一对应</td>
+										</tr>
+										<tr>
+											<td>民生商户号</td>
+											<td>merchantNo</td>
+											<td>21</td>
+											<td>Y</td>
+											<td>实际交易商户的民生商户号</td>
+										</tr>
+										<tr>
+											<td>支付类型</td>
+											<td>selectTradeType</td>
+											<td>30</td>
+											<td>Y</td>
+											<td>API模式下支付类型：</br>
+												H5_WXJSAPI 微信公众号跳转支付</br>
+												API_WXQRCODE 微信正扫</br>
+												API_WXSCAN 微信反扫</br>
+												API_ZFBQRCODE 支付宝正扫</br>
+												API_ZFBSCAN 支付宝反扫</br>
+												H5_ZFBJSAPI 支付宝服务窗
+											</td>
+										</tr>
+										<tr>
+											<td>交易金额</td>
+											<td>amount</td>
+											<td>30</td>
+											<td>Y</td>
+											<td>交易金额，以分为单位</td>
+										</tr>
+										<tr>
+											<td>订单信息</td>
+											<td>orderInfo</td>
+											<td></td>
+											<td>Y</td>
+											<td>商户订单内容，商品信息</td>
+										</tr>
+										<tr>
+											<td>商户流水</td>
+											<td>merchantSeq</td>
+											<td>50</td>
+											<td>Y</td>
+											<td>商户流水号，商户须保证流水唯一，建议是商户平台号+8位日期+商户自定的订单号</td>
+										</tr>
+										<tr>
+											<td>订单日期</td>
+											<td>transDate</td>
+											<td>8</td>
+											<td>Y</td>
+											<td>yyyyMMdd</td>
+										</tr>
+										<tr>
+											<td>订单时间</td>
+											<td>transTime</td>
+											<td>17</td>
+											<td>Y</td>
+											<td>yyyyMMddHHmmssSSS</td>
+										</tr>
+										<tr>
+											<td>通知地址</td>
+											<td>notifyUrl</td>
+											<td>512</td>
+											<td>Y</td>
+											<td>商户实现的接收异步通知的url地址</td>
+										</tr>
+										<tr>
+											<td>备注信息</td>
+											<td>remark</td>
+											<td>200</td>
+											<td>C</td>
+											<td>反扫模式下该部分必输，填扫描客户二维码Base64后的值</td>
+										</tr>
+										<tr>
+											<td>子商户appId</td>
+											<td>subAppleId</td>
+											<td>18</td>
+											<td>C</td>
+											<td>公众号支付API下，该部分必输，填子商户appId</td>
+										</tr>
+										<tr>
+											<td>子商户openId</td>
+											<td>subOpenId</td>
+											<td>28</td>
+											<td>C</td>
+											<td>公众号支付API下，该部分必输，填子商户openId</td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>返回字段
+								</h3>
+								<h5>gateReturnType为S时，返回字段</h5>
+								<table class="table table-bordered ">
+									<thead>
+										<tr>
+											<th>中文名</th>
+											<th>字段名</th>
+											<th>是否必输</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>支付结果</td>
+											<td>tradeStatus</td>
+											<td>Y</td>
+											<td>E 订单失败</br>R 原订单成功，未支付（待支付）
+											</td>
+										</tr>
+										<tr>
+											<td>支付要素</td>
+											<td>payInfo</td>
+											<td>Y</td>
+											<td>微信/支付宝正扫下单返回的是base64二维码字符串</br>公众号支付API下单返回的是prepay_id
+											</td>
+										</tr>
+										<tr>
+											<td>商户名</td>
+											<td>merchantName</td>
+											<td>Y</td>
+											<td>商户名</td>
+										</tr>
+										<tr>
+											<td>商户订单号</td>
+											<td>merchantSeq</td>
+											<td>Y</td>
+											<td>商户订单号</td>
+										</tr>
+										<tr>
+											<td>交易金额</td>
+											<td>amount</td>
+											<td>Y</td>
+											<td>单位到分</td>
+										</tr>
+										<tr>
+											<td>订单详情</td>
+											<td>orderInfo</td>
+											<td>Y</td>
+											<td>传入商品信息等</td>
+										</tr>
+										<tr>
+											<td>备注</td>
+											<td>remark</td>
+											<td>C</td>
+											<td>备注信息</td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>在线调试
+								</h3>
+								<h5 class="word-break">
+									<a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toApi.do"
+											class="adress">http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toApi.do</a>
+								</h5>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="query">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>支付结果查询API</h2>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>应用场景
+								</h3>
+								<p class="lineh22 ">民生提供给商户的微信支付结果查询接口，可查询刷卡，微信正扫、反扫、以及退款交易的结果，只可查询当日交易。</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>请求地址
+								</h3>
+								<table class="table table-container table-bordered ">
+									<tr>
+										<td>测试环境</td>
+										<td style="word-break: break-all;"><a
+											href="http://wxpay.cmbc.com.cn/mobilePlatform/appserver/paymentResultSelect.do"
+											class="adress">http://wxpay.cmbc.com.cn/mobilePlatform/appserver/paymentResultSelect.do</a></td>
+									</tr>
+									<tr>
+										<td>生产环境</td>
+										<td style="word-break: break-all;"><a
+											href="http://epay.cmbc.com.cn/appweb/appserver/paymentResultSelect.do"
+											class="adress">http://epay.cmbc.com.cn/appweb/appserver/paymentResultSelect.do</a></td>
+									</tr>
+								</table>
+								<p class="lineh22 ">接口有统一的报文头，商户将要查询的商户号订单等字段转换为JSON字符串加密加签后放入报文指定字段发送，返回报文同样是密文，请求和相应内容解密后字段组成的json加密加签到businessContext。</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>请求字段
+								</h3>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>中文名</th>
+											<th>字段名</th>
+											<th>长度限制</th>
+											<th>是否必输</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>接入平台号</td>
+											<td>platformId</td>
+											<td>23</td>
+											<td>Y</td>
+											<td>民生银行为接入平台分配的平台编号,与平台证书一一对应</td>
+										</tr>
+										<tr>
+											<td>民生统一商户号</td>
+											<td>merchantNo</td>
+											<td>21</td>
+											<td>Y</td>
+											<td>实际交易商户的民生商户号</td>
+										</tr>
+										<tr>
+											<td>商户订单号</td>
+											<td>merchantSeq</td>
+											<td>50</td>
+											<td>Y</td>
+											<td>原交易商户订单号</td>
+										</tr>
+										<tr>
+											<td>查询类型</td>
+											<td>tradeType</td>
+											<td>2</td>
+											<td>Y</td>
+											<td>1.支付</br>2.退款
+											</td>
+										</tr>
+										<tr>
+											<td>备注字段</td>
+											<td>reserve</td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>原交易凭证号</td>
+											<td>orgvoucherNo</td>
+											<td></td>
+											<td>C</td>
+											<td>当查询类型为退款时必须输入</td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>返回字段
+								</h3>
+								<h5>gateReturnType为S时，返回字段</h5>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>中文名</th>
+											<th>字段名</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>回显商户名</td>
+											<td>merchantName</td>
+											<td>商户用于回显商户收款的名字</td>
+										</tr>
+										<tr>
+											<td>商户订单号</td>
+											<td>merchantSeq</td>
+											<td>原交易商户订单号</td>
+										</tr>
+										<tr>
+											<td>交易金额</td>
+											<td>amount</td>
+											<td>单位到分</td>
+										</tr>
+										<tr>
+											<td>订单详情</td>
+											<td>orderInfo</td>
+											<td>传入商品信息等</td>
+										</tr>
+										<tr>
+											<td>凭证号</td>
+											<td>voucherNo</td>
+											<td>收单凭证号</td>
+										</tr>
+										<tr>
+											<td>银行流水号</td>
+											<td>bankTradeNo</td>
+											<td>收单系统流水号</td>
+										</tr>
+										<tr>
+											<td>交易结果</td>
+											<td>tradeStatus</td>
+											<td>
+												S 订单交易成功</br>
+												E 订单失败</br>
+												R 原订单成功，未支付（待支付)</br>
+												C 已撤销（理论上不存在) 已关闭</br>
+												T 订单转入退款
+											</td>
+										</tr>
+										<tr>
+											<td>保留域</td>
+											<td>remark</td>
+											<td>所查询订单的状态</td>
+										</tr>
+										<tr>
+											<td>参考号</td>
+											<td>refNo</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>批次号</td>
+											<td>batchNo</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>卡类型</td>
+											<td>cardType</td>
+											<td>0借记卡 1贷记卡</td>
+										</tr>
+										<tr>
+											<td>卡号</td>
+											<td>cardNo</td>
+											<td>前六后四中间*</td>
+										</tr>
+										<tr>
+											<td>发卡行行号</td>
+											<td>cbCode</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>发卡行行名</td>
+											<td>cardName</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>交易手续费</td>
+											<td>fee</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>交易类型</td>
+											<td>transType</td>
+											<td>消费</td>
+										</tr>
+										<tr>
+											<td>银联终端号</td>
+											<td>cupTermId</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>设备序列号</td>
+											<td>cupTsamNo</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>其他信息</td>
+											<td>centerInfo</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>微信订单号</td>
+											<td>centerSeqId</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>收单到微信下单编号</td>
+											<td>bankOrderNo</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>在线调试
+								</h3>
+								<h5 class="word-break">
+									<a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toQuery.do"
+											class="adress">http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toQuery.do</a>
+								</h5>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="refund">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>退款API</h2>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>应用场景
+								</h3>
+								<p class="lineh22 ">民生提供给商户的退款接口。</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>请求地址
+								</h3>
+								<table class="table table-bordered ">
+									<tr>
+										<td>测试环境</td>
+										<td style="word-break: break-all;"><a
+											href="http://wxpay.cmbc.com.cn/mobilePlatform/appserver/cancelTrans.do"
+											class="adress">http://wxpay.cmbc.com.cn/mobilePlatform/appserver/cancelTrans.do</a></td>
+									</tr>
+									<tr>
+										<td>生产环境</td>
+										<td style="word-break: break-all;"><a
+											href="http://epay.cmbc.com.cn/appweb/appserver/cancelTrans.do"
+											class="adress">http://epay.cmbc.com.cn/appweb/appserver/cancelTrans.do</a></td>
+									</tr>
+								</table>
+								<p class="lineh22 ">接口有统一的报文头，商户将要退款的商户号订单号等字段转换为JSON字符串加密加签后放入报文指定字段发送，返回报文同样是密文，请求和相应内容解密后字段组成的json加密加签到businessContext。</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>请求字段
+								</h3>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>中文名</th>
+											<th>字段名</th>
+											<th>类型</th>
+											<th>是否必输</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>接入平台号</td>
+											<td>platformId</td>
+											<td>23</td>
+											<td>Y</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>民生统一商户号</td>
+											<td>merchantNo</td>
+											<td>21</td>
+											<td>Y</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>商户订单号</td>
+											<td>merchantSeq</td>
+											<td>50</td>
+											<td>Y</td>
+											<td>原交易商户订单号</td>
+										</tr>
+										<tr>
+											<td>退款金额</td>
+											<td>orderAmount</td>
+											<td></td>
+											<td>Y</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>退款说明</td>
+											<td>orderNote</td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>备注字段</td>
+											<td>reserve</td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>返回字段
+								</h3>
+								<h5>gateReturnType为S时，返回字段</h5>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>中文名</th>
+											<th>字段名</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>回显商户名</td>
+											<td>merchantName</td>
+											<td>商户用于回显商户收款的名字</td>
+										</tr>
+										<tr>
+											<td>商户订单号</td>
+											<td>merchantSeq</td>
+											<td>商户平台号+8位日期+商户自定的订单号</td>
+										</tr>
+										<tr>
+											<td>交易金额</td>
+											<td>amount</td>
+											<td>单位到分</td>
+										</tr>
+										<tr>
+											<td>订单详情</td>
+											<td>orderInfo</td>
+											<td>传入商品信息等</td>
+										</tr>
+										<tr>
+											<td>凭证号</td>
+											<td>voucherNo</td>
+											<td>收单凭证号</td>
+										</tr>
+										<tr>
+											<td>银行流水号</td>
+											<td>bankTradeNo</td>
+											<td>流水号</td>
+										</tr>
+										<tr>
+											<td>交易结果</td>
+											<td>tradeStatus</td>
+											<td>
+												S 订单交易成功</br>
+												E 订单失败</br>
+												R 原订单成功，未支付（待支付)
+											</td>
+										</tr>
+										<tr>
+											<td>保留域</td>
+											<td>remark</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>在线调试
+								</h3>
+								<h5 class="word-break">
+									<a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toCancelTrans.do"
+											class="adress">http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toCancelTrans.do</a>
+								</h5>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="tell">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>异步通知</h2>
+								<p class="lineh22">商户需开发实现订单结果接收接口，民生会向商户的notifyUrl地址发送HTTP
+									POST请求，内容为Json格式的报文（见如下示例），其中context密文解密解签后字段（见附录5）为通知的报文。</p>
+								<p class="lineh22">商户接收处理后，只需回复SUCCESS即可，民生以收到商户SUCCESS为准，收不到商户返回或者收到其他返回，皆会按策略再次尝试重新发送通知，发送8次都收不到回应，则不再发送。</p>
+								<h5>异步通知示例报文：</h5>
+								<pre>
+OooMn9AW9x9gBmBPw7FOXFcvnZCNF4w9o/WCHodB78u0+3wk9CTLztg5CEvWUFWrdF7VqX2Q9ngW7zrSOzgfaHEPnwNdKrJq1VdygI/0wEQIHkTY2kTC40e316tYae3DnJa3SVF0qkI2xLfvJbSFNc8PO5BGxZ1EfmQ0tTB9x8OQfb9nCkdaLfKk8UYlq3ZAn2EohbB2g6WRL3wt7oRX00kJTLz7OYxficqlmefJLTWHRuEXvz3CdvvQA3HZCuyY2o6njeVkBSql5mIy9B0mz6lLBe6yQMh16TH4MhAe9ormJoDYXePfwdrf53OOgiMGzG3+qYiKSkk5uAh6X7PZ7oNXZ6tLUXVLNOF3MBjCBCwhDZmF9kb4cC+2ICcwA+/BV0xBRe5VPxuGYDGGH/rhI8Vfel88q2O/0ISaECXY2zsMMcPYQ/1Jl+DUGpgPhT8IK3mUqkCzzR+t66f4BfiGdCzz2iclRMNhe03Z5Yk9UDAuGzfoX2Un8O1fBcOlHYKHaQ2jJ4aUKoLnc0IpiGLZYeFsCdsjIYKk25fjqQ6dEN8zU42SAv7uiuP0v+GIQQTUq5y2kt2P1cD5TyZzRwJ8oBRmi0eICCzWtZaP1lT8bO8zwGhcSmD7YqgMYCt1el7eN5gNwVlQvSbh8VZqcrdjzDmG/LTBkjTPcD32STGlPie3wSENenam3WgMf4z0cxBWtA20JkAvVGHRLA/M3HwycB5l0ye77KeDWOg0gi+VaCRnvyhdAMKl3TWmZ71kG8A3647baLWImRZ1MIeKDeldd6AtO2YK8LV8okxK3v0eY9GDnk0nXe1AB6uc3inDJB7yNm8zP/Bt57Hk4MfGAfR2z2h2zBKZ5k+2LulyfnjksiuCOLjI9kiXJGnLKgSKjWzM2qof8ff36idiQMX6x85yYKPAhCMpjbx1LoZMjHd+5TDIzuzVX+TVybfRtwNRffT6lBqqEs9wfiXR1idARSTfjWaQhf6Pl1tv4/Xh66C1UlPfCBJSGkKodhgF8bluWhv0/9lZTHUxoxelvrFGzytQbO2e/PDZKRSaYHM03PZyeIuZQIfsCo6ZWMNnalOBYWbpoR+/xlEJWeY8SBnHg1oG5+3cmP0lG/vWGaVop4stq4T5SO+OLGmKucnOz53IOPjm8yCkFI0Ggkwg=="}</pre>
+								<h5>异步通知字段</h5>
+								<table class="table table-bordered word-break">
+									<thead>
+										<tr>
+											<th style="width:15%;" >中文名</th>
+											<th style="width:20%;" >字段名</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>商户号</td>
+											<td>merchantNo</td>
+											<td>商户号</td>
+										</tr>
+										<tr>
+											<td>商户订单号</td>
+											<td>orderNo</td>
+											<td>原交易商户订单号</td>
+										</tr>
+										<tr>
+											<td>平台号</td>
+											<td>platformId</td>
+											<td>平台号</td>
+										</tr>
+										<tr>
+											<td>交易金额</td>
+											<td>amount</td>
+											<td>单位到分</td>
+										</tr>
+										<tr>
+											<td>凭证号</td>
+											<td>voucherNo</td>
+											<td>收单凭证号</td>
+										</tr>
+										<tr>
+											<td>银行流水号</td>
+											<td>bankTradeNo</td>
+											<td>收单系列流水号</td>
+										</tr>
+										<tr>
+											<td>交易结果</td>
+											<td>tradeStatus</td>
+											<td>收单系统流水号 S 订单交易成功</td>
+										</tr>
+										<tr>
+											<td>保留域</td>
+											<td>reserve</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>参考号</td>
+											<td>refNo</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>批次号</td>
+											<td>batchNo</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>卡类型</td>
+											<td>cardType</td>
+											<td>>0借记卡 1贷记卡</td>
+										</tr>
+										<tr>
+											<td>卡号</td>
+											<td>cardNo</td>
+											<td>前六后四中间*</td>
+										</tr>
+										<tr>
+											<td>发卡行行号</td>
+											<td>cbCode</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>发卡行行名</td>
+											<td>cardName</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>交易手续费</td>
+											<td>fee</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>银联终端号</td>
+											<td>cupTermId</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>设备序列号</td>
+											<td>cupTsamNo</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>其他信息</td>
+											<td>centerInfo</td>
+											<td>微信：openid=ooEyIjvNwCKprHj_hwnayDWjy5Ks|is_subscribe=Y|bank_type=ICBC_DEBIT|time_end=20160912164155</br>
+												支付宝：
+												buyer_logon_id=182****7122|buyer_id=2088802699232296|app_id=2015051100069170|seller_id=2088911212416201|seller_email=zfbtest25@service.aliyun.com|payeeSeq=201609122100
+												1004290226429948|tradeNo=2016091221001004290226429948|fund_bill_list=[{\"amount\":\"0.01\",\"fundChannel\":\"ALIPAYACCOUNT\"}]|
+											</td>
+										</tr>
+										<tr>
+											<td>微信/支付宝订单号</td>
+											<td>centerSeqId</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>收单流水号</td>
+											<td>serialNo</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>收单到微信/支付宝下单编号</td>
+											<td>bankOrderNo</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="t-detail">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>交易明细单下单API</h2>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>应用场景
+								</h3>
+								<p class="lineh22 ">民生银行每日会根据机构生成该机构的交易明细单文件。交易明细单文件采用http接口加密分块传输。商户循环/单笔请求文件块，并将接收到的文件块组合，拼成完整文件，商户可以将分块文件缓存后最后一次性写入文件，也可以每接收一块就将该块写入文件，注意使用字节流的方式写入文件，避免乱码，最后可以校验文件MD5值，确认文件的完整性。</p>
+								<p class="lineh22 ">接口有统一的报文头，商户将要请求的文件块参数加密加签后放入报文指定字段发送，返回报文同样是密文，请求和相应内容解密后字段（见附录6），商户初次请求分块0可以获取文件的总块数、文件的MD5等信息。以便确定发送请求的次数。</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>请求字段
+								</h3>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>中文名</th>
+											<th>字段名</th>
+											<th>长度限制</th>
+											<th>必输</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>接入平台号</td>
+											<td>platformId</td>
+											<td>23</td>
+											<td>Y</td>
+											<td>民生银行为接入平台分配的平台编号,与平台证书一一对应</td>
+										</tr>
+										<tr>
+											<td>交易明细单日期</td>
+											<td>slcTransDate</td>
+											<td>8</td>
+											<td>Y</td>
+											<td>yyyyMMdd</br>交易明细单文件日期，目前支持当前自然日T-1日到T-8，7天内的交易明细单文件下载
+											</td>
+										</tr>
+										<tr>
+											<td>块文件索引</td>
+											<td>segmentIndex</td>
+											<td></td>
+											<td>Y</td>
+											<td>0-N</br>当前请求第几块文件，如果传0，则文件块内容和块MD5返空，其他信息齐全
+											</td>
+										</tr>
+										<tr>
+											<td>文件类型</td>
+											<td>fileType</td>
+											<td></td>
+											<td>Y</td>
+											<td>文件类型：</br>
+												WX-微信对账单</br>
+												LSY-乐收银线下刷卡</br>
+												ZFB-支付宝对账单
+											</td>
+										</tr>
+										<tr>
+											<td>块大小</td>
+											<td>segmentSize</td>
+											<td></td>
+											<td>Y</td>
+											<td>KB为单位，最大为1024KB
+											</td>
+										</tr>
+										<tr>
+											<td>备注字段</td>
+											<td>reserve</td>
+											<td></td>
+											<td>Y</td>
+											<td>备注字段</td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>返回字段
+								</h3>
+								<h5>gateReturnType为S时，返回字段</h5>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>中文名</th>
+											<th>字段名</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>接入平台号</td>
+											<td>platformId</td>
+											<td>民生银行为接入平台分配的平台编号,与平台证书一一对应</td>
+										</tr>
+										<tr>
+											<td>交易明细单日期</td>
+											<td>slcTransDate</td>
+											<td>yyyyMMdd</br>交易明细单文件日期，目前支持当前自然日T-1日到T-8，7天内的交易明细单文件下载
+											</td>
+										</tr>
+										<tr>
+											<td>块文件索引</td>
+											<td>segmentIndex</td>
+											<td>0-N</br>当前请求第几块文件，如果传0，则文件块内容和块MD5返空，其他信息齐全
+											</td>
+										</tr>
+										<tr>
+											<td>文件类型</td>
+											<td>fileType</td>
+											<td>文件类型：</br>
+												WX-微信对账单</br>
+												LSY-乐收银线下刷卡</br>
+												ZFB-支付宝对账单
+											</td>
+										</tr>
+										<tr>
+											<td>块大小</td>
+											<td>segmentSize</td>
+											<td>KB为单位，</br>最大为1024KB
+											</td>
+										</tr>
+										<tr>
+											<td>当前分块内容</td>
+											<td>segmentContent</td>
+											<td>当前块内容（Base64加密的String字符串），</br>最大为1M 单位为KB，例如：2KB，1024KB
+											</td>
+										</tr>
+										<tr>
+											<td>当前块MD5</td>
+											<td>segmentMd5</td>
+											<td>当前块的MD5值</td>
+										</tr>
+										<tr>
+											<td>总块数</td>
+											<td>segmentCount</td>
+											<td>总块数</td>
+										</tr>
+										<tr>
+											<td>完整文件MD5</td>
+											<td>fileMd5</td>
+											<td>完整文件的MD5值</td>
+										</tr>
+										<tr>
+											<td>备注字段</td>
+											<td>reserve</td>
+											<td>备注字段</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="x-rule">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>协议规则</h2>
+								<p class="lineh22">商户接入微信支付，调用API必须遵循以下规则：</p>
+								<table class="table table-bordered word-break ">
+									<tr>
+										<td>传输方式</td>
+										<td>为保证交易安全性，采用HTTPS传输</td>
+									</tr>
+									<tr>
+										<td>提交方式</td>
+										<td>采用POST方法提交</td>
+									</tr>
+									<tr>
+										<td>数据格式</td>
+										<td>提交和返回数据都为XML格式，根节点名为xml</td>
+									</tr>
+									<tr>
+										<td>字符编码</td>
+										<td>统一采用UTF-8字符编码</td>
+									</tr>
+									<tr>
+										<td>签名算法</td>
+										<td>MD5，后续会兼容SHA1、SHA256、HMAC等。</td>
+									</tr>
+									<tr>
+										<td>签名要求</td>
+										<td>请求和接收数据均需要校验签名，详细方法请参考安全规范-签名算法</td>
+									</tr>
+									<tr>
+										<td>证书要求</td>
+										<td>调用申请退款、撤销订单接口需要商户证书</td>
+									</tr>
+									<tr>
+										<td>判断逻辑</td>
+										<td>先判断协议字段返回，再判断业务返回，最后判断交易状态</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="s-rule">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>安全规范</h2>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>基本格式
+								</h3>
+								<p class="lineh22 ">民生提供的API接口有统一的明文报文头，开发人员将接口字段信息按照要求签名加密后后放入公共报文头的businessContext发送，返回报文同样是取businessContext，解密后拿到接口返回字段，再验签。</p>
+								<p class="lineh22 ">公共报文businessContext明文部分为json格式，如下所示。</p>
+								<pre>
+{"sign":"xxxx","body":"xxxx"}</pre>
+								<p class="lineh22">其中，body部分为请求字段拼接的json字符串,sign部分为对该字符串商户用私钥进行的签名。然后商户用银行公钥对上述字符串加密，作为businessContext放在公共报文头里，通过http
+									post方式，发给民生银行。</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>公共报文头请求字段
+								</h3>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>字段名称</th>
+											<th>字段</th>
+											<th>是否必输</th>
+											<th>备注</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>版本号</td>
+											<td>version</td>
+											<td></td>
+											<td>版本号，用于版本控制、灰度发布、向下兼容等用途目前默认填v1.0</td>
+										</tr>
+										<tr>
+											<td>发起来源</td>
+											<td>source</td>
+											<td></td>
+											<td>发起渠道，用于标识ios、Android、PC等的渠道管控及版本控制PC-PC
+												Web端；iOS-苹果客户端；</br>Android-安卓客户端
+											</td>
+
+										</tr>
+										<tr>
+											<td>商户编号</td>
+											<td>merchantNum</td>
+											<td></td>
+											<td>统一商户编号，由商户管理系统提供的统一商户编号</td>
+
+										</tr>
+										<tr>
+											<td>商户流水</td>
+											<td>merchantSeq</td>
+											<td></td>
+											<td>商户发起交易时使用的流水，互联网接入网关不对流水号去重，仅将商户编号和商户流水拼接后直接传递给后台系统</td>
+
+										</tr>
+										<tr>
+											<td>交易日期</td>
+											<td>transDate</td>
+											<td></td>
+											<td>yyyyMMdd</td>
+
+										</tr>
+										<tr>
+											<td>交易时间</td>
+											<td>transTime</td>
+											<td></td>
+											<td>yyyyMMddHHmmssSSS</td>
+										</tr>
+										<tr>
+											<td>交易编码</td>
+											<td>transCode</td>
+											<td></td>
+											<td>交易编码</td>
+										</tr>
+										<tr>
+											<td>安全类型</td>
+											<td>securityType</td>
+											<td></td>
+											<td>决定使用何种证书、签名、加密算法</td>
+
+										</tr>
+										<tr>
+											<td>备用字段1</td>
+											<td>reserve1</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>备用字段2</td>
+											<td>reserve2</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>备用字段3</td>
+											<td>reserve3</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>备用字段4</td>
+											<td>reserve4</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>备用字段5</td>
+											<td>reserve5</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>通用备用字段</td>
+											<td>reserveJson</td>
+											<td></td>
+											<td>Json格式的通用备用字段</td>
+										</tr>
+										<tr>
+											<td>业务报文</td>
+											<td>businessContext</td>
+											<td></td>
+											<td>订单签名加密后的内容</td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>公共报文头返回字段
+								</h3>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>字段名称</th>
+											<th>字段</th>
+											<th>是否必输</th>
+											<th>备注</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>商户流水</td>
+											<td>merchantSeq</td>
+											<td></td>
+											<td>原样返回</td>
+										</tr>
+										<tr>
+											<td>交易编码</td>
+											<td>transCode</td>
+											<td></td>
+											<td>原样返回</td>
+										</tr>
+										<tr>
+											<td>网关响应流水</td>
+											<td>gateSeq</td>
+											<td></td>
+											<td>互联网交易网关的响应流水，用于定位问题等</td>
+										</tr>
+										<tr>
+											<td>网关响应日期</td>
+											<td>gateTransDate</td>
+											<td></td>
+											<td>yyyyMMdd</td>
+										</tr>
+										<tr>
+											<td>网关响应时间</td>
+											<td>gateTransTime</td>
+											<td></td>
+											<td>yyyyMMddHHmmssSSS</td>
+										</tr>
+										<tr>
+											<td>网关响应结果</td>
+											<td>gateReturnType</td>
+											<td></td>
+											<td>S:成功，E:失败，R:待查</td>
+										</tr>
+										<tr>
+											<td>网关响应错误码</td>
+											<td>gateReturnCode</td>
+											<td></td>
+											<td>错误码</td>
+										</tr>
+										<tr>
+											<td>网关响应错误信息</td>
+											<td>gateReturnMessage</td>
+											<td></td>
+											<td>错误信息</td>
+										</tr>
+										<tr>
+											<td>备用字段1</td>
+											<td>reserve1</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>备用字段2</td>
+											<td>reserve2</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>备用字段3</td>
+											<td>reserve3</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>通用备用字段</td>
+											<td>reserveJson</td>
+											<td></td>
+											<td>Json格式的通用备用字段</td>
+										</tr>
+										<tr>
+											<td>业务报文</td>
+											<td>businessContext</td>
+											<td>Y</td>
+											<td>仅当网关响应结果gateReturnType为S时该字段存在且有效，为业务系统向外部系统的返回为民生签名加密后的返回信息</td>
+										</tr>
+									</tbody>
+								</table>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>步骤详解
+								</h3>
+								<h5>下面以统一下单API为例说明商户开发过程，其他API流程一样。</h5>
+								<h5>1. 商户后台按照要求，生成对应订单信息，将订单信息拼接成json字符串</h5>
+								<pre>
+{"amount":"2",
+"merchantNo":"M01002016070000000789",
+"merchantSeq":"cust0001T151103920",
+"notifyUrl":"http://111.205.207.103/cmbcpaydemo/NoticeServlet?name=notice","orderInfo":"支付宝",
+"platformId":"cust0001",
+"remark":"",
+"selectTradeType":"API_WXQRCODE",
+"transDate":"20160825",
+"transTime":"20160825151103920"}</pre>
+								<h5>2.将上述字符串调用签名函数进行签名，得到签名值</h5>
+								<pre>
+MEUCICPHMQvZOoWeHTgkKFSSri1gDaWb0tHtEHXqa3lUgDhoAiEA09/k6gi+KGBiMQpLU5ig1kSsLxSsmzWoyCgiuqwYPNg= </pre>
+								<h5>3.将签名值和订单json字符串按如下格式拼接</h5>
+								<pre>
+{"sign":"MEUCICPHMQvZOoWeHTgkKFSSri1gDaWb0tHtEHXqa3lUgDhoAiEA09/k6gi+KGBiMQpLU5ig1kSsLxSsmzWoyCgiuqwYPNg=",
+"body":"{
+\"amount\":\"2\",
+\"merchantNo\":\"M01002016070000000789\",
+\"merchantSeq\":\"cust0001T151103920\",
+\"notifyUrl\":\"http://111.205.207.103/cmbcpaydemo/NoticeServlet?name=notice\",
+\"orderInfo\":\"支付宝\",
+\"platformId\":\"cust0001\",
+\"remark\":\"\",
+\"selectTradeType\":\"API_WXQRCODE\",
+\"transDate\":\"20160825\",
+\"transTime\":\"20160825151103920\"}
+"}</pre>
+								<h5>4.对json串加密得到订单密文</h5>
+								<pre>
+MIICyAYKKoEcz1UGAQQCA6CCArgwggK0AgECMYGdMIGaAgECgBS1x/e/puEJbLQnTtwm2y/+fP1b2jANBgkqgRzPVQGCLQMFAARwNn6oEvoBUJpak+BNV3xmXEqGcu5l68zkxB9Vgw0EXBO0KUIX/uSpNwL4bMrI1jKmq8seTatteyxLRJ02E3wn7B5fZuIZ7PCd40WrDDE96DUnGr70EcuxnyHRbJ7zDn9Pj5K3+FA2SlbnMmAg6vC40jCCAg0GCiqBHM9VBgEEAgEwGwYHKoEcz1UBaAQQloNbW9+JlWq8+sEJ+ct3tYCCAeB0lq+6QuDWECPyiBpFi+u6ohRyC4d40dPX3TOnmdOarqeNWT5EbiJ5P9ZTOemvMRGJbZxAadnVSzG1sj0xB3+1sqiafFXiHXBV310WhbIfH2Ely+w2MMv5Xl9Ve97czaoGAQd7OZg+ZArSp2Y8dhCbbgyXolBuzekBInJgCLMEG7kF42N+NiMJ0t+hutEw5B4iwZSnHCDRXptuXApDcOfAqWJkX1TGMl2mMaFny/vVFiB816EOa9MgvxIGuymWCpcuYRy2hIYi2+xYYsnWOXYXaUhPhd8wFuzbdMtGEOT8eqiLesblU386NlasRY60uSFByQEXZyMhkhU9oxzyv9QNAMqKvBgSTkDmcMVF4qKNpWILGdgOCduVa5Zov/lEbQfKqzYzh7D9zU5y4Rali3wCaXkT51LvWrLLLdYMdbwzf7r4B/rA8u9HhqThGm0+tVp95JsXVlL+pSECyRIWUgXC7kMPwCiOFDOyEsgIVeBa1WvLeovj1nxhkqg+z2m7yBRiLK9nCS1Hw6rzs4cHLMlb35cRemerYTOgeckCxAF9135Ttpq1VcS2bnCmmF0Gk8jy0DjOx/nEWzm6BpVkb+L9yetUTAXzqw36gyQ2y0uft7rml71AwAHSG2PveSIAtT8=
+									</pre>
+								<h5>5.将该部分放到报文头的bussinessContext中</h5>
+								<pre>
+{"businessContext":"MIICyAYKKoEcz1UGAQQCA6CCArgwggK0AgECMYGdMIGaAgECgBS1x/e/puEJbLQnTtwm2y/+fP1b2jANBgkqgRzPVQGCLQMFAARwNn6oEvoBUJpak+BNV3xmXEqGcu5l68zkxB9Vgw0EXBO0KUIX/uSpNwL4bMrI1jKmq8seTatteyxLRJ02E3wn7B5fZuIZ7PCd40WrDDE96DUnGr70EcuxnyHRbJ7zDn9Pj5K3+FA2SlbnMmAg6vC40jCCAg0GCiqBHM9VBgEEAgEwGwYHKoEcz1UBaAQQloNbW9+JlWq8+sEJ+ct3tYCCAeB0lq+6QuDWECPyiBpFi+u6ohRyC4d40dPX3TOnmdOarqeNWT5EbiJ5P9ZTOemvMRGJbZxAadnVSzG1sj0xB3+1sqiafFXiHXBV310WhbIfH2Ely+w2MMv5Xl9Ve97czaoGAQd7OZg+ZArSp2Y8dhCbbgyXolBuzekBInJgCLMEG7kF42N+NiMJ0t+hutEw5B4iwZSnHCDRXptuXApDcOfAqWJkX1TGMl2mMaFny/vVFiB816EOa9MgvxIGuymWCpcuYRy2hIYi2+xYYsnWOXYXaUhPhd8wFuzbdMtGEOT8eqiLesblU386NlasRY60uSFByQEXZyMhkhU9oxzyv9QNAMqKvBgSTkDmcMVF4qKNpWILGdgOCduVa5Zov/lEbQfKqzYzh7D9zU5y4Rali3wCaXkT51LvWrLLLdYMdbwzf7r4B/rA8u9HhqThGm0+tVp95JsXVlL+pSECyRIWUgXC7kMPwCiOFDOyEsgIVeBa1WvLeovj1nxhkqg+z2m7yBRiLK9nCS1Hw6rzs4cHLMlb35cRemerYTOgeckCxAF9135Ttpq1VcS2bnCmmF0Gk8jy0DjOx/nEWzm6BpVkb+L9yetUTAXzqw36gyQ2y0uft7rml71AwAHSG2PveSIAtT8=","merchantNum":"","merchantSeq":"","reserve1":"","reserve2":"","reserve3":"","reserve4":"","reserve5":"","reserveJson":"","securityType":"","sessionId":"5A543988030D49F93DCBCFC893309058.Btomcat","source":"","transCode":"","transDate":"","transTime":"","version":""} 
+									</pre>
+								<h5>6.调用统一下单API，接收API返回信息</h5>
+								<pre>
+{"businessContext":"MIICOAYKKoEcz1UGAQQCA6CCAigwggIkAgECMYGdMIGaAgECgBRZlNziHI2cFrW5Ep1ym13ckOMoGTANBgkqgRzPVQGCLQMFAARw+hyS0V6ivs+yH4Cqs9ijox21x3Fy0AR+ZKbGot9K4hvwfPfFL/5w6aWoZj7WcSFJfDiqxsBC1OIOcQuruwwixzfcV88JH9l90kaK9UgEPgmuJve1fG/g7gpx5OF8jqfNFBYHiZl7szSp6JYQ1lApNzCCAX0GCiqBHM9VBgEEAgEwGwYHKoEcz1UBaAQQDe7zSnneYa/1cxTXILC6dICCAVD/KEWjFW0TCYSjdrleCQ6tLuPPyv/veEBhQ1hd6iZgyU2sDdxqMig5zWpvihJ7alM0XRrY667oRs5FX7lswmRvHPhw8sc0fGPH5mz8LqbG+xCxPDfMA6OihvB1hyo15bvXFLost1pFv9ufpTceDhFWKxzqBBw6dal7Vvm003L8y14g4O0Ra4bQB7cghsxG7imujlX+Mep4NwY877V+Ojh9Le0OfapG+OIItK60xe2M7+JEVWDadStdrq/PkmJsYyZYnUUewVn3Ido7/n/1a0J5dKvvatf+i5OMujPDcambxRp6bQ/QioOJX/hZvoRTfKfVOORnk7rTCR/xABTnVPoE0xzyDgBT12zFmrTnJZO+qMeezKtmI4LT2PgT4EfczwF9zrCdVcWjvBA8+b94WYMScpPFgU7s/PKOvmUcVxjnIOuNu9RjlANhLdqDeG/kxX4=","gateReturnCode":"","gateReturnMessage":"","gateReturnType":"S","gateSeq":"20160825151305622","gateTransDate":"20160825","gateTransTime":"20160825151305622","merchantSeq":"","reserve1":"","reserve2":"","reserve3":"","reserveJson":"","transCode":""}
+									</pre>
+								<h5>7.从businessContext中获取支付返回的密文</h5>
+								<pre>
+MIICOAYKKoEcz1UGAQQCA6CCAigwggIkAgECMYGdMIGaAgECgBRZlNziHI2cFrW5Ep1ym13ckOMoGTANBgkqgRzPVQGCLQMFAARw+hyS0V6ivs+yH4Cqs9ijox21x3Fy0AR+ZKbGot9K4hvwfPfFL/5w6aWoZj7WcSFJfDiqxsBC1OIOcQuruwwixzfcV88JH9l90kaK9UgEPgmuJve1fG/g7gpx5OF8jqfNFBYHiZl7szSp6JYQ1lApNzCCAX0GCiqBHM9VBgEEAgEwGwYHKoEcz1UBaAQQDe7zSnneYa/1cxTXILC6dICCAVD/KEWjFW0TCYSjdrleCQ6tLuPPyv/veEBhQ1hd6iZgyU2sDdxqMig5zWpvihJ7alM0XRrY667oRs5FX7lswmRvHPhw8sc0fGPH5mz8LqbG+xCxPDfMA6OihvB1hyo15bvXFLost1pFv9ufpTceDhFWKxzqBBw6dal7Vvm003L8y14g4O0Ra4bQB7cghsxG7imujlX+Mep4NwY877V+Ojh9Le0OfapG+OIItK60xe2M7+JEVWDadStdrq/PkmJsYyZYnUUewVn3Ido7/n/1a0J5dKvvatf+i5OMujPDcambxRp6bQ/QioOJX/hZvoRTfKfVOORnk7rTCR/xABTnVPoE0xzyDgBT12zFmrTnJZO+qMeezKtmI4LT2PgT4EfczwF9zrCdVcWjvBA8+b94WYMScpPFgU7s/PKOvmUcVxjnIOuNu9RjlANhLdqDeG/kxX4=
+									</pre>
+								<h5>8.解密密文，获取到签名串和明文信息</h5>
+								<pre>
+{"sign":"MEYCIQDLRe0D/GIhGQVnpq9g0+3UgcUo+sCuS/P7T8nj0TmbTwIhALmtYjbZFurzHp0rvXay6LESeCxRpQ/bgBesDoCmAROo","body":"{\"amount\":\"2\",\"merchantName\":\"\",\"merchantSeq\":\"cust0001T151103920\",\"orderInfo\":\"支付宝\",\"payInfo\":\"d2VpeGluOi8vd3hwYXkvYml6cGF5dXJsP3ByPUpWd2pzVnk=\",\"remark\":\"\",\"tradeStatus\":\"A\"}
+									</pre>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="error-code">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>错误码说明</h2>
+								<table class="table table-bordered word-break">
+									<thead>
+										<tr>
+											<th>错误码</th>
+											<th>错误描述</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>APPS0001</td>
+											<td>数据校验错误+具体描述</td>
+										</tr>
+										<tr>
+											<td>APPS0002</td>
+											<td>报文转换错误</td>
+										</tr>
+										<tr>
+											<td>APPS0003</td>
+											<td>数据格式转换错误</td>
+										</tr>
+										<tr>
+											<td>APPS0004</td>
+											<td>未找到对应收单接口实现类</td>
+										</tr>
+										<tr>
+											<td>APPS0005</td>
+											<td>Socket调用失败</td>
+										</tr>
+										<tr>
+											<td>APPS0006</td>
+											<td>日期字符串格式错误</td>
+										</tr>
+										<tr>
+											<td>APPS0007</td>
+											<td>加解密错误</td>
+										</tr>
+										<tr>
+											<td>APPS0008</td>
+											<td>Token无效</td>
+										</tr>
+										<tr>
+											<td>APPS0009</td>
+											<td>HTTP发送失败</td>
+										</tr>
+										<tr>
+											<td>APPS0010</td>
+											<td>未找到配置的REQUEST/RESPONSE转换类</td>
+										</tr>
+										<tr>
+											<td>APPS0011</td>
+											<td>收单系统返回报文错误</td>
+										</tr>
+										<tr>
+											<td>APPS0012</td>
+											<td>TOKEN验证失败</td>
+										</tr>
+										<tr>
+											<td>APPS0013</td>
+											<td>查询商务平台失败</td>
+										</tr>
+										<tr>
+											<td>APPS0014</td>
+											<td>没有权限</td>
+										</tr>
+										<tr>
+											<td>APPS0015</td>
+											<td>数据库出现错误</td>
+										</tr>
+										<tr>
+											<td>APPS0016</td>
+											<td>收单系统返回错误</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0000</td>
+											<td>交易成功</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0001</td>
+											<td>请使用微信打开页面</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0002</td>
+											<td>商户订单密文为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0003</td>
+											<td>解密验签发生错误</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0004</td>
+											<td>订单信息为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0005</td>
+											<td>统一商户号为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0006</td>
+											<td>订单号MerchantSeq为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0007</td>
+											<td>默认支付类型DefaultTradeType为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0008</td>
+											<td>民生SDK可选支付类型SelectTradeType为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0009</td>
+											<td>交易金额amount为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0010</td>
+											<td>订单详情OrderInfo为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0011</td>
+											<td>异步通知地址NotifyUrl为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0012</td>
+											<td>微信回跳参数为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0013</td>
+											<td>请求的支付参数为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0014</td>
+											<td>调用收单系统返回空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0015</td>
+											<td>请求的查询参数为空</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0016</td>
+											<td>后台读取订单信息失败</td>
+										</tr>
+										<tr>
+											<td>CMBCPAY0017</td>
+											<td>请求的订单类型不合法</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="problem">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h3>
+									<span class="iconfont">&#xe60f;</span>错误信息约定
+								</h3>
+								<p class="lineh22">错误信息只列出错误中的关键信息，在实际错误中出现该错误关键信息，可能都属于该类问题。</p>
+								<h3>
+									<span class="iconfont">&#xe60f;</span>错误信息与解决方案
+								</h3>
+								<h5>加解密错误</h5>
+								<table class="table table-bordered word-break">
+									<thead>
+										<th>错误码</th>
+										<th>错误信息</th>
+										<th>发生场景</th>
+										<th>问题原因</th>
+										<th>解决方案</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>851001</td>
+											<td>can not find the receiver!!!</td>
+											<td>返回错误</td>
+											<td>未找到对应的解密证书</td>
+											<td>1. 确认更改加密证书为民生银行公钥证书（参看Demo提供的证书使用说明）； 2.
+												满足上一条前提下沟通接入支持并确认商户公钥证书在民生环境已配置。</td>
+										</tr>
+										<tr>
+											<td>851001</td>
+											<td>pad block corrupted</td>
+											<td>做签名/加密时</td>
+											<td>证书密码错误</td>
+											<td>修改证书对应的密码</td>
+										</tr>
+										<tr>
+											<td>850935</td>
+											<td>解析消息数字信封失败</td>
+											<td>1. 自己解密</br>2. 返回错误
+											</td>
+											<td>密文出错</td>
+											<td>1. 对比原始密文和报文密文的一致性</br> 2. 确保密文中的加号等符号没有被转义为URL编码格式如%2B</br>
+												3. 如未解决，进一步沟通
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<h5>其他错误</h5>
+								<table class="table table-bordered word-break">
+									<thead>
+										<th>错误码</th>
+										<th>错误信息</th>
+										<th>发生场景</th>
+										<th>问题原因</th>
+										<th>解决方案</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>APPS0002</td>
+											<td>报文转换错误:…%22%2C%22…</td>
+											<td>HttpPost请求时</td>
+											<td>Post请求参数被如URLEncoder之类的工具转换</td>
+											<td>1. 采用Demo提供的httpPost方法请求；</br>2. 确保post请求参数不要被URL编码。
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<h5>文档demo下载提示</h5>
+								<P class="lineh22">1.点击如下地址，进入“demo索引界面”；</P>
+								<p class="lineh22">2.点击“下载文档/Demo/证书”按钮，即可下载所需内容。</p>
+								<p>
+									<a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/" class="adress">http://wxpay.cmbc.com.cn/cmbcpaydemo/</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="container footer-product">
+			<div class="row">
+				<p class="footer-t">我们每日帮助万余家公司处理支付问题。</p>
+			</div>
+			<div class="row row1">
+				<div class="span4">
+					<img src="img/y-l_03.png">
+					<span class="footer-m">乐收银＋</span>
+				</div>
+				<div class="span4">
+					<img src="img/y-e_05.png">						
+					<span class="footer-m">二维码收银台</span>
+				</div>
+				<div class="span4">
+					<img src="img/y-p_07.png">						
+					<span class="footer-m">智能POS</span>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+		    <div class="testl fontc6 ">
+			    	<a href="#">中国民生银行</a>
+			    	<a href="#">解决方案</a>     
+			    	<a href="#">关于我们</a>     
+			    	<a href="#">联系我们</a>
+		    </div>
+	    		<div class="testl fontcc paddingb20">@版权所有&nbsp;中国民生银行&nbsp;|&nbsp;京ICP备05020372号</div>
+    		</div>
+	</div>
+	<a class="iconfont to-top">&#xe625;</a>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		document.body.addEventListener('touchstart', function() {
+		}); //保证手机端按钮或链接active效果
+
+		$(".to-top").click(function() { //置顶按钮
+			$('html,body').animate({
+				scrollTop : '0'
+			}, 80)
+		})
+
+		$(document).ready(function() { //控制文档左侧菜单不同二级菜单不同时active
+			$('ul.menu-second > li').click(function(e) {
+				e.preventDefault();
+				$('ul.menu-second > li').removeClass('active');
+				$(this).addClass('active');
+			});
+		});
+
+		$('#pa-left1-1 a').click(function(e) { //点击左侧菜单显示相应内容
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left1-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-3 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-4 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-3 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-3 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-4 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-5 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left5-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left5-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+	</script>
+</body>
+</html>

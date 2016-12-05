@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>移动收单开放平台 | 开发者中心-智能POS</title>
+    		<link rel="stylesheet" href="css/bootstrap.css" >
+    		<link rel="stylesheet" href="css/bootstrap-responsive.css" >
+   	 	<link rel="stylesheet" href="css/iconfont.css" >
+   	 	<link rel="stylesheet" href="css/styles.css">
+   	 	<script src="js/respond.js"></script>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-static-top positiona nav-bg">
+			<div class="navbar-inner navbar-header">
+				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#navbar-collapse">
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+				    </button>
+					<a class="brand logo-padd" href="#"><img src="img/logo.png" width="240"></a>
+					<div class="nav-collapse collapse" id="navbar-collapse">
+						<ul class="nav">
+							<li><a href="index.html">首页</a></li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								产品介绍
+								<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu dropdown-style">
+									<li><a href="#">乐收银＋</a></li>
+									<li><a href="#">二维码收银台</a></li>
+									<li><a href="#">智能POS</a></li>
+								</ul>
+							</li>
+					        <li class="dropdown">
+					        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        		解决方案
+					        		<b class="caret"></b>
+					        		</a>
+					        		<ul class="dropdown-menu dropdown-style">
+									<li><a href="#">服务商篇</a></li>
+									<li><a href="#">代理商篇</a></li>
+									<li><a href="#">大商户篇</a></li>
+									<li><a href="#">小商户篇</a></li>
+								</ul>
+					        </li>
+					        <li class="dropdown">
+						        	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						        	常见问题
+						        	<b class="caret"></b>
+						        	</a>
+						        	<ul class="dropdown-menu dropdown-style">
+									<li><a href="commonProblem.html">综合篇</a></li>
+									<li><a href="f-Problem.html">服务商篇</a></li>
+									<li><a href="d-Problem.html">代理商篇</a></li>
+									<li><a href="P-Problem.html">平台篇</a></li>
+								</ul>
+						        	<!--<ul class="dropdown-menu dropdown-style">
+									<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toTools.do">常用工具</a></li>
+									<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/">旧版开发者中心</a></li>
+								</ul>-->
+					        </li>
+					        <li class="dropdown">
+					        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        		开发接入
+					        		<b class="caret"></b>
+					        		</a>
+					        		<div class="dropdown-menu dropdown-style width540 down-pos">
+					        			<ul class="menu-list api-height sdk-height">
+										<li class="nav-header menu-title">服务端API</li>
+										<li><a href="payApi.html">联机交易类</a></li>
+										<li><a href="manageApi.html">商户管理类</a></li>
+									</ul>
+									<ul class="menu-list h5-height">
+										<li class="nav-header menu-title">页面跳转</li>
+										<li><a href="docSkiph5.html">微信公众号跳转</a></li>
+									</ul>
+									<ul class="menu-list border0 api-height">
+										<li class="nav-header menu-title">移动端SDK</li>
+										<li><a href="androidSDK.html">安卓SDK(收单)</a></li>
+									    <li><a href="iosSDK.html">苹果SDK(收单)</a></li>
+										<li><a href="#">后台SDK</a></li>
+									</ul>
+								</div>
+					        </li>
+					        <li><a href="#">关于我们</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pd-banner">
+			<div class="pd-banner01">
+				<div class="container banner-text">
+					<div>
+						<img src="img/le-logo.png">
+						<h1>乐收银</h1>
+						<p>“乐收银”是中国民生银行为小微商户量身打造的移动收单利器，提供POS收款、付款、账单查询等功能，收款资金实时到账，安全快捷；更有店员管理功能，方便打理多家店铺；</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="tab-content">
+				<div class="tab-pane active" id="scene">
+					<div class="scene-block4">
+						<div class="container">
+							<h2>场景四：智能POS支付</h2>
+							<div class="row">
+								<div class="span1"></div>
+								<div class="span2 margint30">
+									<div class="scene-img401">
+										<img src="img/scene4-1_07.png" width="150">
+									</div>
+									<div class="scene4-text">
+										<span class="order-num">1</span>
+										<p>在“我要付款界面”，输入收款的金额后点击“收款”</p>
+									</div>
+								</div>
+								<div class="span2 margint30">
+									<div class="scene-img401">
+										<img src="img/scene4-2_09.png" width="150">
+									</div>
+									<div class="scene4-text">
+										<span class="order-num">2</span>
+										<p>“收银台”界面生成订单信息，选择银联卡收款</p>
+									</div>
+								</div>
+								<div class="span2 margint30">
+									<div class="scene-img401">
+										<img src="img/scene4-3_11.png" width="150">
+									</div>
+									<div class="scene4-text">
+										<span class="order-num">3</span>
+										<p>判断当日有无签到，若没有签到，则进行签到</p>
+									</div>
+								</div>
+								<div class="span2 margint30">
+									<div class="scene-img401">
+										<img src="img/scene4-4_13.png" width="150">
+									</div>
+									<div class="scene4-text">
+										<span class="order-num">4</span>
+										<p>签到成功，进行刷卡/插卡/挥卡处理</p>
+									</div>
+								</div>
+								<div class="span2 margint30">
+									<div class="scene-img401">
+										<img src="img/scene4-5_15.png" width="150">
+									</div>
+									<div class="scene4-text">
+										<span class="order-num">5</span>
+										<p>提示客户输入密码，密码输入完毕，连接服务器进行交易</p>
+									</div>
+							    </div>
+								<div class="span1"></div>
+							</div>
+						</div>
+						<div class="container">
+							<div class="row">
+								<div class="span1"></div>
+								<div class="span2 margint30">
+									<div class="scene-img401heng">
+										<img src="img/scene4-6_22.png" width="180">
+									</div>
+									<div class="scene4heng-text">
+										<span class="order-num">6</span>
+										<p>交易成功，进行电子签名，若电子签名过于复杂则清空该电子签名并提示用户重新签名，如果电子签名上传不成功，则下次进入交易界面时继续上传该笔电子签名</p>
+									</div>
+								</div>
+								<div class="span2 margint30">
+									<div class="scene-img401heng">
+										<img src="img/scene4-7_23.png" width="180">
+									</div>
+									<div class="scene4heng-text">
+										<span class="order-num">7</span>
+										<p>上传电子签名过程中进行打印消费凭证，如果打印不成功，则可以在终端管理的末笔打印中重新进行打印，并且在下次进入消费界面要进行该笔的打印</p>
+									</div>
+								</div>
+								<div class="span2 margint30">
+									<div class="scene-img401">
+										<img src="img/scene4-8_22.png" width="150">
+									</div>
+									<div class="scene4-text">
+										<span class="order-num">8</span>
+										<p>完成交易后，显示交易成功界面</p>
+									</div>
+								</div>
+								<div class="span1"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container footer-product">
+				<div class="row">
+					<p class="footer-t">我们每日帮助万余家公司处理支付问题。</p>
+				</div>
+				<div class="row row1">
+					<div class="span4">
+						<img src="img/y-l_03.png">
+						<span class="footer-m">乐收银＋</span>
+					</div>
+					<div class="span4">
+						<img src="img/y-e_05.png">						
+						<span class="footer-m">二维码收银台</span>
+					</div>
+					<div class="span4">
+						<img src="img/y-p_07.png">						
+						<span class="footer-m">智能POS</span>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+			    <div class="testl fontc6 ">
+				    	<a href="#">中国民生银行</a>
+				    	<a href="#">解决方案</a>     
+				    	<a href="#">关于我们</a>     
+				    	<a href="#">联系我们</a>
+			    </div>
+		    		<div class="testl fontcc paddingb20">@版权所有&nbsp;中国民生银行&nbsp;|&nbsp;京ICP备05020372号</div>
+	    		</div>
+		</div>
+		<script src="js/jquery-1.9.1.min.js"></script>
+    		<script src="js/bootstrap.js"></script>
+    		<script>
+			$(function () {
+				$('#myTab a[href="#scene"]').tab('show');
+				$('#myTab a[href="#firm"]').tab('show');
+				$('#myTab a[href="#entryway"]').tab('show');
+				$('#myTab a[href="#document"]').tab('show');
+		    		$('#myTab a[href="#resouce"]').tab('show');
+			})
+    		</script>
+	</body>
+</html>

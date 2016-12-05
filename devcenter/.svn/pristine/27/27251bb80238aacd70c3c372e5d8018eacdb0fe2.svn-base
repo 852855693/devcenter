@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>民生移动收单平台</title>
+    		<link rel="stylesheet" href="css/bootstrap.css" >
+    		<link rel="stylesheet" href="css/bootstrap-responsive.css" >
+   	 	<link rel="stylesheet" href="css/iconfont.css" >
+   	 	<link rel="stylesheet" href="css/styles.css">
+   	 	<script src="http://api.html5media.info/1.1.8/html5media.min.js"></script>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-static-top positiona nav-bg">
+			<div class="navbar-inner navbar-header">
+				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#navbar-collapse">
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+				    </button>
+					<a class="brand logo-padd" href="#"><img src="img/logo.png" width="240"></a>
+					<div class="nav-collapse collapse" id="navbar-collapse">
+						<ul class="nav">
+							<li><a href="index.html">首页</a></li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								产品介绍
+								<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu dropdown-style">
+									<li><a href="#">乐收银＋</a></li>
+									<li><a href="#">二维码收银台</a></li>
+									<li><a href="#">智能POS</a></li>
+								</ul>
+							</li>
+					        <li class="dropdown">
+					        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        		解决方案
+					        		<b class="caret"></b>
+					        		</a>
+					        		<ul class="dropdown-menu dropdown-style">
+									<li><a href="#">服务商篇</a></li>
+									<li><a href="#">代理商篇</a></li>
+									<li><a href="#">大商户篇</a></li>
+									<li><a href="#">小商户篇</a></li>
+								</ul>
+					        </li>
+					        <li class="dropdown">
+						        	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						        	常见问题
+						        	<b class="caret"></b>
+						        	</a>
+						        	<ul class="dropdown-menu dropdown-style">
+									<li><a href="commonProblem.html">综合篇</a></li>
+									<li><a href="f-Problem.html">服务商篇</a></li>
+									<li><a href="d-Problem.html">代理商篇</a></li>
+									<li><a href="P-Problem.html">平台商篇</a></li>
+								</ul>
+						        	<!--<ul class="dropdown-menu dropdown-style">
+									<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toTools.do">常用工具</a></li>
+									<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/">旧版开发者中心</a></li>
+								</ul>-->
+					        </li>
+					        <li class="dropdown">
+					        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        		开发接入
+					        		<b class="caret"></b>
+					        		</a>
+					        		<div class="dropdown-menu dropdown-style width540 down-pos">
+					        			<ul class="menu-list api-height">
+										<li class="nav-header menu-title">服务端API</li>
+										<li><a href="payApi.html">联机交易类</a></li>
+										<li><a href="manageApi.html">商户管理类</a></li>
+									</ul>
+									<ul class="menu-list h5-height">
+										<li class="nav-header menu-title">页面跳转</li>
+										<li><a href="docSkiph5.html">微信公众号跳转</a></li>
+									</ul>
+									<ul class="menu-list border0 api-height sdk-height">
+										<li class="nav-header menu-title">移动端SDK</li>
+										<li><a href="androidSDK.html">安卓SDK(收单)</a></li>
+									    <li><a href="iosSDK.html">苹果SDK(收单)</a></li>
+										<li><a href="#">后台SDK</a></li>
+									</ul>
+								</div>
+					        </li>
+					        <li><a href="#">关于我们</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h3 class="text-center paddingtb80">服务商接入申请流程</h3>
+			<div class="container flowchart">
+				<div class="first-step">
+					<div class="step-lcircle">
+						<img src="img/c1.png">
+					</div>
+					<div class="left-title step1-bg">第一步</div>
+					<div class="first-text andr-sct">
+						<div class="accordion-toggle accordion-group" data-toggle="collapse" data-target="#s-1">
+							<div class="accordion-heading overflowh">
+						        <h5>商务谈判及签约</h5>
+						        <i class="iconfont icon-r">&#xe60c;</i>
+						   </div>
+						   <div id="s-1" class="collapse accordion-body paddinglr10">
+						   	    <div class="container-fluid">
+						   	    	<div class="row-fluid">
+						   	    		<div class="span4">
+						   	    			<h5>1.确定双方合作费率</h5>
+						                    <p class="lineh22">全行指导价为不低于<span class="colorr">0.23%</span>；对于优质服务商，可进一步降至<span class="colorr">0.22%</span>；</p>
+						                    <p class="lineh22">行内结算商户、他行结算商户分别定价；</p>
+						                    <p class="lineh22">移动支付市场在全国各地区域性差异较大，<span class="colorr">服务商准入标准由主办行制定</span>。</p>
+						   	    		</div>
+						   	    		<div class="span4">
+						   	    			<h5>2.确定移动支付服务范围</h5>
+						                    <p class="colorr">移动支付渠道：</p>
+						                    <p class="lineh22">（1）目前可支持微信支付、支付宝，建议同时开通；</p>
+						                    <p class="lineh22">（2）暂不支持不同渠道单独设置合作费率，<span class="colorr">即针对服务商微信、支付宝都统一定价</span>。</p>
+						                    <p class="colorr">移动支付接口：</p>
+						                    <p class="lineh22">（1）根据服务商为终端商户提供的支付场景确定开放给服务商的移动支付接口；</p>
+						                    <p class="lineh22">（2）不同支付场景对应移动支付接口参考《移动支付场景及交易接口对照表》。</p>
+						   	    		</div>
+						   	    		<div class="span4">
+						   	    			<h5>3.服务商协议签署及开户</h5>
+						                    <p class="lineh22">签署《中国民生银行移动支付收款服务商合作协议》</p>
+						                    <p class="lineh22">服务商在我行开立<span class="colorr">对公账户</span>用于手续费分润</p>
+						   	    		</div>
+						   	    	</div>
+						   	    </div>
+					       </div>
+						</div>
+					</div>
+				</div>
+			    <div class="second-step">
+				    	<div class="step-rcircle">
+				    		<img src="img/c2.png">
+				    	</div>
+				    	<div class="right-title step2-bg">第二步</div>
+				    	<div class="second-text andr-sct">
+				    		<div class="accordion-toggle accordion-group" data-toggle="collapse" data-target="#s-2">
+							    <div class="accordion-heading overflowh">
+				    		        <h5>服务商信息、平台识别码及交易证书申请</h5>
+				    		        <i class="iconfont icon-r">&#xe60c;</i>
+				    		   </div>
+				    		   <div id="s-2" class="collapse accordion-body paddinglr10">
+				    		   	  <div class="container-fluid">
+				    		   		<div class="row-fluid">
+				    		   			<div class="span3">
+				    		   				<h5>1.服务商上线申请</h5>
+				    			            <p class="lineh22">主办分行通过OA事务审批流程<span class="colorr">提交以下材料</span>至总行小微金融部：</p>
+				    			            <P class="lineh22">（1）《中国民生银行移动支付收款服务商合作协议》复印件(该协议要求填写服务商对公账户、合作费率)</P>
+				    			            <P class="lineh22">（2）服务商营业执照复印件</P>
+				    			            <p class="lineh22">（3）法人身份证复印件</p>
+				    		   			</div>
+				    		   			<div class="span3">
+				    		   				<h5>2.服务商信息创建</h5>
+				    			            <P class="lineh22">总行商务平台操作岗完成服务商<span class="colorr">信息创建</span>，包括：</P>
+				    			            <P class="lineh22">（1）平台识别码(即服务商编号)</P>
+				    			            <P class="lineh22">（2）服务商商户资料</P>
+				    			            <P class="lineh22">（3）合作费率</P>
+				    			            <P class="lineh22">（4）对公结算账户等</P>
+				    		   			</div>
+				    		   			<div class="span3">
+				    		   				<h5>3.证书申请</h5>
+				    			            <p class="lineh22">服务商登录移动收单开放平台网站(wxpay.cmbc.com.cn),点击“下载文档及demo”:</p>
+				    			            <p class="lineh22">（1）下载并填写<span class="colorr">《中国民生银行数字证书申请表(行外客户)》</span>，进行证书申请。</p>
+				    			            <p class="lineh22">（2）证书申请成功后，会将下载证书所需要的证书两码<span class="colorr">(即参考号和授权码)</span>下发到申请时预留的手机号和邮箱。</p>
+				    		   			</div>
+				    		   			<div class="span3">
+				    		   				<h5>4.证书使用</h5>
+				    			            <P>证书使用应按照要求步骤进行:</P>
+				    			            <P class="lineh22">（1）服务商应<span class="colorr">在规定时间内下载</span>安全证书，过期会失效需要重新生成。</P>
+				    			            <p class="lineh22">（2）根据<span class="colorr">《文件证书下载使用操作手册-国密》</span>完成后续操作</p>
+				    			            <P class="lineh22">将<span class="colorr">公钥信息</span>发送至总行科技部，进行与服务商平台号的配对。</P>
+				    		   			</div>
+				    		   		</div>
+				    		   	  </div>
+				    		   </div>
+				    		</div>
+				    	</div>
+			    </div>
+			    <div class="third-step">
+				    	<div class="step-lcircle">
+				    		<img src="img/c3.png">
+				    	</div>
+				    	<div class="left-title step3-bg">第三步</div>
+				    	<div class="third-text andr-sct">
+				    		<div class="accordion-toggle accordion-group" data-toggle="collapse" data-target="#s-3">
+							    <div class="accordion-heading overflowh">
+				    		        <h5>服务商系统接入联调</h5>
+				    		        <i class="iconfont icon-r">&#xe60c;</i>
+				    		   </div>
+				    		   <div id="s-3" class="collapse accordion-body paddinglr10">
+				    		   	    <div class="container-fluid">
+				    		   	    	<div class="row-fluid">
+				    		   	    		<div class="span4">
+				    		   	    			<h5>1.技术支持</h5>
+				    			                <p class="lineh22">服务商登录移动收单开放平台网站(wxpay.cmbc.com.cn),获取相关技术支持，包括：</p>
+				    			                <p>（1）接口文档</p>
+				    			                <P>（2）接入demo</P>
+				    			                <p>（3）测试用户号及证书</p>
+				    			                <P>（4）代码示例</P>
+				    			                <P>（5）常用工具等</P>
+				    		   	    		</div>
+				    		   	    		<div class="span4">
+				    		   	    			<h5>2.微信群支持</h5>
+				    			                <P class="lineh22">为方便服务商的接入，分行可对每个服务商建立微信支持群，提供技术支持服务：</P>
+				    			                <P class="lineh22">（1）总行科技</P>
+				    			                <P class="lineh22">（2）分行科技</P>
+				    			                <P class="lineh22">（3）业务人员等</P>
+				    		   	    		</div>
+				    		   	    		<div class="span4">
+				    		   	    			<h5>3.联调确认</h5>
+				    			                <P class="lineh22">完成接入联调后，需提供证记：</P>
+				    			                <P class="lineh22">（1）服务商将调试通过的证迹给主办分行，包括uat测试和生产验证测试。</P>
+				    			                <P class="lineh22">（2）由主办分行再提交至总行科技支持人员邮箱进行确认。</P>
+				    		   	    		</div>
+				    		   	    	</div>
+				    		   	    </div>
+				    		   </div>
+				    		</div>
+				    	</div>
+			    </div>
+			    <div class="fourth-step">
+				    	<div class="step-rcircle">
+				    		<img src="img/c4.png">
+				    	</div>
+				    	<div class="right-title step4-bg">第四步</div>
+				    	<div class="fourth-text andr-sct">
+				    		<div class="accordion-toggle accordion-group" data-toggle="collapse" data-target="#s-4">
+							    <div class="accordion-heading overflowh">
+				    		        <h5>服务商上线</h5>
+				    		        <i class="iconfont icon-r">&#xe60c;</i>
+				    		   </div>
+				    		   <div id="s-4" class="collapse accordion-body paddinglr10">
+				    		   	   <div class="container-fluid">
+				    		   	   	<div class="row-fluid">
+				    		   	   		<div class="span6">
+				    		   	   			<h5>1.服务商上线验证</h5>
+				    		                <p class="lineh22">服务商使用生产环境平台识别码、交易证书接入我行生产环境，验证生产环境交易接口是否可用，<span class="colorr">至少应包括一下内容：</span></p>
+				    		                <p class="lineh22">（1）商户进件</p>
+				    		                <p class="lineh22">（2）下单</p>
+				    		                <p class="lineh22">（3）支付</p>
+				    		                <p class="lineh22">（4）退货</p>
+				    		                <p class="lineh22">（5）异步通知</p>
+				    		                <p class="lineh22">（6）订阅查询</p>
+				    		   	   		</div>
+				    		   	   		<div class="span6">
+				    		   	   			<h5>2.服务商支付场景调查</h5>
+				    		                <p class="lineh22">主办方应：</p>
+				    		                <p class="lineh22">（1）现场调研服务商终端商户支付场景；</p>
+				    		                <p class="lineh22">（2）并对支付场景应用过程、结果进行<span class="colorr">拍照或录像</span>；</p>
+				    		                <p class="lineh22">（3）该步骤是确认服务商是否能够按照合同约定正常开展业务，具备生产环境的上线条件</p>
+				    		   	   		</div>
+				    		   	   	</div>
+				    		   	   </div>
+				    		   </div>
+				    		</div>
+				    	</div>
+			    </div>
+			    <div class="fifth-step">
+			    		<div class="step-lcircle">
+			    			<img src="img/c1.png">
+					</div>
+					<div class="left-title step3-bg">第五步</div>
+				    	<div class="fifth-text andr-sct">
+				    		<div class="accordion-toggle accordion-group" data-toggle="collapse" data-target="#s-5">
+							    <div class="accordion-heading overflowh">
+				    		        <h5>业务运营</h5>
+				    		        <i class="iconfont icon-r">&#xe60c;</i>
+				    		   </div>
+				    		   <div id="s-5" class="collapse accordion-body paddinglr10">
+				    		   	    <P class="lineh22">主办行应对上线的服务商业务开展情况进行跟进，及时发现问题和控制风险，包括但不限于以下事项：</P>
+				    		   	    <div class="container-fluid">
+				    		   	    	<div class="row-fluid">
+				    		   	    		<div class="span6">
+				    		   	    			<h5>1.服务商经营情况跟踪</h5>
+				    		                    <P class="lineh22">主办行应在服务商开展业务后持续监控业务开展情况，包括但不限于：</P>
+				    		                    <P class="lineh22">（1）服务商报表数据监控（目前乐收银商户平台提供的报表）：</P>
+				    		                    <P class="lineh22">商户：基本信息表、交易统计表</P>
+				    		                    <P class="lineh22">合作商：基本信息表、分润日结报表</P>
+				    		                    <P class="lineh22">（2）服务商终端商户抽查</P>
+				    		                    <P class="lineh22">（3）针对服务商交易量突出的重点商户进行现场检查</P>
+				    		                    <P class="lineh22">（4）对商户经营情况进行评估</P>
+				    		   	    		</div>
+				    		   	    		<div class="span6">
+				    		   	    			<h5>2.服务商分润</h5>
+				    		                    <P class="lineh22">（1）系统暂定为每个自然月5号，自动执行服务商分润</P>
+				    		                    <P class="lineh22">（2）分行应在月初提前下载服务商分润表进行数据检查，并及时提供给服务商对账</P>
+				    		                    <P class="lineh22">（3）对于有异议的情况及时通知总行</P>
+				    		   	    		</div>
+				    		   	    	</div>
+				    		   	    </div>
+				    		   </div>
+				    		</div>
+				    	</div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+		
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="span3 columns">
+						<h3>无处不在</h3>
+						<ul class="text-left marginl0">
+							<li class="sina-entry">
+								<span class="iconfont sina-icon">&#xe604;</span>
+								<span>新浪微博</span>
+							</li>
+							<li class="weixin-entry">
+								<span class="iconfont weixin-icon">&#xe602;</span>
+								<span>微信公众号</span>
+							</li>
+							<li>
+								<img class="weixin-er" src="img/weixin-er.png" width="56">
+							</li>
+						</ul>
+					</div>
+					<div class="span3 columns">
+						<h3>联系我们</h3>
+						<ul class="text-left marginl0">
+							<li>
+								<a>营业网点</a>
+							</li>
+							<li>
+								<a>信用卡中心电话：400 66 95568</a>
+							</li>
+							<li>
+								<a>客户中心：95568</a>
+							</li>
+						</ul>
+					</div>
+					<div class="span3 columns">
+						<h3>帮助中心</h3>
+						<ul class="text-left marginl0">
+							<li>
+								<a>在线服务：个人/公司/信用卡</a>
+							</li>
+							<li>
+								<a>常见问题</a>
+							</li>
+							<li>
+								<a>网站地图</a>
+							</li>
+						</ul>
+					</div>
+					<div class="span3 columns">
+						<h3>关于民生</h3>
+						<ul class="text-left marginl0">
+							<li>
+								<a>民生新闻</a>
+							</li>
+							<li>
+								<a>人才招聘</a>
+							</li>
+							<li class="branch-entry">
+								<div class="dropdown">
+									<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" href="#">
+								    <span class="iconfont branch-icon">&#xe608;</span>
+								    分支机构
+									<b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+								    		<li role="presentation">
+								    			<a class="dropdown-list" role="menuitem" tabindex="-1" href="#">list1</a>
+								    		</li>
+								    		<li role="presentation">
+								    			<a class="dropdown-list" role="menuitem" tabindex="-1" href="#">list2</a>
+								    		</li>
+									</ul>
+								</div>
+							</li>
+							<li class="branch-entry">
+								<div class="dropdown">
+									<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" href="#">
+								    <span class="iconfont branch-icon">&#xe603;</span>
+								    其他链接
+									<b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+								    		<li role="presentation">
+								    			<a class="dropdown-list" role="menuitem" tabindex="-1" href="#">list1</a>
+								    		</li>
+								    		<li role="presentation">
+								    			<a class="dropdown-list" role="menuitem" tabindex="-1" href="#">list2</a>
+								    		</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">版权所有&nbsp;中国民生银行&nbsp;|&nbsp;京ICP备05020372号</div>
+		</footer>
+    		<script src="js/jquery-1.9.1.min.js"></script>
+    		<script src="js/bootstrap.js"></script>
+    		<script type="text/javascript">
+    			document.body.addEventListener('touchstart', function () { });  //保证手机端按钮或链接active效果
+    			
+    		</script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>移动收单开放平台 | 开发者中心-常见问题服务商篇</title>
+    		<link rel="stylesheet" href="css/bootstrap.css" >
+    		<link rel="stylesheet" href="css/bootstrap-responsive.css" >
+   	 	<link rel="stylesheet" href="css/iconfont.css" >
+   	 	<link rel="stylesheet" href="css/styles.css">
+   	 	<script src="http://api.html5media.info/1.1.8/html5media.min.js"></script>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<div id="top" ></div>
+	    <div class="container paddingtb50  problem-box">
+	        <h3 class="text-center paddingtb50">服务商篇</h3>
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q1：服务商接入流程说明</h4>
+	        <P class="lineh22">A：商务签约 — 平台识别号及交易证书申请 — 系统接入联调 — 系统上线 — 业务运营具体请参照民生银行移动支付服务商接入申请流程</P>
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q2：服务商分润账户的要求是什么？</h4>
+	        <P class="lineh22">A：主要有四种合作模式：商户、大商户（有系统对接需求）、服务商（（有系统对接需求）、代理商。</P>
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q3：服务商如何在系统中录入或修改商户？</h4>
+	        <P class="lineh22">A：服务商通过我行提供的进件接口，连接自身系统，可直接将商户录入到我行系统中，也可调用修改进件接口，对商户部分信息进行修改。</P>
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q4：对于服务商拓展的商户，其入账账户有何要求？</h4>
+	        <P class="lineh22">A：原则上，商户应当在我行开立支持借记卡、对公账户以及电子账户的人民币结算卡账户作为移动支付收款交易的结算账户。个体工商户、暂时无法提供营业执照但有实际经营地址并从事经营活动的商户，可以以借记卡、电子商户作为收款入账账户，公司类商户应以单位结算账户作为收款入账账户。</P>
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q5：无证照商户是否可以准入？需要提供什么资料？</h4>
+	        <P class="lineh22">A：如果无证照商户确为拥有实际经营地址且从事真实经营活动的商户，只是由于某些原因暂时无法提供营业执照，需要提供业主身份证、人行征信及可以证明其实际经营活动的资料，如与市场管理方签署的租赁合同等。</P>
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q6：商户图片资料包括哪些？</h4>
+	        <P class="lineh22">A：商户协议电子版、商户营业执照（暂时无证照需后续补传）、法人身份证正反面、店铺照片3张。</P>
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q7：商户图片资料如何上传至民生系统？</h4>
+	        <P class="lineh22">A：通过我行后续开放的接口，直接上传（预计11月开放）。</P>
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q8：商户费率收取可否添加包月的形式？</h4>
+	        <P class="lineh22">A：民生银行移动支付都是无封顶的扣率，不支持包月形式。</P>
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q9：对于服务商的服务费，是以何种方式结算？</h4>
+	        <P class="lineh22">A：默认以月结的方式，每月5日自动结算至服务商在我行开立的对公分润账户中。</P>
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q10：服务商分润报表、商户交易统计报表如何查看？</h4>
+	        <P class="lineh22">A：民生银行将开放服务商中心，服务商可通过账号密码登录后，自行查看分润查询报表、分润结转统计表、以及商户交易统计表。目前相关报表由主管分行提供给服务商。</P>
+	    </div>
+		<div id="foot"></div>
+		
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#top").load("nav.html");
+				$("#foot").load("foot.html");
+			});
+			document.body.addEventListener('touchstart', function () { });  //保证手机端按钮或链接active效果
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>移动收单开放平台 | 开发者中心-常见问题通用篇</title>
+    		<link rel="stylesheet" href="css/bootstrap.css" >
+    		<link rel="stylesheet" href="css/bootstrap-responsive.css" >
+   	 	<link rel="stylesheet" href="css/iconfont.css" >
+   	 	<link rel="stylesheet" href="css/styles.css">
+   	 	<script src="http://api.html5media.info/1.1.8/html5media.min.js"></script>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-static-top positiona nav-bg">
+			<div class="navbar-inner navbar-header">
+				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#navbar-collapse">
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+				    </button>
+					<a class="brand logo-padd" href="#"><img src="img/logo.png" width="240"></a>
+					<div class="nav-collapse collapse" id="navbar-collapse">
+						<ul class="nav">
+							<li><a href="index.html">首页</a></li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								产品介绍
+								<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu dropdown-style">
+									<li><a href="#">乐收银＋</a></li>
+									<li><a href="#">二维码收银台</a></li>
+									<li><a href="#">智能POS</a></li>
+								</ul>
+							</li>
+					        <li class="dropdown">
+					        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        		解决方案
+					        		<b class="caret"></b>
+					        		</a>
+					        		<ul class="dropdown-menu dropdown-style">
+									<li><a href="#">服务商篇</a></li>
+									<li><a href="#">代理商篇</a></li>
+									<li><a href="#">大商户篇</a></li>
+									<li><a href="#">小商户篇</a></li>
+								</ul>
+					        </li>
+					        <li class="dropdown">
+						        	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						        	常见问题
+						        	<b class="caret"></b>
+						        	</a>
+						        	<ul class="dropdown-menu dropdown-style">
+									<li><a href="commonProblem.html">综合篇</a></li>
+									<li><a href="f-Problem.html">服务商篇</a></li>
+									<li><a href="d-Problem.html">代理商篇</a></li>
+									<li><a href="P-Problem.html">平台商篇</a></li>
+								</ul>
+						        	<!--<ul class="dropdown-menu dropdown-style">
+									<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toTools.do">常用工具</a></li>
+									<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/">旧版开发者中心</a></li>
+								</ul>-->
+					        </li>
+					        <li class="dropdown">
+					        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        		开发接入
+					        		<b class="caret"></b>
+					        		</a>
+					        		<div class="dropdown-menu dropdown-style width540 down-pos">
+					        			<ul class="menu-list api-height sdk-height">
+										<li class="nav-header menu-title">服务端API</li>
+										<li><a href="payApi.html">联机交易类</a></li>
+										<li><a href="manageApi.html">商户管理类</a></li>
+									</ul>
+									<ul class="menu-list h5-height">
+										<li class="nav-header menu-title">页面跳转</li>
+										<li><a href="docSkiph5.html">微信公众号跳转</a></li>
+									</ul>
+									<ul class="menu-list border0 api-height">
+										<li class="nav-header menu-title">移动端SDK</li>
+										<li><a href="androidSDK.html">安卓SDK(收单)</a></li>
+									    <li><a href="iosSDK.html">苹果SDK(收单)</a></li>
+										<li><a href="SDKServer.html">SDK服务端</a></li>
+									</ul>
+								</div>
+					        </li>
+					        <li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								资源中心
+								<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu dropdown-style">
+									<li><a href="http://wxpay.cmbc.com.cn/cmbcpaydemo/MainServlet?name=toTools.do">常用工具</a></li>
+								</ul>
+							</li>
+					        <li><a href="#">关于我们</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	    <div class="container paddingtb50  problem-box">
+	        <h3 class="text-center paddingtb50">综合篇</h3>
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q1：民生银行移动收单项目支持哪些合作模式？</h4>
+	        <P class="lineh22">A：主要有四种合作模式：商户、大商户（有系统对接需求）、服务商（（有系统对接需求）、代理商。</P>
+	        <img src="img/saq1.png" class="width-100">
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q2：四种合作模式的主要区别？</h4>
+	        <p class="lineh22">A：主要区别在于是否有系统对接需求、是否有手续费分润需求。如下表所示。</p>
+	        <table class="table table-bordered">
+	        	<thead>
+	        		<tr>
+	        		   <th></th>
+	        		   <th>1. 服务商	</th>
+	        		   <th>2. 代理商</th>
+	        		</tr>
+	        	</thead>
+	        	<tbody>
+	        		<tr>
+	        			<th>系统对接</th>
+	        			<td>需要</td>
+	        			<td>无系统对接需求</td>
+	        		</tr>
+	        		<tr>
+	        			<th>手续费分润</th>
+	        			<td>有分润</td>
+	        			<td>有分润</td>
+	        		</tr>
+	        		<tr>
+	        			<th>商户进件</th>
+	        			<td>接口方式进件</td>
+	        			<td>使用我行提供的进件渠道（APP或者网站</td>
+	        		</tr>
+	        		<tr>
+	        			<th>商户审批</th>
+	        			<td>自行审批</td>
+	        			<td>银行审批，审批前可以进行交易体验，通过日交易额度控制商户风险（缺省200RMB/日）</td>
+	        		</tr>
+	        		<tr>
+	        			<th>签署协议</th>
+	        			<td>《中国民生银行移动支付收款服务商合作协议》</td>
+	        			<td>《中国民生银行移动支付收款服务商合作协议》</td>
+	        		</tr>
+	        		<tr>
+	        			<th>接入流程</th>
+	        			<td>服务商接入流程（涉及系统对接）</td>
+	        			<td></td>
+	        		</tr>
+	        	</tbody>
+	        </table>
+	        <table class="table table-bordered">
+	        	<thead>
+	        		<tr>
+	        		   <th></th>
+	        		   <th>3. 大商户（系统对接）	</th>
+	        		   <th>4.商户（无需系统对接）</th>
+	        		</tr>
+	        	</thead>
+	        	<tbody>
+	        		<tr>
+	        			<th>系统对接</th>
+	        			<td>需要</td>
+	        			<td>无系统对接需求</td>
+	        		</tr>
+	        		<tr>
+	        			<th>手续费分润</th>
+	        			<td>无分润</td>
+	        			<td>无分润</td>
+	        		</tr>
+	        		<tr>
+	        			<th>商户进件</th>
+	        			<td>进件工作由银行完成</td>
+	        			<td>进件工作由银行完成</td>
+	        		</tr>
+	        		<tr>
+	        			<th>商户审批</th>
+	        			<td>银行审批，审批前通过缺省的较小日交易额度控制商户风险</td>
+	        			<td>银行审批，审批前审批前可以进行交易体验，通过较小日交易额度控制商户风险（200元/日）</td>
+	        		</tr>
+	        		<tr>
+	        			<th>签署协议</th>
+	        			<td>《中国民生银行条码支付收款商户服务协议》</td>
+	        			<td>《中国民生银行条码支付收款商户服务协议》</td>
+	        		</tr>
+	        		<tr>
+	        			<th>接入流程</th>
+	        			<td>商户接入流程（涉及系统对接）</td>
+	        			<td>二维码收银台、乐收银APP</td>
+	        		</tr>
+	        	</tbody>
+	        </table>
+
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q3：民生银行移动收单项目支持哪些支付场景？</h4>
+	        <p class="lineh22">A：目前支持的微信、支付宝的支付场景如下图所示。后续将开放支付宝SDK、QQ钱包支付功能。只要付款方打开客户端，通过客户端发起或受理的支付方式均支持。从第三方应用或其他网站跳转至付款方客户端的方式暂不支持。</p>
+	        <img src="img/saq3.png" class="width-100">
+	        <h4 class="lineh22">具体支付场景如下：</h4>
+	        <img src="img/cj1.png" class="width-100">
+	        <img src="img/cj2.png" class="width-100"> 
+	        <img src="img/cj3.png" class="width-100"> 
+	        <img src="img/cj4.png" class="width-100"> 
+	        <img src="img/cj5.png" class="width-100"> 
+	        <img src="img/cj6.png" class="width-100"> 
+	        <img src="img/cj7.png" class="width-100">
+	        <h4><span class="iconfont iconb">&#xe60f;</span>Q4：民生银行移动收单项目支持哪些接口？对应的接入类型有哪些？</h4>
+	        <p class="lineh22">A： 如表格所示。</p>
+	        <table class="table table-bordered">
+	        	<thead>
+	        		<tr>
+	        			<th colspan="2">接口说明	</th>
+	        			<th colspan="2">接入说明</th>
+	        		</tr>
+	        		<tr>
+	        			<th>接口类别</th>
+	        			<th>接口名称</th>
+	        			<th>服务商</th>
+	        			<th>大商户</th>
+	        		</tr>
+	        	</thead>
+	        	<tbody>
+	        		<tr>
+	        			<th rowspan="4">微信	</th>
+	        			<td>微信主扫支付</td>
+	        			<td>可选</td>
+	        			<td>可选</td>
+	        		</tr>
+	        		<tr>
+	        			<td>微信被扫支付</td>
+	        			<td>可选</td>
+	        			<td>可选</td>
+	        		</tr>
+	        		<tr>
+	        			<td>微信公众号页面支付</td>
+	        			<td>可选</td>
+	        			<td>可选</td>
+	        		</tr>
+	        		<tr>
+	        			<td>微信公众号API支付</td>
+	        			<td>可选</td>
+	        			<td>可选</td>
+	        		</tr>
+	        		<tr>
+	        			<th rowspan="3">支付宝	</th>
+	        			<td>支付宝主扫支付</td>
+	        			<td>可选</td>
+	        			<td>可选</td>
+	        		</tr>
+	        		<tr>
+	        			<td>支付宝被扫支付</td>
+	        			<td>可选</td>
+	        			<td>可选</td>
+	        		</tr>
+	        		<tr>
+	        			<td>支付宝服务窗支付</td>
+	        			<td>可选</td>
+	        			<td>可选</td>
+	        		</tr>
+	        		<tr>
+	        			<th>退款</th>
+	        			<td>退款接口</td>
+	        			<td>可选</td>
+	        			<td>可选</td>
+	        		</tr>
+	        		<tr>
+	        			<th rowspan="3">查询及明细</th>
+	        			<td>查询</td>
+	        			<td>必选</td>
+	        			<td>必选</td>
+	        		</tr>
+	        		<tr>
+	        			<td>异步通知</td>
+	        			<td>必选</td>
+	        			<td>必选</td>
+	        		</tr>
+	        		<tr>
+	        			<td>交易明细单下载</td>
+	        			<td>可选</td>
+	        			<td>可选</td>
+	        		</tr>
+	        		<tr>
+	        			<th rowspan="2">进件接口</th>
+	        			<td>商户进件</td>
+	        			<td>可选</td>
+	        			<td>不需要</td>
+	        		</tr>
+	        		<tr>
+	        			<td>商户进件修改</td>
+	        			<td>可选</td>
+	        			<td>不需要</td>
+	        		</tr>
+	        		<tr>
+	        			<th rowspan="2">提现	</th>
+	        			<td>商户提现</td>
+	        			<td>可选</td>
+	        			<td>不需要</td>
+	        		</tr>
+	        		<tr>
+	        			<td>提现余额查询</td>
+	        			<td>可选</td>
+	        			<td>不需要</td>
+	        		</tr>
+	        	</tbody>
+	        </table>
+	    </div>
+		<div class="footer">
+			<div class="container footer-product">
+				<div class="row">
+					<p class="footer-t">我们每日帮助万余家公司处理支付问题。</p>
+				</div>
+				<div class="row row1">
+					<div class="span4">
+						<img src="img/y-l_03.png">
+						<span class="footer-m">乐收银＋</span>
+					</div>
+					<div class="span4">
+						<img src="img/y-e_05.png">						
+						<span class="footer-m">二维码收银台</span>
+					</div>
+					<div class="span4">
+						<img src="img/y-p_07.png">						
+						<span class="footer-m">智能POS</span>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+			    <div class="testl fontc6 ">
+				    	<a href="#">中国民生银行</a>
+				    	<a href="#">解决方案</a>     
+				    	<a href="#">关于我们</a>     
+				    	<a href="#">联系我们</a>
+			    </div>
+	    		<div class="testl fontcc paddingb20">@版权所有&nbsp;中国民生银行&nbsp;|&nbsp;京ICP备05020372号</div>
+			</div>
+		</div>
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script type="text/javascript">
+			document.body.addEventListener('touchstart', function () { });  //保证手机端按钮或链接active效果
+			
+		</script>
+	</body>
+</html>

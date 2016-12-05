@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>民生移动收单平台</title>
+    		<link rel="stylesheet" href="css/bootstrap.css" >
+    		<link rel="stylesheet" href="css/bootstrap-responsive.css" >
+   	 	<link rel="stylesheet" href="css/iconfont.css" >
+   	 	<link rel="stylesheet" href="css/styles.css">
+   	 	<script src="http://api.html5media.info/1.1.8/html5media.min.js"></script>
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-static-top positiona nav-bg">
+			<div class="navbar-inner navbar-header">
+				<div class="container">
+					<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#navbar-collapse">
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+					    <span class="icon-bar"></span>
+				    </button>
+					<a class="brand logo-padd" href="#"><img src="img/logo.png" width="240"></a>
+					<div class="nav-collapse collapse" id="navbar-collapse">
+						<ul class="nav">
+							<li><a href="index.html">首页</a></li>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								产品
+								<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu dropdown-style">
+									<li><a href="product.html">乐收银</a></li>
+									<li><a>二维码收款台</a></li>
+									<li><a>智能POS</a></li>
+								</ul>
+							</li>
+					        <li class="dropdown">
+					        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        		解决方案
+					        		<b class="caret"></b>
+					        		</a>
+					        		<div class="dropdown-menu dropdown-style width410">
+									<ul class="menu-list solution-size01">
+										<li class="nav-header menu-title">通用方案</li>
+										<li><a href="#">服务商接入</a></li>
+										<li><a href="#">智能POS</a></li>
+										<li><a href="#">公众号页面</a></li>
+										<li><a href="#">移动APP</a></li>
+									</ul>
+									<ul class="menu-list solution-size02 border0">
+										<li class="nav-header menu-title">行业方案</li>
+										<li class="pull-left">
+											<ul class="pull-left marginl0">
+												<li><a href="#">P2P</a></li>
+												<li><a href="#">娱乐</a></li>
+												<li><a href="#">电商</a></li>
+											</ul>
+											<ul class="pull-left marginl0">
+												<li><a href="#">酒店</a></li>
+												<li><a href="#">零售</a></li>
+												<li><a href="#">餐饮</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+					        </li>
+					        <li class="dropdown">
+					        		<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					        		开发
+					        		<b class="caret"></b>
+					        		</a>
+					        		<div class="dropdown-menu dropdown-style width540">
+					        			<ul class="menu-list api-height">
+										<li class="nav-header menu-title">服务端API</li>
+										<li><a href="payApi.html">联机交易类</a></li>
+										<li><a href="manageApi.html">商户管理类</a></li>
+									</ul>
+									<ul class="menu-list h5-height">
+										<li class="nav-header menu-title">H5页面跳转</li>
+										<li><a href="docSkiph5.html">微信公众号</a></li>
+									</ul>
+									<ul class="menu-list border0 api-height">
+										<li class="nav-header menu-title">移动端SDK</li>
+										<li><a href="androidSDK.html">安卓SDK(收单)</a></li>
+									    <li><a href="iosSDK.html">苹果SDK(收单)</a></li>
+									</ul>
+									<ul class="menu-list hardware-height">
+										<li class="nav-header menu-title">智能硬件</li>
+										<li><a href="#">智能POS</a></li>
+										<li><a href="#">mPOS</a></li>
+										<li><a href="#">扫码枪</a></li>
+										<li><a href="#">客显屏</a></li>
+										<li><a href="#">打印机</a></li>
+									</ul>
+									<!--<ul class="menu-list">
+										<li class="nav-header menu-title">常用工具</li>
+										<li><a href="#">智能POS</a></li>
+										<li><a href="#">mPOS</a></li>
+									</ul>-->
+								</div>
+					        </li>
+					        <li class="dropdown">
+						        	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						        	资源中心
+						        	<b class="caret"></b>
+						        	</a>
+						        	<ul class="dropdown-menu dropdown-style">
+									<li><a href="#">常用工具</a></li>
+								</ul>
+					        </li>
+					        <li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+								接入申请
+								<b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu dropdown-style">
+									<li><a href="f-accessApplication.html">服务商</a></li>
+									<li><a href="q-accessApplication.html">渠道商</a></li>
+									<li><a href="s-accessApplication.html">商户</a></li>
+								</ul>
+							</li>
+					        <li><a href="aboutUs.html">关于我们</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h3 class="text-center paddingtb80">渠道商接入申请流程</h3>
+			<div class="container flowchart">
+				<div class="first-step">
+					<div class="step-lcircle">
+						<img src="img/c1.png">
+					</div>
+					<div class="left-title step1-bg">第一步</div>
+					<div class="first-text andr-sct">
+						<div class="accordion-toggle accordion-group" data-toggle="collapse" data-target="#s-1">
+							<div class="accordion-heading overflowh">
+						        <h5>商务谈判及签约</h5>
+						        <i class="iconfont">&#xe60c;</i>
+						   </div>
+						   <div id="s-1" class="collapse accordion-body paddinglr10">
+						   	    <div class="container-fluid">
+						   	    	<div class="row-fluid">
+						   	    		<div class="span4">
+						   	    			<h5>1.确定双方合作费率</h5>
+						                    <p class="lineh22">全行指导价为不低于0.23%；对于优质服务商，可进一步降至0.22%；</p>
+						                    <p class="lineh22">渠道商应以拓展<span class="colorr">行内结算商户</span>为主、对于不愿开卡的个人结算商户可采用<span class="colorr">开立民生银行电子账户</span>形式进行拓展；</p>
+						                    <p class="lineh22">移动支付市场在全国各地区域性差异较大，服务商准入标准由主办行制定。</p>
+						   	    		</div>
+						   	    		<div class="span4">
+						   	    			<h5>2.渠道商协议签署及开户</h5>
+						                    <p class="lineh22">签署《中国民生银行移动支付收款服务商合作协议》</p>
+						                    <p class="lineh22">服务商在我行开立<span class="colorr">对公账户</span>用于手续费分润</p>
+						                    <p>移动支付接口：</p>
+						                    <p class="lineh22">（1）根据服务商为终端商户提供的支付场景确定开放给服务商的移动支付接口；</p>
+						                    <p class="lineh22">（2）不同支付场景对应移动支付接口参考《移动支付场景及交易接口对照表》。</p>
+						   	    		</div>
+						   	    		<div class="span4">
+						   	    			<h5>3.服务商协议签署及开户</h5>
+						                    <p class="lineh22">签署《中国民生银行移动支付收款服务商合作协议》</p>
+						                    <p class="lineh22">服务商在我行开立对公账户用于手续费分润</p>
+						   	    		</div>
+						   	    	</div>
+						   	    </div>
+					       </div>
+						</div>
+					</div>
+				</div>
+			    <div class="second-step">
+				    	<div class="step-rcircle">
+				    		<img src="img/c2.png">
+				    	</div>
+				    	<div class="right-title step2-bg">第二步</div>
+				    	<div class="second-text andr-sct">
+				    		<div class="accordion-toggle accordion-group" data-toggle="collapse" data-target="#s-2">
+							    <div class="accordion-heading overflowh">
+				    		        <h5> 渠道商信息创建</h5>
+				    		        <i class="iconfont">&#xe60c;</i>
+				    		   </div>
+				    		   <div id="s-2" class="collapse accordion-body paddinglr10">
+				    		   	    <div class="container-fluid">
+				    		   	    	<div class="row-fluid">
+				    		   	    		<div class="span6">
+				    		   	    			<h5>1.渠道商上线申请</h5>
+				    			                <p class="lineh22">主办分行通过OA事务审批流程提交以下材料至总行小微金融部：</p>
+				    			                <P class="lineh22">（1）《中国民生银行移动支付收款服务商合作协议》复印件（该协议要求填写渠道商对公账户、合作费率）</P>
+				    			                <P class="lineh22">（2）渠道商营业执照复印件</P>
+				    			                <p class="lineh22">（3）法人身份证复印件</p>
+				    		   	    		</div>
+				    		   	    		<div class="span6">
+				    		   	    			<h5>2.渠道商信息创建</h5>
+				    			                <P class="lineh22">总行商务平台操作岗完成渠道商信息创建，包括：</P>
+				    			                <P class="lineh22">（1）渠道商平台识别码（即渠道商编号）</P>
+				    			                <P class="lineh22">（2）渠道商商户资料</P>
+				    			                <P class="lineh22">（3）合作费率</P>
+				    			                <P class="lineh22">（4）对公结算账户等</P>
+				    		   	    		</div>
+				    		   	    	</div>
+				    		   	    </div>
+				    		    </div>
+				    		</div>
+				    	</div>
+			    </div>
+			    <div class="third-step">
+				    	<div class="step-lcircle">
+				    		<img src="img/c3.png">
+				    	</div>
+				    	<div class="left-title step3-bg">第三步</div>
+				    	<div class="third-text andr-sct">
+				    		<div class="accordion-toggle accordion-group" data-toggle="collapse" data-target="#s-3">
+							    <div class="accordion-heading overflowh">
+				    		        <h5>渠道商业务拓展</h5>
+				    		        <i class="iconfont">&#xe60c;</i>
+				    		   </div>
+				    		   <div id="s-3" class="collapse accordion-body paddinglr10">
+				    		   	  <div class="container-fluid">
+				    		   		<div class="row-fluid">
+				    		   			<div class="span6">
+				    		   				<h5>1.在我行商户进件APP或互联网进件功能尚未提供前,流程为：</h5>
+				    			            <p class="lineh22">（1）渠道商提交商户信息给主办分行</p>
+				    			            <P class="lineh22">（2）主办分行通过行内乐收银商务平台进行商户信息创建</P>
+				    			            <p class="lineh22">（3）创建商户信息时应选择：</p>
+				    			            <P class="lineh22 colorr">“拓展模式”为“第三方”</P>
+				    			            <P class="lineh22 colorr">“服务商”为对应的渠道商</P>
+				    			            <P class="lineh22 colorr">这样系统可自动识别及分润</P>
+				    		   			</div>
+				    		   			<div class="span6">
+				    		   				<h5>2.商户进件APP或互联网进件功能上线后（11月），流程为：</h5>
+				    			            <P class="lineh22">（1）渠道商可登录地推APP或互联网端，使用进件功能联机提交商户信息</P>
+				    			            <P class="lineh22">（2）主办分行进行商户审批，审批成功后生效</P>
+				    			            <P class="lineh22">具体操作手册随该功能上线时发布</P>
+				    		   			</div>
+				    		   		</div>
+				    		   	  </div>
+				    		    </div>
+				    		</div>
+				    	</div>
+			    </div>
+			    <div class="fourth-step">
+				    	<div class="step-rcircle">
+				    		<img src="img/c4.png">
+				    	</div>
+				    	<div class="right-title step4-bg">第四步</div>
+				    	<div class="fourth-text andr-sct">
+				    		<div class="accordion-toggle accordion-group" data-toggle="collapse" data-target="#s-4">
+							    <div class="accordion-heading overflowh">
+				    		        <h5> 业务运营</h5>
+				    		        <i class="iconfont">&#xe60c;</i>
+				    		   </div>
+				    		   <div id="s-4" class="collapse accordion-body paddinglr10">
+				    		    <p class="lineh22">主办行应对上线的渠道商业务开展情况进行跟进，及时发现问题和控制风险，包括但不限于以下事项：</p>
+				    		      <div class="container-fluid">
+				    		    	<div class="row-fluid">
+				    		    		<div class="span6">
+				    		    			<h5>1.渠道商经营情况跟踪</h5>
+				    		                <p class="lineh22">主办行应在渠道商开展业务后持续监控业务开展情况，包括但不限于：</p>
+				    		                <p class="lineh22">（1）渠道商报表数据监控（目前乐收银商户平台提供的报表）：</p>
+				    		                <p class="lineh22">商户：基本信息表、交易统计表</p>
+				    		                <p class="lineh22">合作商：基本信息表、分润日结报表、分润结转统计表</p>
+				    		                <p class="lineh22">（2）渠道商终端商户抽查</p>
+				    		                <p class="lineh22">（3）针对服务商交易量突出的重点商户进行现场检查</p>
+				    		                <p class="lineh22">（4）对商户经营情况进行评估</p>
+				    		    		</div>
+				    		    		<div class="span6">
+				    		    			<h5>2.渠道商分润</h5>
+				    		                <p class="lineh22">（1）系统暂定为每个自然月5号，自动执行渠道商分润</p>
+				    		                <p class="lineh22">（2）分行应在月初提前下载渠道商分润表进行数据检查，并及时提供给渠道商对账</p>
+				    		                <p class="lineh22">（3）对于有异议的情况及时通知总行</p>
+				    		    		</div>
+				    		    	</div>
+				    		      </div>
+				    		    </div>
+				    		</div>
+				    	</div>
+			    </div>
+			</div>
+		</div>
+		
+		<footer class="footer">
+			<div class="container">
+				<div class="row">
+					<div class="span3 columns">
+						<h3>无处不在</h3>
+						<ul class="text-left marginl0">
+							<li class="sina-entry">
+								<span class="iconfont sina-icon">&#xe604;</span>
+								<span>新浪微博</span>
+							</li>
+							<li class="weixin-entry">
+								<span class="iconfont weixin-icon">&#xe602;</span>
+								<span>微信公众号</span>
+							</li>
+							<li>
+								<img class="weixin-er" src="img/weixin-er.png" width="56">
+							</li>
+						</ul>
+					</div>
+					<div class="span3 columns">
+						<h3>联系我们</h3>
+						<ul class="text-left marginl0">
+							<li>
+								<a>营业网点</a>
+							</li>
+							<li>
+								<a>信用卡中心电话：400 66 95568</a>
+							</li>
+							<li>
+								<a>客户中心：95568</a>
+							</li>
+						</ul>
+					</div>
+					<div class="span3 columns">
+						<h3>帮助中心</h3>
+						<ul class="text-left marginl0">
+							<li>
+								<a>在线服务：个人/公司/信用卡</a>
+							</li>
+							<li>
+								<a>常见问题</a>
+							</li>
+							<li>
+								<a>网站地图</a>
+							</li>
+						</ul>
+					</div>
+					<div class="span3 columns">
+						<h3>关于民生</h3>
+						<ul class="text-left marginl0">
+							<li>
+								<a>民生新闻</a>
+							</li>
+							<li>
+								<a>人才招聘</a>
+							</li>
+							<li class="branch-entry">
+								<div class="dropdown">
+									<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" href="#">
+								    <span class="iconfont branch-icon">&#xe608;</span>
+								    分支机构
+									<b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+								    		<li role="presentation">
+								    			<a class="dropdown-list" role="menuitem" tabindex="-1" href="#">list1</a>
+								    		</li>
+								    		<li role="presentation">
+								    			<a class="dropdown-list" role="menuitem" tabindex="-1" href="#">list2</a>
+								    		</li>
+									</ul>
+								</div>
+							</li>
+							<li class="branch-entry">
+								<div class="dropdown">
+									<a class="dropdown-toggle" id="dLabel" role="button" data-toggle="dropdown" href="#">
+								    <span class="iconfont branch-icon">&#xe603;</span>
+								    其他链接
+									<b class="caret"></b>
+									</a>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+								    		<li role="presentation">
+								    			<a class="dropdown-list" role="menuitem" tabindex="-1" href="#">list1</a>
+								    		</li>
+								    		<li role="presentation">
+								    			<a class="dropdown-list" role="menuitem" tabindex="-1" href="#">list2</a>
+								    		</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="copyright">版权所有&nbsp;中国民生银行&nbsp;|&nbsp;京ICP备05020372号</div>
+		</footer>
+    		<script src="js/jquery-1.9.1.min.js"></script>
+    		<script src="js/bootstrap.js"></script>
+    		<script type="text/javascript">
+    			document.body.addEventListener('touchstart', function () { });  //保证手机端按钮或链接active效果
+    			
+    		</script>
+	</body>
+</html>

@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>移动收单开放平台 | 开发者中心-SDK服务端</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-responsive.css">
+<link rel="stylesheet" href="css/iconfont.css">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/respond.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+<style>
+body {
+	position: relative;
+}
+
+.navbar-inverse .navbar-inner {
+	border-radius: 0;
+}
+
+.nav-bg {
+	background-color: rgba(1, 112, 227, 1); /*导航背景默认颜色－透明*/
+	box-shadow: none;
+}
+</style>
+</head>
+<body>
+	<div id="top" ></div>
+	<div class="container marginb100 paddingt70">
+		<div class="row">
+			<div id="pa-left-nav" class="span3">
+				<ul class="sidebar-menu">
+					<li><a href="#userMeun"
+						class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> <span class="iconfont">&#xe60e;</span>
+							文档说明 <span class="iconfont pull-right"></span>
+							<span class="iconfont pull-right" style="position: relative;"></span>
+					</a>
+						<ul id="userMeun" class="nav nav-list collapse in menu-second">
+							<li id="pa-left1-1" class="active"><a href="#reader"
+								data-toggle="tab">阅读对象</a></li>
+							<li id="pa-left1-2"><a href="#copyright" data-toggle="tab">版本说明</a></li>
+						</ul></li>
+					<li><a href="#r-work"
+						class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> <span class="iconfont">&#xe60e;</span>
+							机构接入准备工作 
+							<span class="iconfont pull-right" style="position: relative;"></span>
+					</a>
+						<ul id="r-work" class="nav nav-list collapse menu-second">
+							<li id="pa-left2-1"><a href="#p-work" data-toggle="tab">准备工作</a></li>
+							<li id="pa-left2-2"><a href="#p-noun" data-toggle="tab">专有名词解释</a></li>
+							<li id="pa-left2-3"><a href="#c-index" data-toggle="tab">测试及生产环境参数说明</a></li>
+						</ul></li>
+					<li><a href="#weixin"
+						class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> <span class="iconfont">&#xe60e;</span>
+							SDK服务端
+							<span class="iconfont pull-right" style="position: relative;"></span>
+					</a>
+						<ul id="weixin" class="nav nav-list collapse menu-second">
+							<li id="pa-left3-1"><a href="#SDK-function" data-toggle="tab">功能描述</a></li>
+							<li id="pa-left3-2"><a href="#SDK-case" data-toggle="tab">案例介绍</a></li>
+							<li id="pa-left3-3"><a href="#SDK-work" data-toggle="tab">业务流程</a></li>
+						</ul></li>
+					
+					<!--<li><a href="#rule"
+						class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> <span class="iconfont">&#xe60e;</span>
+							接口规则 <span class="iconfont pull-right"></span>
+					</a>
+						<ul id="rule" class="nav nav-list collapse menu-second">
+							<li id="pa-left5-1"><a href="#x-rule" data-toggle="tab">协议规则</a></li>
+						</ul>
+					</li>-->
+					<li><a href="#platform"
+						class="nav-header menu-first collapsed borderb-ddd"
+						data-toggle="collapse"> <span class="iconfont">&#xe60e;</span>
+							平台开发 
+							<span class="iconfont pull-right" style="position: relative;"></span>
+					</a>
+						<ul id="platform" class="nav nav-list collapse menu-second">
+							<li id="pa-left6-1"><a href="#plat-1" data-toggle="tab">订单生成</a></li>
+							<li id="pa-left6-2"><a href="#plat-2" data-toggle="tab">订单结果异步通知接收</a></li>
+							<li id="pa-left6-3"><a href="#plat-3" data-toggle="tab">支付结果查询</a></li>
+							<li id="pa-left6-4"><a href="#plat-4" data-toggle="tab">微信支付退款</a></li>
+							<li id="pa-left6-5"><a href="#plat-5" data-toggle="tab">加解密说明</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div id="pa-right" class="span9" data-spy="scroll"
+				data-target=".sidebar-menu">
+				<div class="tab-content border-ddd">
+					<div class="tab-pane active" id="reader">
+						<div class="content-sct">
+							<div class="func-discript">
+								<h2 class="sct-tit">阅读对象</h2>
+								<div>
+									<p class="lineh22">民生银行为合作的移动收单商户提供了SDK接入的方式，本文档主要介绍合作机构的开发者如何进行SDK服务端的开发，配合SDK移动端完成移动收单功能。</p>
+									<p class="lineh22">该指导主要面向合作机构服务端的开发人员。</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="copyright">
+						<div class="content-sct">
+							<div class="func-discript">
+								<div>
+									<h2 class="sct-tit">版本说明</h2>
+								</div>
+								<div>
+									<table class="table table-bordered">
+										<tr>
+											<td>当前版本</td>
+											<td>V1.0</td>
+											<td>添加支付查询、微信支付退款接口说明</td>
+											<td>赵琦 </td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="p-work">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">准备工作</h2>
+								<p class="lineh22">机构在与民生银行完成线下协议签订后，由总行乐收银商务平台管理员在乐收银商务平台开立机构平台号，平台号唯一，机构真实进行交易的商户须在民生乐收银商务平台开通商户，开通商户后，会生成民生银行商户号，民生会为每一个机构平台发放用于订单加密加签和解密验签的的通信证书。证书由商户后台保存，用于完成与民生银行之间数据加密解密工作。</p>
+								<p class="lineh22">其中，通信协议采用SM2算法，商户订单信息采用机构私钥证书签名(cust0001.sm2)，民生公钥证书(cmbcTest.cer)加密。商户收到民生银行返回的信息，用商户私钥证书(cust0001.sm2)解密，民生公钥证书(cmbcTest.cer)验签，确保双方交互的信息加密传输，安全可靠防抵赖。</p>
+								<p class="lineh22">民生银行目前提供加密加签和解密验签demo，支持的语言有c#.net，php，和java，商户可以下载demo结合文档进行开发，测试证书在民生银行开发平台直接下载。</p>
+								<p class="lineh22">收单SDK开发需要与商户后台开发同时进行，SDK接入流程如下：</p>
+								<p class="lineh22">1.商户后台开发：根据本文指导，在商户后台集成民生通信证书，根据不同的功能API字段完成相关功能的请求字段签名、加密工作。</p>
+								<p class="lineh22">2.商户APP集成SDK：在商户原有APP基础上集成民生移动收单SDK，根据本指导，完成SDK各模块的集成开发工作。</p>
+								<p class="lineh22">3.商户APP调用SDK发起收款等功能测试工作：在APP配置文件中填写UAT测试环境地址，完成各模块的联调工作。</p>
+								<p class="lineh22">4.商户APP上线验收工作：在确保测试环境联调无误后，将APP配置文件中UAT环境参数改为生产环境参数，进行最后的生产环境下调试验证工作。</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="p-noun">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">专有名词解释</h2>
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>字段名	</th>
+											<th>字段说明</th>
+											<th>获取方式</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>platformId </td>
+											<td>平台编号</td>
+											<td>平台接入时，在乐收银商务平台添加平台后生成平台编号，民生向该平台发放证书</br>UAT测试环境填：cust0001</br>生产环境填民生为接入机构开通的平台编号。</td>
+										</tr>
+										<tr>
+											<td>merchantNo</td>
+											<td>民生统一商户号</td>
+											<td>在乐收银商务平台开通商户后生成统一商户号，有民生银行分行商户录入时提供或者批量导给商户。</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="c-index">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">测试及生产环境参数说明</h2>
+								<h5>测试环境参数：</h5>
+								  <table class="table table-bordered">
+									<tr>
+										<td>平台号</td>
+										<td>cust0001</td>
+									</tr>
+									<tr>
+										<td>商户号</td>
+										<td>22222</td>
+									</tr>
+									<tr>
+										<td>商户私钥</td>
+										<td>cust0001.sm2</td>
+									</tr>
+									<tr>
+										<td>私钥密码</td>
+										<td>123123</td>
+									</tr>
+									<tr>
+										<td>民生公钥</td>
+										<td>cmbcTest.cer</td>
+									</tr>
+								</table>
+								<h5>生产环境参数：</h5>
+								<p class="lineh22">生产环境平台需向民生银行申请平台号以及平台证书，平台保留自己的私钥和密码，将生产环境平台公钥文件提供给民生银行，生产环境民生银行公钥为证书文件cmbc.cer，由商户保留用作加密和验签。</p>
+									<h5>民生收单网关地址</h5>
+									<h5 class="word-break">
+										测试环境：<a href="http://111.205.207.103/mobilePlatform"
+											class="adress">http://111.205.207.103/mobilePlatform</a>
+									</h5>
+									<h5 class="word-break">
+										生产环境: <a href="http://epay.cmbc.com.cn/appweb"
+											class="adress">http://epay.cmbc.com.cn/appweb</a>
+									</h5>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="SDK-function">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">功能描述</h2>
+								  <p class="lineh22">民生移动收单插件，主要面向有收单需求的商户APP，实现移动端收单服务快速接入。商户需要收单时，产生一笔收单订单，调起民生收单插件，由民生收单插件完成订单支付流程，订单支付成功后，民生后台会异步通知商户后台，完成整个收单过程。</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="tab-pane" id="SDK-case">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">案例介绍</h2>
+									<p class="lineh22 ">目前已上线支付案例，商户可进行实际体验。</p>
+									<p class="lineh22">商户案例：福州273、乐收银App、冠达星云商、临沂云物流等。</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="SDK-work">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">业务流程</h2>
+								<img src="img/SDK-s1.png">
+								<h5 class="lineh22 ">商户系统集成SDK后下单主要交互说明：</h5>
+								<p class="lineh22">步骤1：在商户APP中选择对应的服务或商品，发起下单申请给后台；</p>
+								<p class="lineh22">步骤2：商户后台将订单信息用本地通信密钥签名并加密，将密文传至SDK；</p>
+								<p class="lineh22">步骤3：收单SDK将加密订单信息发送至民生银行收单网关；</p>
+								<p class="lineh22">步骤4：收单SDK会发起和民生银行建立安全通道；</p>
+								<p class="lineh22">步骤5：银行端将解密后的订单信息在安全通道上返回；</p>
+								<p class="lineh22">步骤6：收单SDK发起下单请求；</p>
+								<p class="lineh22">步骤7：民生系统完成订单校验并完成下单支付操作；</p>
+								<p class="lineh22">步骤8：收单SDK发起支付查询结果；</p>
+								<p class="lineh22">步骤9：收单SDK收到支付结果后在商户App端显示支付结果；</p>
+								<p class="lineh22">步骤10：异步通知商户后台支付结果。</p>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="plat-1">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">订单生成</h2>
+							  <p class="lineh22">民生会为每一个接入平台分配一个平台号，民生会为平台发放订单生成的证书。对于接入的商户，民生会为商户分配一个商户号。一个平台可以对应多个商户。交易时，由商户服务端按照民生要求使用民生提供的证书对订单内容进行加密加签，生成订单密文，将订单密文放到orderinfo字段中，并发送给App端SDK处理。</p>
+							  <h5>商户订单字段：</h5>
+							  <table class="table table-bordered word-break">
+							  	<thead>
+							  		<tr>
+							  			<th>字段名	</th>
+							  			<th>中文名</th>
+							  			<th>长度限制</th>
+							  			<th>字段说明</th>
+							  		</tr>
+							  	</thead>
+							  	<tbody>
+							  		<tr>
+							  			<td>platformId</td>
+							  			<td>平台号</td>
+							  			<td>50</td>
+							  			<td>民生银行为接入平台分配的平台编号</td>
+							  		</tr>
+							  		<tr>
+							  			<td>merchantNo</td>
+							  			<td>商户号</td>
+							  			<td>50</td>
+							  			<td>该订单对应的民生统一商户号</td>
+							  		</tr>
+							  		<tr>
+							  			<td>merchantName</td>
+							  			<td>商户名</td>
+							  			<td>100</td>
+							  			<td>商户名称，用于在民生页面反显</td>
+							  		</tr>
+							  		<tr>
+							  			<td>defaultTradeType</td>
+							  			<td>默认支付类型</td>
+							  			<td>1</td>
+							  			<td>在民生页面上默认显示的支付类型，默认支付类型:0~4之间一个整数.其中0-默认选择支付,1-微信,2-M-POS,3-微信扫一扫,4-微信二维码</td>
+							  		</tr>
+							  		<tr>
+							  			<td>selectTradeType</td>
+							  			<td>可选支付类型</td>
+							  			<td>1</td>
+							  			<td>SDK可选支付类型:1,2,3,4任意组合,以”,”分隔其中1-微信,2-M_POS,3-微信扫一扫,4-微信二维码.输入0-默认四种支付方式,例1,2（多选，”,”为英文的逗号）</td>
+							  		</tr>
+							  		<tr>
+							  			<td>amount</td>
+							  			<td>交易金额</td>
+							  			<td>19</td>
+							  			<td>以分为单位</td>
+							  		</tr>
+							  		<tr>
+							  			<td>orderInfo</td>
+							  			<td>订单信息</td>
+							  			<td>127</td>
+							  			<td>商户订单内容，用于在民生页面反显</td>
+							  		</tr>
+							  		<tr>
+							  			<td>merchantSeq</td>
+							  			<td>商户流水</td>
+							  			<td>48</td>
+							  			<td>商户流水号，商户须保证流水唯一</td>
+							  		</tr>
+							  		<tr>
+							  			<td>transDate</td>
+							  			<td>订单日期</td>
+							  			<td>8</td>
+							  			<td>yyyyMMdd</td>
+							  		</tr>
+							  		<tr>
+							  			<td>transTime</td>
+							  			<td>订单时间</td>
+							  			<td>17</td>
+							  			<td>yyyyMMddHHmmssSSS</td>
+							  		</tr>
+							  		<tr>
+							  			<td>notifyUrl</td>
+							  			<td>通知地址</td>
+							  			<td>512</td>
+							  			<td>商户实现的接收异步通知的url地址</td>
+							  		</tr>
+							  		<tr>
+							  			<td>remark</td>
+							  			<td>备注信息</td>
+							  			<td>4000</td>
+							  			<td>备注字段</br>格式为：key=value&amp; key=value（如deviceId=123456789，指定连接deviceId为123456789的POS机）</td>
+							  		</tr>
+							  		<tr>
+							  			<td>printFlag</td>
+							  			<td>打印标识</td>
+							  			<td>1</td>
+							  			<td>0默认</br>0，POS继续做电子签名，电子签名成功后打印签名的凭条</br>1，不做电子签名，消费成功直接打印凭条</td>
+							  		</tr>
+							  		<tr>
+							  			<td>isConfirm</td>
+							  			<td>是否显示支付页面</td>
+							  			<td>1</td>
+							  			<td>0不显示，1显示，默认显示</td>
+							  		</tr>
+							  		<tr>
+							  			<td>isShowSuccess</td>
+							  			<td>是否显示成功界面</td>
+							  			<td>1</td>
+							  			<td>0不显示，1显示，默认显示</td>
+							  		</tr>
+							  	</tbody>
+							  </table>
+							  <h5>服务端加签加密密文举例如下:</h5>
+							  <h5>1.平台按照民生订单字段要求，生成对应订单信息，将信息拼接成json字符串</h5>
+							  <pre>
+{"amount":"1",
+"defaultTradeType":"1",
+"merchantName":"SDK测试",
+"merchantNo":"M01002016070000000789",
+"merchantSeq":"100860001111111160",
+"notifyUrl":"http://111.205.207.103/cmbcpaydemo/NoticeServlet?name=notice",
+"orderInfo":"",
+"platformId":"cust0001",
+"remark":"",
+"selectTradeType":"1",
+"transDate":"20160815",
+"transTime":"201608150900000"}</pre>
+							  <h5>2.将上述字符串调用签名函数进行签名，得到签名值</h5>
+							  <pre>
+MEUCIQDLqCEopODFpAmv+52k+MpMpz0ARPv2hSnIw5K+8HBQ1gIgKgUPxWbXpIFYpDsF0ITtMvYdOysK6g2VlnzLIlm0ls0=	</pre>
+							  <h5>3.将签名值和订单json字符串按如下格式拼接</h5>
+							  <pre>
+{"sign":"MEUCIQDLqCEopODFpAmv+52k+MpMpz0ARPv2hSnIw5K+8HBQ1gIgKgUPxWbXpIFYpDsF0ITtMvYdOysK6g2VlnzLIlm0ls0=",
+"body":"{
+\"amount\":\"1\",
+\"defaultTradeType\":\"1\",
+\"merchantName\":\"SDK测试\",
+\"merchantNo\":\"M01002016070000000789\",
+\"merchantSeq\":\"100860001111111160\",
+\"notifyUrl\":\"http://111.205.207.103/cmbcpaydemo/NoticeServlet?name=notice\",
+\"orderInfo\":\"\",
+\"platformId\":\"cust0001\",
+\"remark\":\"\",
+\"selectTradeType\":\"1\",
+\"transDate\":\"20160815\",
+\"transTime\":\"201608150900000\"}"}	</pre>
+							  <h5>4.对json传加密得到订单密文</h5>
+							  <pre>
+MIIC6AYKKoEcz1UGAQQCA6CCAtgwggLUAgECMYGdMIGaAgECgBS1x/e/puEJbLQnTtwm2y/+fP1b2jANBgkqgRzPVQGCLQMFAARwd6u/dPuDyr9j90IlFV3WfMmOgg21Dd9S2fLyIjTCXHOmM9l/4P8dSk7LpY4qQ5mONgK5m91H+zSPP+L03FO5D1VySv1qISuv5icWlNGQgoi8R/Vk+ja8xyZbSI683LVsRLwFrDm3OFyei9P7VksxtjCCAi0GCiqBHM9VBgEEAgEwGwYHKoEcz1UBaAQQMbv3CBNnA8rm+yBajMmzwoCCAgDHMSxtn5ez7tdcrxF5GxgrR3F4y6RYrLXXc2U9YKTgadLOEfYVwyl3Wyp+rzdCqW765xP9p7TkWAO72fXBTdjZpWKeXMEv5dusQ0S/MVF80ArDPw+LLOal8Z1wpNoTuYVmqKJjmi27D6jHQd0DWjVpYWCC3dZTBp8623/h7b1hVXgI9xghure+w5BpkKRujBEJfiGK1N/mzbe5J/UFj778M1B6ovMxI0W/G0Yki3U0yRAelxNyIWczGPSn0J7apNDiB6XzopNC/eMYNiOhl/d+eD8E15MiNCL/LxHWYvMQZN9iyDswjA5/AeCNN5JvFDm6qku79BuW7rF9mQCyNIvVWXZY+TsUvORklGZmjY8j0KTlEzSdQ6KxT9jQubYmnyoKM2nohcRxUrZYh0rIwfoyPiFEDkIB86Q2s1cnT5G3Rs/0r+Ci5Ki0zhdBlZbuBSqREEfdE0ukQT1aFPMd+oKaGvR21r4IIysyp7U8tVlZ13qEYhsp0RQmZH7BSBS6asaX8waJnVXaeXJbS2WhLTlnZrQevp6Q+eLPsJaCr3KwyDH+RlLYs68WTUmAZ8jd3I2+eD/z/BDA3Djf+0JWU6EdLXzSkY7KY15cARE9gZlLweTRnsqlxPBNuV+zt31rEY92o26Db6egcuGfju1k7dLIAaHKqnXEOAyHYdScoAQc9g==	</pre>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="plat-2">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2 class="sct-tit">订单结果异步通知接收</h2>
+								<p class="lineh22">商户需开发实现订单结果接收接口，民生会向商户的notifyUrl中发送POST请求：内容为context=context密文，其中context密文解密解签后字段。</p>
+								<p class="lineh22">商户接收处理后，只需回复SUCCESS即可，民生以收到商户SUCCESS为准，收不到商户返回或者收到其他返回，皆会按策略再次尝试重新发送通知，发送8次都收不到回应，则不再发送。</p>
+								<h5>1.平台收到民生异步通知的密文如下</h5>
+								<pre>
+{
+"context":"MIIC2AYKKoEcz1UGAQQCA6CCAsgwggLEAgECMYGdMIGaAgECgBSq6s+QdIj6lzM83KgOTAr2XTeadTANBgkqgRzPVQGCLQMFAARwzlP/P8jU0Hj6OnFQIsWYZn1xyve4ighdOaA0NnAYAuM9iy747EgifCfV+yOoJxozqi+3DkaOfPDQc1MvAAVZrac6ks3zDOEhZivzTw7OvSZjoai98MGQmpQKsBXqrEU7vALvoZtQWZUy7I4T72VbGDCCAh0GCiqBHM9VBgEEAgEwGwYHKoEcz1UBaAQQ7UcdY4GPyuiAyce1KG8YkYCCAfBNrC5ll4+1B4HC59qyqc5qX3WQSYSVxGbLZ+iM1vwf9Y24aTmHor7ckUQObfZmBVjskL9fJOpNLCsrmm8MCXQuhkJS1YVpXYvYxxTTWueGLjKBXipNpL0ED6X3StssgVAertj7qMHSdi2scKwqZIhAhR0skLS15qo+hQQg5tP32k+QF9osZtrJ9OtfuB9czBVodXYh13rQwZ5dUXhk8Xod9S3nmARonUjeypBYnywM8Q+oNoLp3qIIfCfwPokU"
+}</pre>
+								<h5>2.将密文用平台私钥进行解密获得签名和明文信息</h5>
+								<pre>
+{"sign":"MEUCICuDL2FC36sohRH8vZQR9Ik5SYiF9amh7fuLbCN6AdWSAiEA1Z6OX7qnKsvqf+sXVKGx8f4+JSBiDCNhEuc3BUsqf6w\u003d","body":"{\"amount\":\"11\",\"defaultTradeType\":\"1\",\"merchantName\":\"1\",\"merchantNum\":\"122222\",\"merchantSeq\":\"adf\",\"notifyUrl\":\"http://197.3.135.242:23001/merchantdemo/noticeServlet\",\"orderInfo\":\"sdf\",\"platformId\":\"cust0001\",\"printFlag\":\"0\",\"remark\":\"1\",\"selectTradeType\":\"1\",\"transDate\":\"12222222\",\"transTime\":\"212321222222123\"}"}	</pre>
+								<h5>3.取出sign签名验证并获取明文进行业务处理</h5>
+								<h5>异步通知解密后字段：</h5>
+								<table class="table table-bordered word-break">
+									<thead>
+										<tr>
+											<th>字段名</th>
+											<th>中文名</th>
+											<th>长度限制</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>platformId</td>
+											<td>接入平台号</td>
+											<td>50</td>
+											<td>民生银行为接入平台分配的平台编号</td>
+										</tr>
+									  <tr>
+											<td>merchantNo</td>
+											<td>民生统一商户号</td>
+											<td>50</td>
+											<td>商户的统一商户号</td>
+										</tr>
+									  <tr>
+											<td>orderNo</td>
+											<td>商户订单号</td>
+											<td>48</td>
+											<td>商户方按民生要求产生的商户订单号，商户号+日期+10位流水</td>
+										</tr>
+									  <tr>
+											<td>tradeStatus</td>
+											<td>交易结果</td>
+											<td>1</td>
+											<td>S成功E失败</td>
+										</tr>
+										<tr>
+											<td>serialNo</td>
+											<td>APP SERVER平台流水号</td>
+											<td>1</td>
+											<td>平台流水号，由APP SERVER产生</td>
+										</tr>
+										<tr>
+											<td>bankTradeNo</td>
+											<td>内部流水号</td>
+											<td>19</td>
+											<td>收单的银行流水号</td>
+										</tr>
+										<tr>
+											<td>reserve</td>
+											<td>保留域</td>
+											<td>255</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="plat-3">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>支付结果查询</h2>
+								<p class="lineh22">民生提供给商户的微信支付结果查询接口，可查询刷卡，微信正扫、反扫、以及退款交易的结果，只可查询当日交易。</p>
+								<h5>请求地址：</h5>
+								<table class="table table-bordered word-break">
+									<tr>
+										<th>测试环境</th>
+										<td>http://wxpay.cmbc.com.cn/mobilePlatform/appserver/paymentResultSelect.do</td>
+									</tr>
+									<tr>
+										<th>生产环境</th>
+										<td>http://epay.cmbc.com.cn/appweb/appserver/paymentResultSelect.do</td>
+									</tr>
+								</table>
+								<p class="lineh22">接口有统一的报文头，商户将要查询的商户号订单等字段转换为JSON字符串加密加签后放入报文指定字段发送，返回报文同样是密文，请求和相应内容解密后字段组成的json加密加签到businessContext。
+								</p>
+								<h5>请求字段</h5>
+								<table class="table table-bordered word-break">
+									<thead>
+										<tr>
+											<th>字段名称</th>
+											<th>字段</th>
+											<th>数据类型</th>
+											<th>是否必输</th>
+											<th>备注</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>版本号</td>
+											<td>version</td>
+											<td>String</td>
+											<td></td>
+											<td>版本号，用于版本控制、灰度发布、向下兼容等用途</td>
+										</tr>
+										<tr>
+											<td>发起来源</td>
+											<td>source</td>
+											<td>String</td>
+											<td></td>
+											<td>发起渠道，用于标识ios、Android、PC等的渠道管控及版本控制</br>
+												PC-PC Web端；</br>
+												iOS-苹果客户端；</br>
+												Android-安卓客户端;
+											</td>
+										</tr>
+										<tr>
+											<td>商户编号</td>
+											<td>merchantNum</td>
+											<td>String(50)</td>
+											<td></td>
+											<td>统一商户编号，由商户管理系统提供的统一商户编号</td>
+										</tr>
+										<tr>
+											<td>商户流水</td>
+											<td>merchantSeq</td>
+											<td>String(40)</td>
+											<td></td>
+											<td>商户发起交易时使用的流水，互联网接入网关不对流水号去重，仅将商户编号和商户流水拼接后直接传递给后台系
+											统</td>
+										</tr>
+										<tr>
+											<td>交易日期</td>
+											<td>transDate</td>
+											<td>String(8)</td>
+											<td>Y</td>
+											<td>yyyyMMdd</td>
+										</tr>
+										<tr>
+											<td>交易时间</td>
+											<td>transTime</td>
+											<td>String(17)</td>
+											<td>Y</td>
+											<td>yyyyMMddHHmmssSSS</td>
+										</tr>
+										<tr>
+											<td>交易编码</td>
+											<td>transCode</td>
+											<td>String</td>
+											<td></td>
+											<td>交易编码</td>
+										</tr>
+										<tr>
+											<td>安全类型</td>
+											<td>securityType</td>
+											<td>String</td>
+											<td></td>
+											<td>决定使用何种证书、签名、加密算法</td>
+										</tr>
+										<tr>
+											<td>备用字段1</td>
+											<td>reserve1</td>
+											<td>String</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>备用字段2</td>
+											<td>reserve2</td>
+											<td>String</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>备用字段3</td>
+											<td>reserve3</td>
+											<td>String</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>备用字段4</td>
+											<td>reserve4</td>
+											<td>String</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>备用字段5</td>
+											<td>reserve5</td>
+											<td>String</td>
+											<td></td>
+											<td>一般备用字段</td>
+										</tr>
+										<tr>
+											<td>通用备用字段</td>
+											<td>reserveJson</td>
+											<td>String</td>
+											<td></td>
+											<td>Json格式的通用其他信息</td>
+										</tr>
+										<tr>
+											<td>业务报文</td>
+											<td>bussinessContext</td>
+											<td>String</td>
+											<td>Y</td>
+											<td>传递给业务系统的报文</td>
+										</tr>
+									</tbody>
+								</table>
+								<h5>返回字段：</h5>
+							      <table class="table table-bordered word-break">
+											<thead>
+												<tr>
+													<th>字段名称</th>
+													<th>字段</th>
+													<th>数据类型</th>
+													<th>是否必输</th>
+													<th>备注</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>商户流水</td>
+													<td>version</td>
+													<td>String</td>
+													<td></td>
+													<td>原样返回</td>
+												</tr>
+												<tr>
+													<td>交易编码</td>
+													<td>source</td>
+													<td>String</td>
+													<td></td>
+													<td>原样返回</td>
+												</tr>
+												<tr>
+													<td>网关响应流水</td>
+													<td>merchantNum</td>
+													<td>String(50)</td>
+													<td></td>
+													<td>互联网交易网关的响应流水，用于定位问题等</td>
+												</tr>
+												<tr>
+													<td>网关响应日期</td>
+													<td>merchantSeq</td>
+													<td>String(40)</td>
+													<td>Y</td>
+													<td>yyyyMMdd</td>
+												</tr>
+												<tr>
+													<td>网关响应时间</td>
+													<td>transDate</td>
+													<td>String(8)</td>
+													<td>Y</td>
+													<td>yyyyMMddHHmmssSSS</td>
+												</tr>
+												<tr>
+													<td>网关响应结果</td>
+													<td>transTime</td>
+													<td>String(17)</td>
+													<td></td>
+													<td>S:成功，E:失败，R:待查</td>
+												</tr>
+												<tr>
+													<td>网关响应错误码</td>
+													<td>transCode</td>
+													<td>String</td>
+													<td></td>
+													<td>错误码</td>
+												</tr>
+												<tr>
+													<td>网关响应错误信息</td>
+													<td>securityType</td>
+													<td>String</td>
+													<td></td>
+													<td>错误信息</td>
+												</tr>
+												<tr>
+													<td>备用字段1</td>
+													<td>reserve1</td>
+													<td>String</td>
+													<td></td>
+													<td>一般备用字段</td>
+												</tr>
+												<tr>
+													<td>备用字段2</td>
+													<td>reserve2</td>
+													<td>String</td>
+													<td></td>
+													<td>一般备用字段</td>
+												</tr>
+												<tr>
+													<td>备用字段3</td>
+													<td>reserve3</td>
+													<td>String</td>
+													<td></td>
+													<td>一般备用字段</td>
+												</tr>
+													<td>通用备用字段</td>
+													<td>reserveJson</td>
+													<td>String</td>
+													<td></td>
+													<td>Json格式的通用其他信息</td>
+												</tr>
+												<tr>
+													<td>业务报文</td>
+													<td>bussinessContext</td>
+													<td>String</td>
+													<td>Y</td>
+													<td>仅当网关响应结果gateReturnType为S时该字段存在且有效，为业务系统向外部系统的返回</td>
+												</tr>
+											</tbody>
+										</table>
+								<h5>查询结果字段 </h5>
+								<table class="table table-bordered word-break">
+									<thead>
+										<tr>
+											<th>中文名</th>
+											<th>字段名</th>
+											<th>长度限制</th>
+											<th>是否必输</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>接入平台号</td>
+											<td>platformId</td>
+											<td>23</td>
+											<td>Y</td>
+											<td>民生银行为接入平台分配的平台编号,与平台证书一一对应</td>
+										</tr>
+										<tr>
+											<td>民生统一商户号</td>
+											<td>merchantNo</td>
+											<td>21</td>
+											<td>Y</td>
+											<td>实际交易商户的民生商户号</td>
+										</tr>
+										<tr>
+											<td>商户订单号</td>
+											<td>merchantSeq</td>
+											<td>50</td>
+											<td>Y</td>
+											<td>原交易商户订单号</td>
+										</tr>
+										<tr>
+											<td>查询类型</td>
+											<td>tradeType</td>
+											<td>2</td>
+											<td>Y</td>
+											<td>1.支付</br>2.退款</td>
+										</tr>
+										<tr>
+											<td>备注字段</td>
+											<td>reserve</td>
+											<td></td>
+											<td></td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+								<h5>gateReturnType为S时，返回字段</h5>
+								<table class="table table-bordered word-break ">
+									<thead>
+										<tr>
+											<th>中文名</th>
+											<th>字段名</th>
+											<th>字段说明</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>回显商户名</td>
+											<td>merchantName</td>
+											<td>商户用于回显商户收款的名字</td>
+										</tr>
+										<tr>
+											<td>商户订单号</td>
+											<td>merchantSeq</td>
+											<td>原交易商户订单号</td>
+										</tr>
+										<tr>
+											<td>交易金额</td>
+											<td>amount</td>
+											<td>单位到分</td>
+										</tr>
+										<tr>
+											<td>订单详情</td>
+											<td>orderInfo</td>
+											<td>传入商品信息等</td>
+										</tr>
+										<tr>
+											<td>凭证号</td>
+											<td>voucherNo</td>
+											<td>收单凭证号</td>
+										</tr>
+										<tr>
+											<td>银行流水号</td>
+											<td>bankTradeNo</td>
+											<td>收单系统流水号</td>
+										</tr>
+										<tr>
+											<td>交易结果</td>
+											<td>tradeStatus</td>
+											<td>
+												S 订单交易成功</br>
+												E 订单失败</br>
+												R 原订单成功，未支付（待支付)</br>
+												C 已撤销（理论上不存在) 已关闭</br>
+												T 订单转入退款
+											</td>
+										</tr>
+										<tr>
+											<td>保留域</td>
+											<td>reserve</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>参考号</td>
+											<td>refNo</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>批次号</td>
+											<td>batchNo</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>卡类型</td>
+											<td>cardType</td>
+											<td>0借记卡 1贷记卡</td>
+										</tr>
+										<tr>
+											<td>卡号</td>
+											<td>cardNo</td>
+											<td>前六后四中间*</td>
+										</tr>
+										<tr>
+											<td>发卡行行号</td>
+											<td>cbCode</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>发卡行行名</td>
+											<td>cardName</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>交易手续费</td>
+											<td>fee</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>交易类型</td>
+											<td>transType</td>
+											<td>消费</td>
+										</tr>
+										<tr>
+											<td>银联终端号</td>
+											<td>cupTermId</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td>设备序列号</td>
+											<td>cupTsamNo</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="plat-4">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>微信支付退款</h2>
+								<p class="lineh22">民生提供给商户的退款接口。</p>
+								<h5>请求地址</h5>
+								<table class="table table-bordered word-break">
+									<tr>
+										<th>测试环境</th>
+										<td>http://wxpay.cmbc.com.cn/mobilePlatform/appserver/cancelTrans.do</td>
+									</tr>
+									<tr>
+										<th>生产环境</th>
+										<td>http://epay.cmbc.com.cn/appweb/appserver/cancelTrans.do</td>
+									</tr>
+								</table>
+								<p class="lineh22">接口有统一的报文头，商户将要退款的商户号订单号等字段转换为JSON字符串加密加签后放入报文指定字段发送，返回报文同样是密文，请求和相应内容解密后字段组成的json加密加签到businessContext。</p>
+								<h5>微信退款交易接口字段：</h5>
+								<table class="table table-bordered word-break">
+										<thead>
+											<tr>
+												<th>字段名称</th>
+												<th>字段</th>
+												<th>数据类型</th>
+												<th>是否必输</th>
+												<th>备注</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>版本号</td>
+												<td>version</td>
+												<td>String</td>
+												<td></td>
+												<td>版本号，用于版本控制、灰度发布、向下兼容等用途</td>
+											</tr>
+											<tr>
+												<td>发起来源</td>
+												<td>source</td>
+												<td>String</td>
+												<td></td>
+												<td>发起渠道，用于标识ios、Android、PC等的渠道管控及版本控制</br>
+													PC-PC Web端；</br>
+													iOS-苹果客户端；</br>
+													Android-安卓客户端;
+												</td>
+											</tr>
+											<tr>
+												<td>商户编号</td>
+												<td>merchantNum</td>
+												<td>String(50)</td>
+												<td></td>
+												<td>统一商户编号，由商户管理系统提供的统一商户编号</td>
+											</tr>
+											<tr>
+												<td>商户流水</td>
+												<td>merchantSeq</td>
+												<td>String(40)</td>
+												<td></td>
+												<td>商户发起交易时使用的流水，互联网接入网关不对流水号去重，仅将商户编号和商户流水拼接后直接传递给后台系
+												统</td>
+											</tr>
+											<tr>
+												<td>交易日期</td>
+												<td>transDate</td>
+												<td>String(8)</td>
+												<td>Y</td>
+												<td>yyyyMMdd</td>
+											</tr>
+											<tr>
+												<td>交易时间</td>
+												<td>transTime</td>
+												<td>String(17)</td>
+												<td>Y</td>
+												<td>yyyyMMddHHmmssSSS</td>
+											</tr>
+											<tr>
+												<td>交易编码</td>
+												<td>transCode</td>
+												<td>String</td>
+												<td></td>
+												<td>交易编码</td>
+											</tr>
+											<tr>
+												<td>安全类型</td>
+												<td>securityType</td>
+												<td>String</td>
+												<td></td>
+												<td>决定使用何种证书、签名、加密算法</td>
+											</tr>
+											<tr>
+												<td>备用字段1</td>
+												<td>reserve1</td>
+												<td>String</td>
+												<td></td>
+												<td>一般备用字段</td>
+											</tr>
+											<tr>
+												<td>备用字段2</td>
+												<td>reserve2</td>
+												<td>String</td>
+												<td></td>
+												<td>一般备用字段</td>
+											</tr>
+											<tr>
+												<td>备用字段3</td>
+												<td>reserve3</td>
+												<td>String</td>
+												<td></td>
+												<td>一般备用字段</td>
+											</tr>
+											<tr>
+												<td>备用字段4</td>
+												<td>reserve4</td>
+												<td>String</td>
+												<td></td>
+												<td>一般备用字段</td>
+											</tr>
+											<tr>
+												<td>备用字段5</td>
+												<td>reserve5</td>
+												<td>String</td>
+												<td></td>
+												<td>一般备用字段</td>
+											</tr>
+											<tr>
+												<td>通用备用字段</td>
+												<td>reserveJson</td>
+												<td>String</td>
+												<td></td>
+												<td>Json格式的通用其他信息</td>
+											</tr>
+											<tr>
+												<td>业务报文</td>
+												<td>bussinessContext</td>
+												<td>String</td>
+												<td>Y</td>
+												<td>传递给业务系统的报文</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5>返回字段</h5>
+									<table class="table table-bordered word-break">
+										<thead>
+											<tr>
+												<th>字段名称</th>
+												<th>字段</th>
+												<th>数据类型</th>
+												<th>是否必输</th>
+												<th>备注</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>商户流水</td>
+												<td>version</td>
+												<td>String</td>
+												<td></td>
+												<td>原样返回</td>
+											</tr>
+											<tr>
+												<td>交易编码</td>
+												<td>source</td>
+												<td>String</td>
+												<td></td>
+												<td>原样返回</td>
+											</tr>
+											<tr>
+												<td>网关响应流水</td>
+												<td>merchantNum</td>
+												<td>String(50)</td>
+												<td></td>
+												<td>互联网交易网关的响应流水，用于定位问题等</td>
+											</tr>
+											<tr>
+												<td>网关响应日期</td>
+												<td>merchantSeq</td>
+												<td>String(40)</td>
+												<td>Y</td>
+												<td>yyyyMMdd</td>
+											</tr>
+											<tr>
+												<td>网关响应时间</td>
+												<td>transDate</td>
+												<td>String(8)</td>
+												<td>Y</td>
+												<td>yyyyMMddHHmmssSSS</td>
+											</tr>
+											<tr>
+												<td>网关响应结果</td>
+												<td>transTime</td>
+												<td>String(17)</td>
+												<td></td>
+												<td>S:成功，E:失败，R:待查</td>
+											</tr>
+											<tr>
+												<td>网关响应错误码</td>
+												<td>transCode</td>
+												<td>String</td>
+												<td></td>
+												<td>错误码</td>
+											</tr>
+											<tr>
+												<td>网关响应错误信息</td>
+												<td>securityType</td>
+												<td>String</td>
+												<td></td>
+												<td>错误信息</td>
+											</tr>
+											<tr>
+												<td>备用字段1</td>
+												<td>reserve1</td>
+												<td>String</td>
+												<td></td>
+												<td>一般备用字段</td>
+											</tr>
+											<tr>
+												<td>备用字段2</td>
+												<td>reserve2</td>
+												<td>String</td>
+												<td></td>
+												<td>一般备用字段</td>
+											</tr>
+											<tr>
+												<td>备用字段3</td>
+												<td>reserve3</td>
+												<td>String</td>
+												<td></td>
+												<td>一般备用字段</td>
+											</tr>
+												<td>通用备用字段</td>
+												<td>reserveJson</td>
+												<td>String</td>
+												<td></td>
+												<td>Json格式的通用其他信息</td>
+											</tr>
+											<tr>
+												<td>业务报文</td>
+												<td>bussinessContext</td>
+												<td>String</td>
+												<td>Y</td>
+												<td>仅当网关响应结果gateReturnType为S时该字段存在且有效，为业务系统向外部系统的返回</td>
+											</tr>
+										</tbody>
+									</table>
+									<h5>退款字段 </h5>
+								      <table class="table table-bordered word-break">
+									    <thead>
+										    <tr>
+											    <th>中文名</th>
+											    <th>字段名</th>
+											    <th>类型</th>
+											    <th>是否必输</th>
+											    <th>字段说明</th>
+										    </tr>
+									    </thead>
+									    <tbody>
+										    <tr>
+											    <td>接入平台号</td>
+											    <td>platformId</td>
+											    <td>23</td>
+											    <td>Y</td>
+											    <td></td>
+										    </tr>
+										    <tr>
+											    <td>民生统一商户号</td>
+											    <td>merchantNo</td>
+											    <td>21</td>
+											    <td>Y</td>
+											    <td></td>
+										    </tr>
+										    <tr>
+											    <td>商户订单号</td>
+											    <td>merchantSeq</td>
+											    <td>50</td>
+											    <td>Y</td>
+											    <td>原交易商户订单号</td>
+										    </tr>
+										    <tr>
+											    <td>退款金额</td>
+											    <td>orderAmount</td>
+											    <td></td>
+											    <td>Y</td>
+											    <td></td>
+										    </tr>
+										    <tr>
+											    <td>退款说明</td>
+											    <td>orderNote</td>
+											    <td></td>
+											    <td></td>
+											    <td></td>
+										    </tr>
+										    <tr>
+											    <td>备注字段</td>
+											    <td>reserve</td>
+											    <td></td>
+											    <td></td>
+											    <td></td>
+										    </tr>
+									    </tbody>
+								    </table>
+								    <h5>gateReturnType为S时，返回字段</h5>
+								    <table class="table table-bordered word-break ">
+									  <thead>
+										  <tr>
+											  <th>中文名</th>
+											  <th>字段名</th>
+											  <th>字段说明</th>
+										  </tr>
+									  </thead>
+									  <tbody>
+										  <tr>
+											  <td>回显商户名</td>
+											  <td>merchantName</td>
+											  <td>商户用于回显商户收款的名字</td>
+										  </tr>
+										  <tr>
+											  <td>商户订单号</td>
+											  <td>merchantSeq</td>
+											  <td>商户平台号+8位日期+商户自定的订单号</td>
+										  </tr>
+										  <tr>
+											  <td>交易金额</td>
+											  <td>tradeAmount</td>
+											  <td>单位到分</td>
+										  </tr>
+										  <tr>
+											  <td>订单详情</td>
+											  <td>orderInfo</td>
+											  <td>传入商品信息等</td>
+										  </tr>
+										  <tr>
+											  <td>凭证号</td>
+											  <td>voucherNo</td>
+											  <td>收单凭证号</td>
+										  </tr>
+										  <tr>
+											  <td>银行流水号</td>
+											  <td>bankTradeNo</td>
+											  <td>流水号</td>
+										  </tr>
+										  <tr>
+											  <td>交易结果</td>
+											  <td>tradeStatus</td>
+											  <td>
+												S 订单交易成功</br>
+												E 订单失败</br>
+												R 原订单成功，未支付（待支付)
+											  </td>
+										  </tr>
+										  <tr>
+											  <td>保留域</td>
+											  <td>reserve</td>
+											  <td></td>
+										  </tr>
+										 </tbody>
+									</table>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane" id="plat-5">
+						<div class="content-sct">
+							<div class="andr-sct">
+								<h2>
+									加解密说明
+								</h2>
+								<p class="lineh22">民生提供了对密文加密加签、解密解签的jar包。</p>
+								<h5>加密加签使用</h5>
+								<pre>
+EncryptAndSignService custEncrypt = new EncryptAndSignService(reqBodyJson);
+if(custEncrypt.custEncryptAndSign(priKeyAbsPath, certAbsPath, priKeyPWD)){
+	cipherTxt = custEncrypt.getCipherTxt();
+}</pre>
+								<h5>加密加签参数</h5>
+								<table class="table table-bordered">
+									<tr>
+										<td>reqBodyJson</td>
+										<td>需加密的明文</td>
+									</tr>
+									<tr>
+										<td>priKeyAbsPath</td>
+										<td>商户私钥绝对路径</td>
+									</tr>
+									<tr>
+										<td>certAbsPath</td>
+										<td>民生公钥绝对路径</td>
+									</tr>
+									<tr>
+										<td>priKeyPWD</td>
+										<td>商户私钥密码</td>
+									</tr>
+								</table>
+								<h5>解密解签使用</h5>
+								<pre>
+DecryptAndVerifyService custDecrypt = new DecryptAndVerifyService(cipherTxt);
+if(custDecrypt.custDecrypyAndVerify(priKeyAbsPath,certAbsPath, priKeyPWD)){
+	plainBody = custDecrypt.getPlainBody();
+} </pre>
+								<h5>解密解签参数</h5>
+								<table class="table table-bordered">
+									<tr>
+										<td>cipherTxt</td>
+										<td>需加密的明文</td>
+									</tr>
+									<tr>
+										<td>priKeyAbsPath</td>
+										<td>商户私钥绝对路径</td>
+									</tr>
+									<tr>
+										<td>certAbsPath</td>
+										<td>民生公钥绝对路径</td>
+									</tr>
+									<tr>
+										<td>priKeyPWD</td>
+										<td>商户私钥密码</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="foot"></div>
+	<a class="iconfont to-top">&#xe625;</a>
+	<script src="js/jquery-1.9.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#top").load("nav.html");
+			$("#foot").load("foot.html");
+		});
+		document.body.addEventListener('touchstart', function() {
+		}); //保证手机端按钮或链接active效果
+
+		$(".to-top").click(function() { //置顶按钮
+			$('html,body').animate({
+				scrollTop : '0'
+			}, 80)
+		})
+
+		$(document).ready(function() { //控制文档左侧菜单不同二级菜单不同时active
+			$('ul.menu-second > li').click(function(e) {
+				e.preventDefault();
+				$('ul.menu-second > li').removeClass('active');
+				$(this).addClass('active');
+			});
+		});
+
+		$('#pa-left1-1 a').click(function(e) { //点击左侧菜单显示相应内容
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left1-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-3 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-4 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left2-5 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-3 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-4 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left3-5 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-3 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-4 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left4-5 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left5-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left5-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-1 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-2 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-3 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-4 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-5 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+		$('#pa-left6-6 a').click(function(e) {
+			e.preventDefault()
+			$(this).tab('show')
+		});
+	</script>
+</body>
+</html>
